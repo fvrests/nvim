@@ -5,6 +5,6 @@ require('colorscheme')
 
 -- plugin config
 require('p-barbar')
-require('p-nvim-tree')
-require('p-nvim-treesitter')
 require('p-telescope')
+require('p-tree')
+require('p-treesitter')

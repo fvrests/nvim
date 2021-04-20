@@ -13,12 +13,12 @@ return require('packer').startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
 		use 'romgrk/barbar.nvim'
-		use 'kyazdani42/nvim-web-devicons'
-		use 'kyazdani42/nvim-tree.lua'
-		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 		use {
 			'nvim-telescope/telescope.nvim',
 			requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
 		}
+		use 'kyazdani42/nvim-web-devicons'
+		use 'kyazdani42/nvim-tree.lua'
+		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	end
 )
