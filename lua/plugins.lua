@@ -12,6 +12,7 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 return require('packer').startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
+		use 'romgrk/barbar.nvim'
 		use 'kyazdani42/nvim-web-devicons'
 		use 'kyazdani42/nvim-tree.lua'
 		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
