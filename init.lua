@@ -1,6 +1,7 @@
 require('plugins')
 require('settings')
 require('keymappings')
+require('colorscheme')
 
 -- plugin config
 require('p-barbar')
