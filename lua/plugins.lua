@@ -16,5 +16,9 @@ return require('packer').startup(
 		use 'kyazdani42/nvim-web-devicons'
 		use 'kyazdani42/nvim-tree.lua'
 		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+		use {
+			'nvim-telescope/telescope.nvim',
+			requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+		}
 	end
 )
