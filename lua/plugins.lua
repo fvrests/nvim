@@ -14,5 +14,6 @@ return require('packer').startup(
 		use 'wbthomason/packer.nvim'
 		use 'kyazdani42/nvim-web-devicons'
 		use 'kyazdani42/nvim-tree.lua'
+		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	end
 )
