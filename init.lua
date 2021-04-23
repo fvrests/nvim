@@ -8,6 +8,7 @@ require('lsp')
 
 -- plugin config
 require('p-barbar')
+require('p-compe')
 require('p-telescope')
 require('p-tree')
 require('p-treesitter')
