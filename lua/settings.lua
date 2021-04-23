@@ -8,5 +8,7 @@ vim.o.splitright = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
+vim.bo.undofile = true
+
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'
