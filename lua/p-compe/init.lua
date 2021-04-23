@@ -1,3 +1,6 @@
+local set_keymap = vim.api.nvim_set_keymap
+local opts = {expr = true}
+
 vim.o.completeopt = 'menuone,noselect'
 
 require'compe'.setup {
@@ -54,7 +57,7 @@ _G.s_tab_complete = function()
 	end
 end
 
-vim.api.nvim_set_keymap('i', '<tab>', 'v:lua.tab_complete()', {expr = true})
-vim.api.nvim_set_keymap('s', '<tab>', 'v:lua.tab_complete()', {expr = true})
-vim.api.nvim_set_keymap('i', '<s-tab>', 'v:lua.s_tab_complete()', {expr = true})
-vim.api.nvim_set_keymap('s', '<s-tab>', 'v:lua.s_tab_complete()', {expr = true})
+set_keymap('i', '<tab>', 'v:lua.tab_complete()', opts)
+set_keymap('s', '<tab>', 'v:lua.tab_complete()', opts)
+set_keymap('i', '<s-tab>', 'v:lua.s_tab_complete()', opts)
+set_keymap('s', '<s-tab>', 'v:lua.s_tab_complete()', opts)
