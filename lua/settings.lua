@@ -5,6 +5,7 @@ vim.o.smartcase = true
 vim.o.laststatus = 0
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.smartindent = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
