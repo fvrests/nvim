@@ -27,5 +27,6 @@ return require('packer').startup(
 		use 'kabouzeid/nvim-lspinstall'
 		use 'hrsh7th/nvim-compe'
 		use 'hrsh7th/vim-vsnip'
+		use 'terrortylor/nvim-comment'
 	end
 )
