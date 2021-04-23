@@ -3,6 +3,9 @@ require('settings')
 require('keymappings')
 require('colorscheme')
 
+-- lsp
+require('lsp')
+
 -- plugin config
 require('p-barbar')
 require('p-telescope')
