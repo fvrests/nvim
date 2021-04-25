@@ -28,5 +28,6 @@ return require('packer').startup(
 		use 'hrsh7th/nvim-compe'
 		use 'hrsh7th/vim-vsnip'
 		use 'terrortylor/nvim-comment'
+		use {'prettier/vim-prettier', run = 'npm install'}
 	end
 )
