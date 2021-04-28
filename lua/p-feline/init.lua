@@ -1,4 +1,10 @@
+vim.o.laststatus = 2
+
+-- disabling showmode causes an issue with nvim-compe
+-- setting shortmess fixes this
+-- https://github.com/hrsh7th/nvim-compe/issues/259
 vim.o.showmode = false
+vim.o.shortmess= vim.o.shortmess .. 'c'
 
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
@@ -130,20 +136,12 @@ table.insert(components.right.active, {
 })
 
 table.insert(components.right.active, {
-	provider = 'git_branch',
-	hl = {fg = palette.subtle},
-	left_sep = ' '
-})
-
-table.insert(components.right.active, {
 	provider = function () return ' ' end
 })
 
 require('feline').setup({
     default_bg = 'NONE',
     default_fg = palette.text,
-    -- colors = colors,
-    -- separators = separators,
     components = components,
     properties = properties,
     vi_mode_colors = vi_mode_colors
