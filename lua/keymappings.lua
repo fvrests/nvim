@@ -25,6 +25,9 @@ set_keymap('n', '{', ':bprevious<cr>', opts)
 set_keymap('v', '<', '<gv', opts)
 set_keymap('v', '>', '>gv', opts)
 
+-- search visually selected text (consistent `*` behaviour)
+set_keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>]], opts)
+
 -- bubble lines
 set_keymap('x', 'J', ':move \'>+1<cr>gv=gv', opts)
 set_keymap('x', 'K', ':move \'<-2<cr>gv=gv', opts)
