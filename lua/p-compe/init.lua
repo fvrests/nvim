@@ -1,5 +1,5 @@
 local set_keymap = vim.api.nvim_set_keymap
-local opts = {expr = true}
+local opts = {silent = true, expr = true}
 
 vim.o.completeopt = 'menuone,noselect'
 
@@ -61,3 +61,5 @@ set_keymap('i', '<tab>', 'v:lua.tab_complete()', opts)
 set_keymap('s', '<tab>', 'v:lua.tab_complete()', opts)
 set_keymap('i', '<s-tab>', 'v:lua.s_tab_complete()', opts)
 set_keymap('s', '<s-tab>', 'v:lua.s_tab_complete()', opts)
+set_keymap('i', '<cr>', [[compe#confirm('<cr>')]], opts)
+set_keymap('i', '<c-space>', 'compe#complete()', opts)
