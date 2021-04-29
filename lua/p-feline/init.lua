@@ -1,10 +1,5 @@
 vim.o.laststatus = 2
-
--- disabling showmode causes an issue with nvim-compe
--- setting shortmess fixes this
--- https://github.com/hrsh7th/nvim-compe/issues/259
 vim.o.showmode = false
-vim.o.shortmess= vim.o.shortmess .. 'c'
 
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
