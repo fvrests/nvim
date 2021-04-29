@@ -9,6 +9,8 @@ vim.o.smartindent = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.backup = false
+vim.o.writebackup = false
 
 vim.bo.undofile = true
 
