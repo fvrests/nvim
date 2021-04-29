@@ -46,5 +46,7 @@ define_augroups({
         {'BufRead', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
     },
+	-- TODO: We should check if the formatter, eg. prettier, exists
+	-- If not, there is a large delay before saving
 	_auto_formatters = auto_formatters
 })
