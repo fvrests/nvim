@@ -12,3 +12,4 @@ local opts = {noremap = true, silent = true}
 
 -- TODO: Why doesn't -g,!{.git,node_modules} work?
 set_keymap('n', '<leader>f', ':Telescope find_files find_command=rg,--hidden,--files,-g,!.git,-g,!node_modules<cr>', opts)
+set_keymap('n', '<leader>/', ':Telescope live_grep<cr>', opts)
