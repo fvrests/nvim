@@ -1,4 +1,5 @@
 require 'plugins'
+require 'autocommands'
 require 'settings'
 require 'keymappings'
 require 'colorscheme'
