@@ -39,7 +39,7 @@ _G.tab_complete = function()
 	if vim.fn.pumvisible() == 1 then
 		return t '<c-n>'
 	elseif vim.fn.call('vsnip#available', {1}) == 1 then
-		return t '<Plug>(vsnip-expand-or-jump)'
+		return t '<plug>(vsnip-expand-or-jump)'
 	elseif check_back_space() then
 		return t '<tab>'
 	else
@@ -51,7 +51,7 @@ _G.s_tab_complete = function()
 	if vim.fn.pumvisible() == 1 then
 		return t '<c-p>'
 	elseif vim.fn.call('vsnip#jumpable', {-1}) == 1 then
-		return t '<Plug>(vsnip-jump-prev)'
+		return t '<plug>(vsnip-jump-prev)'
 	else
 		return t '<s-tab>'
 	end
@@ -63,3 +63,13 @@ set_keymap('i', '<s-tab>', 'v:lua.s_tab_complete()', opts)
 set_keymap('s', '<s-tab>', 'v:lua.s_tab_complete()', opts)
 set_keymap('i', '<cr>', [[compe#confirm('<cr>')]], opts)
 set_keymap('i', '<c-space>', 'compe#complete()', opts)
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = false,
+    underline = true,
+    signs = true,
+  }
+)
+vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
+vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
