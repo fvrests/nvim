@@ -6,7 +6,7 @@ local opts = {noremap = true, silent = true}
 -- hover doc
 set_keymap('n', 'K', [[<cmd>lua require'lspsaga.hover'.render_hover_doc()<cr>]], opts)
 -- diagnostics
-set_keymap('n', 'H', [[<cmd>lua require'lspsaga.diagnostics'.show_cursor_diagnostics()<cr>]], opts)
+set_keymap('n', 'H', [[<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<cr>]], opts)
 -- definition / reference
 set_keymap('n', 'gh', [[<cmd>lua require'lspsaga.provider'.lsp_finder()<cr>]], opts)
 -- signature help
