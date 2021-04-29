@@ -33,6 +33,10 @@ table.insert(auto_formatters, css_format)
 table.insert(auto_formatters, json_format)
 table.insert(auto_formatters, yaml_format)
 
+-- TODO: Fix random efm crashes
+	-- [ ERROR ] 2021-04-28T23:04:33-0500 ] ...im/HEAD-a6504ec_2/share/nvim/runtime/lua/vim/lsp/rpc.lua:457 ]	"rpc"	"/Users/not/.local/share/nvim/lspinstall/efm/./efm-langserver"	"stderr"	"panic: runtime error: invalid memory address or nil pointer dereference"
+	-- [ ERROR ] 2021-04-28T23:04:33-0500 ] ...im/HEAD-a6504ec_2/share/nvim/runtime/lua/vim/lsp/rpc.lua:457 ]	"rpc"	"/Users/not/.local/share/nvim/lspinstall/efm/./efm-langserver"	"stderr"	"\n[signal SIGSEGV: segmentation violation code=0x2 addr=0x20 pc=0x104935874]\n\ngoroutine 19 [running]:\ntime.(*Timer).Stop(...)\n\t"
+
 vim.lsp.set_log_level('debug')
 
 define_augroups({
@@ -42,9 +46,5 @@ define_augroups({
         {'BufRead', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
     },
-	-- TODO: Fix random efm crashes
-	-- [ ERROR ] 2021-04-28T23:04:33-0500 ] ...im/HEAD-a6504ec_2/share/nvim/runtime/lua/vim/lsp/rpc.lua:457 ]	"rpc"	"/Users/not/.local/share/nvim/lspinstall/efm/./efm-langserver"	"stderr"	"panic: runtime error: invalid memory address or nil pointer dereference"
-	-- [ ERROR ] 2021-04-28T23:04:33-0500 ] ...im/HEAD-a6504ec_2/share/nvim/runtime/lua/vim/lsp/rpc.lua:457 ]	"rpc"	"/Users/not/.local/share/nvim/lspinstall/efm/./efm-langserver"	"stderr"	"\n[signal SIGSEGV: segmentation violation code=0x2 addr=0x20 pc=0x104935874]\n\ngoroutine 19 [running]:\ntime.(*Timer).Stop(...)\n\t"
-
 	_auto_formatters = auto_formatters
 })
