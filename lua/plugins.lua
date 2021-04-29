@@ -23,6 +23,8 @@ return require('packer').startup(
 		use 'kyazdani42/nvim-web-devicons'
 		use 'kyazdani42/nvim-tree.lua'
 		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+		use 'JoosepAlviste/nvim-ts-context-commentstring'
+		use 'windwp/nvim-ts-autotag'
 		use 'rktjmp/lush.nvim'
 		use 'neovim/nvim-lspconfig'
 		use 'kabouzeid/nvim-lspinstall'
