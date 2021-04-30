@@ -25,6 +25,10 @@ local function setup_servers()
 	for _, server in pairs(servers) do
 		local config = make_config()
 
+		if server == 'typescript' then
+			config = vim.tbl_extend('force', config, require'lsp/js-ts')
+		end
+
 		if server == 'efm' then
 			config = vim.tbl_extend('force', config, require'lsp/efm')
 		end
