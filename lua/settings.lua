@@ -11,7 +11,7 @@ vim.o.tabstop = 4
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.backup = false
 vim.o.writebackup = false
-vim.o.updatetime = 500
+vim.o.updatetime = 300
 
 vim.bo.undofile = true
 
