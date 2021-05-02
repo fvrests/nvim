@@ -1,4 +1,6 @@
 require 'plugins'
+require 'globals'
+vim.cmd('luafile ~/.config/nvim/conf.lua')
 require 'autocommands'
 require 'settings'
 require 'keymappings'
