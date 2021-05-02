@@ -12,6 +12,7 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
+vim.o.pumheight = 10
 
 vim.bo.undofile = true
 
