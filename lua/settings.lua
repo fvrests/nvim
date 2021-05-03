@@ -1,33 +1,29 @@
-local o = vim.o
-local bo = vim.bo
-local wo = vim.wo
+vim.o.mouse = 'a'
+vim.o.hidden = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.smartindent = true
+vim.o.shiftwidth = O.tab_size
+vim.o.tabstop = O.tab_size
+vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.updatetime = 300
+vim.o.pumheight = 10
 
-o.mouse = 'a'
-o.hidden = true
-o.ignorecase = true
-o.smartcase = true
-o.splitbelow = true
-o.splitright = true
-o.smartindent = true
-o.shiftwidth = O.tab_size
-o.tabstop = O.tab_size
-o.shortmess = o.shortmess .. 'c'
-o.backup = false
-o.writebackup = false
-o.updatetime = 300
-o.pumheight = 10
-
-o.laststatus = O.statusline.enabled and 2 or 0
+vim.o.laststatus = O.statusline.enabled and 2 or 0
 if (O.statusline.left ~= nil) then
-	o.statusline = o.statusline .. O.statusline.left
+	vim.o.statusline = vim.o.statusline .. O.statusline.left
 end
 
 if (O.statusline.right ~= nil) then
-	o.statusline = o.statusline .. '%=' .. O.statusline.right
+	vim.o.statusline = vim.o.statusline .. '%=' .. O.statusline.right
 end
 
-bo.undofile = true
+vim.bo.undofile = true
 
-wo.number = O.show_line_numbers
-wo.wrap = O.wrap_lines
-wo.signcolumn = 'yes'
+vim.wo.number = O.show_line_numbers
+vim.wo.wrap = O.wrap_lines
+vim.wo.signcolumn = 'yes'
