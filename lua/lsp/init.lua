@@ -48,3 +48,15 @@ require'lspinstall'.post_install_hook = function ()
 	vim.cmd('bufdo e')
 end
 
+local set_keymap = vim.api.nvim_set_keymap
+local opts = {noremap = true, silent = true}
+set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.buf.show_line_diagnostics()<cr>', opts)
+
