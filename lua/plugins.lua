@@ -32,6 +32,7 @@ return require('packer').startup(
 		use 'hrsh7th/vim-vsnip'
 		use 'rafamadriz/friendly-snippets'
 		use 'terrortylor/nvim-comment'
+		use 'rmagatti/auto-session'
 	end
 )
 
