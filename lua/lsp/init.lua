@@ -1,3 +1,33 @@
+local config = require'lspinstall/util'.extract_config('sumneko_lua')
+
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+else
+		print("Unsupported system for sumneko")
+end
+
+local sumneko_root_path = vim.fn.stdpath('data') .. '/lspinstall/newlua/lua-language-server'
+local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
+
+config.default_config.cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'}
+
+require'lspinstall/servers'.newlua = vim.tbl_extend('error', config, {
+	-- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
+	install_script = [[
+		git clone https://github.com/sumneko_lua/lua-language-server
+		cd lua-language-server
+		git submodule update --init --recursive
+		cd 3rd/luamake
+		compile/install.sh
+		cd ../..
+		./3rd/luamake/luamake rebuild
+	]],
+	uninstall_script = nil
+})
+
 local on_attach = function(client, bufnr) end
 
 local function make_config()
@@ -33,7 +63,7 @@ local function setup_servers()
 			config = vim.tbl_extend('force', config, require'lsp/efm')
 		end
 
-		if server == 'lua' then
+		if server == 'newlua' then
 			config = vim.tbl_extend('force', config, require'lsp/lua')
 		end
 
