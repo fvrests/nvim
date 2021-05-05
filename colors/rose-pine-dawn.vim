@@ -1,6 +1,6 @@
 " You probably always want to set this in your vim file
-set background=dark
-let g:colors_name="rose_pine"
+set background=light
+let g:colors_name="rose-pine-dawn"
 
 " By setting our module to nil, we clear lua's cache,
 " which means the require ahead will *always* occur.
@@ -11,7 +11,7 @@ let g:colors_name="rose_pine"
 "
 " Note if you're working in on your theme and have lush.ify'd the buffer,
 " your changes will be applied with our without the following line.
-lua package.loaded['lush_theme.rose_pine'] = nil
+lua package.loaded['lush_theme.rose-pine-dawn'] = nil
 
 " include our theme file and pass it to lush to apply
-lua require('lush')(require('lush_theme.rose_pine'))
+lua require('lush')(require('lush_theme.rose-pine-dawn'))

@@ -25,21 +25,21 @@ local lush = require('lush')
 local hsl = lush.hsl
 
 local p = {
-	base = hsl('#191724'),
-	surface = hsl('#1f1d2e'),
-	overlay = hsl('#26233a'),
-	inactive = hsl('#555169'),
+	base = hsl('#faf4ed'),
+	surface = hsl('#fffaf3'),
+	overlay = hsl('#f2e9de'),
+	inactive = hsl('#9893a5'),
 	subtle = hsl('#6e6a86'),
-	text = hsl('#e0def4'),
-	love = hsl('#eb6f92'),
-	gold = hsl('#f6c177'),
-	rose = hsl('#ebbcba'),
-	pine = hsl('#31748f'),
-	foam = hsl('#9ccfd8'),
-	iris = hsl('#c4a7e7'),
-	highlight = hsl('#2A2837'),
-	highlight_inactive = hsl('#211F2D'),
-	highlight_overlay = hsl('#3A384A'),
+	text = hsl('#575279'),
+	love = hsl('#b4637a'),
+	gold = hsl('#ea9d34'),
+	rose = hsl('#d7827e'),
+	pine = hsl('#286983'),
+	foam = hsl('#56949f'),
+	iris = hsl('#907aa9'),
+	highlight = hsl('#eee9e6'),
+	highlight_inactive = hsl('#f2ede9'),
+	highlight_overlay = hsl('#e4dfde'),
 }
 
 local theme = lush(function()

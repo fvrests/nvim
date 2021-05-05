@@ -1,3 +1,3 @@
 vim.o.termguicolors = true
-vim.cmd [[ colorscheme rose_pine ]]
+vim.cmd [[ colorscheme rose-pine-dawn ]]
 
