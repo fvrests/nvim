@@ -14,8 +14,6 @@ return require('packer').startup(
 		use 'wbthomason/packer.nvim'
 		use 'romgrk/barbar.nvim'
 		use {'iamcco/markdown-preview.nvim', ft = {'markdown'}, run = 'cd app && npm install'}
-		use 'tjdevries/colorbuddy.nvim'
-		use 'maaslalani/nordbuddy'
 		use {
 			'nvim-telescope/telescope.nvim',
 			requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
