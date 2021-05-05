@@ -37,9 +37,9 @@ local p = {
 	pine = hsl('#3e8fb0'),
 	foam = hsl('#9ccfd8'),
 	iris = hsl('#c4a7e7'),
-	highlight = hsl('#292635'),
-	highlight_inactive = hsl('#211f2d'),
-	highlight_overlay = hsl('#383547'),
+	highlight = hsl('#312f44'),
+	highlight_inactive = hsl('#2a283d'),
+	highlight_overlay = hsl('#3f3c53'),
 }
 
 local theme = lush(function()
