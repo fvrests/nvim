@@ -1,5 +1,3 @@
-local config = require'lspinstall/util'.extract_config('sumneko_lua')
-
 local system_name
 if vim.fn.has("mac") == 1 then
   system_name = "macOS"
@@ -9,12 +7,25 @@ else
 		print("Unsupported system for sumneko")
 end
 
+-- local vue_config = require'lspinstall/util'.extract_config('vuels')
+-- vue_config.default_config.cmd = {'node', './node_modules/vscode-vue-languageservice/out/languageService.js', '--stdio'}
+-- 
+-- require'lspinstall/servers'.newvue = vim.tbl_extend('error', vue_config, {
+-- 	install_script = [[
+-- 	  ! test -f package.json && npm init -y --scope=lspinstall || true
+-- 		npm install vscode-vue-languageservice@latest
+-- 	]],
+-- 	uninstall_script = nil
+-- })
+
+local lua_config = require'lspinstall/util'.extract_config('sumneko_lua')
+
 local sumneko_root_path = vim.fn.stdpath('data') .. '/lspinstall/newlua/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
 
-config.default_config.cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'}
+lua_config.default_config.cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'}
 
-require'lspinstall/servers'.newlua = vim.tbl_extend('error', config, {
+require'lspinstall/servers'.newlua = vim.tbl_extend('error', lua_config, {
 	-- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 	install_script = [[
 		git clone https://github.com/sumneko_lua/lua-language-server
@@ -47,6 +58,16 @@ local function make_config()
 	}
 end
 
+local function install_servers()
+	local required_servers = { 'newlua', 'efm', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'bash', 'json' }
+	local installed_servers = require'lspinstall'.installed_servers()
+	for _, server in pairs(required_servers) do
+		if not vim.tbl_contains(installed_servers, server) then
+			require'lspinstall'.install_server(server)
+		end
+	end
+end
+
 local function setup_servers()
 	require'lspinstall'.setup()
 
@@ -71,6 +92,7 @@ local function setup_servers()
 	end
 end
 
+install_servers()
 setup_servers()
 
 require'lspinstall'.post_install_hook = function ()
