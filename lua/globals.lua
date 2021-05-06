@@ -5,6 +5,6 @@ O = {
 	statusline = {
 		enabled = false,
 		left = '%f',
-		right = '%l:%c'
-	}
+		right = '%l:%c',
+	},
 }

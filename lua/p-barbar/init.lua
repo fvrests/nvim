@@ -1,12 +1,12 @@
 local set_keymap = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 vim.g.bufferline = {
 	animation = false,
 	icons = false,
 	icon_separator_active = '',
 	icon_separator_inactive = '',
-	no_name_title = '[ New buffer ]'
+	no_name_title = '[ New buffer ]',
 }
 
 set_keymap('n', '}', ':BufferNext<cr>', opts)

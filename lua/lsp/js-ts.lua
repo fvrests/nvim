@@ -5,5 +5,5 @@ end
 
 return {
 	on_attach = on_attach,
-	settings = {documentFormatting = false}
+	settings = { documentFormatting = false },
 }

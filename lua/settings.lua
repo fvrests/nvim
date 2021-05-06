@@ -14,11 +14,11 @@ vim.o.updatetime = 300
 vim.o.pumheight = 10
 
 vim.o.laststatus = O.statusline.enabled and 2 or 0
-if (O.statusline.left ~= nil) then
+if O.statusline.left ~= nil then
 	vim.o.statusline = vim.o.statusline .. O.statusline.left
 end
 
-if (O.statusline.right ~= nil) then
+if O.statusline.right ~= nil then
 	vim.o.statusline = vim.o.statusline .. '%=' .. O.statusline.right
 end
 

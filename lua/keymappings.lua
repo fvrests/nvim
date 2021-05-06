@@ -1,5 +1,5 @@
 local set_keymap = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 set_keymap('n', '<space>', '<nop>', opts)
 vim.g.mapleader = ' '
@@ -29,9 +29,8 @@ set_keymap('v', '>', '>gv', opts)
 set_keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>]], opts)
 
 -- bubble lines
-set_keymap('x', 'J', ':move \'>+1<cr>gv=gv', opts)
-set_keymap('x', 'K', ':move \'<-2<cr>gv=gv', opts)
+set_keymap('x', 'J', ":move '>+1<cr>gv=gv", opts)
+set_keymap('x', 'K', ":move '<-2<cr>gv=gv", opts)
 
 -- escape
 set_keymap('i', 'jk', '<esc>', opts)
-

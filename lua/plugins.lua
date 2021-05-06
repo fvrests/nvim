@@ -3,7 +3,7 @@ local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.n
 -- Install packer (plugin manager) if not already
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-	vim.api.nvim_command 'packadd packer.nvim'
+	vim.api.nvim_command('packadd packer.nvim')
 end
 
 -- Auto compile changed plugins
