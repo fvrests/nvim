@@ -1,8 +1,18 @@
-local lspconfig = require 'lspconfig'
+local lspconfig = require('lspconfig')
 
+-- Searches for local prettier
+-- $ npm install --save-dev prettier
 local prettier = {
-  formatCommand = './node_modules/.bin/prettier --stdin-filepath ${INPUT}',
-  formatStdin = true
+	formatCommand = './node_modules/.bin/prettier --stdin-filepath ${INPUT}',
+	formatStdin = true,
+}
+
+-- Searches for stylua installed via cargo
+-- $ brew install rust
+-- $ cargo install stylua
+local stylua = {
+	formatCommand = '~/.cargo/bin/stylua -',
+	formatStdin = true,
 }
 
 local languages = {
@@ -17,6 +27,7 @@ local languages = {
 	svelte = { prettier },
 	html = { prettier },
 	css = { prettier },
+	lua = { stylua },
 }
 
 return {
@@ -24,10 +35,10 @@ return {
 	filetypes = vim.tbl_keys(languages),
 	init_options = {
 		documentFormatting = true,
-		codeAction = true
+		codeAction = true,
 	},
 	settings = {
 		rootMarkers = { '.git/' },
-		languages = languages
-	}
+		languages = languages,
+	},
 }

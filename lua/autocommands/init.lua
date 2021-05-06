@@ -27,6 +27,7 @@ local extensions = {
 	'*.css',
 	'*.json',
 	'*.yaml',
+	'*.lua',
 }
 
 for _,value in pairs(extensions) do
