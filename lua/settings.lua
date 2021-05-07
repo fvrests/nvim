@@ -22,6 +22,11 @@ if O.statusline.right ~= nil then
 	vim.o.statusline = vim.o.statusline .. '%=' .. O.statusline.right
 end
 
+if O.show_indent_guides then
+	vim.wo.list = true
+	vim.o.listchars = 'tab:┊ '
+end
+
 vim.bo.undofile = true
 
 vim.wo.number = O.show_line_numbers
