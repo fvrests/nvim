@@ -63,11 +63,3 @@ set_keymap('i', '<s-tab>', 'v:lua.s_tab_complete()', opts)
 set_keymap('s', '<s-tab>', 'v:lua.s_tab_complete()', opts)
 set_keymap('i', '<cr>', [[compe#confirm('<cr>')]], opts)
 set_keymap('i', '<c-space>', 'compe#complete()', opts)
-
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	virtual_text = false,
-	underline = true,
-	signs = true,
-})
-vim.cmd([[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]])
-vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])

@@ -95,9 +95,15 @@ local opts = { noremap = true, silent = true }
 set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.buf.show_line_diagnostics()<cr>', opts)
+
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	virtual_text = false,
+	underline = true,
+	signs = true,
+})
+vim.cmd([[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]])
+vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])
