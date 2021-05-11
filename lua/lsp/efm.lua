@@ -1,24 +1,23 @@
 local lspconfig = require('lspconfig')
 
--- Searches for local prettier
--- $ npm install --save-dev prettier
 local prettier = {
 	formatCommand = './node_modules/.bin/prettier --stdin-filepath ${INPUT}',
 	formatStdin = true,
 }
 
--- Searches for stylua installed via cargo
--- $ brew install rust
--- $ cargo install stylua
 local stylua = {
 	formatCommand = '~/.cargo/bin/stylua -',
+	formatStdin = true,
+}
+
+local pandoc = {
+	formatCommand = 'pandoc -f markdown -t gfm -sp --tab-stop=2',
 	formatStdin = true,
 }
 
 local languages = {
 	json = { prettier },
 	yaml = { prettier },
-	markdown = { prettier },
 	javascript = { prettier },
 	javascriptreact = { prettier },
 	typescript = { prettier },
@@ -28,6 +27,7 @@ local languages = {
 	html = { prettier },
 	css = { prettier },
 	lua = { stylua },
+	markdown = { pandoc },
 }
 
 return {
