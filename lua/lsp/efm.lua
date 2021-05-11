@@ -1,9 +1,12 @@
 local lspconfig = require('lspconfig')
 
 local prettier = {
-	formatCommand = './node_modules/.bin/prettier --stdin-filepath ${INPUT}',
+	formatCommand = 'prettier --stdin-filepath ${INPUT}',
 	formatStdin = true,
 }
+if vim.fn.glob('node_modules/.bin/prettier') == true then
+	prettier.formatCommand = './node_modules/.bin/prettier --stdin-filepath ${INPUT}'
+end
 
 local stylua = {
 	formatCommand = '~/.cargo/bin/stylua -',
