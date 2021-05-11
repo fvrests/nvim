@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
 	use('hrsh7th/nvim-compe')
 	use('hrsh7th/vim-vsnip')
 	use('rafamadriz/friendly-snippets')
-	use('jose-elias-alvarez/nvim-lsp-ts-utils')
 
 	-- markdown preview
 	use({ 'iamcco/markdown-preview.nvim', ft = { 'markdown' }, run = 'cd app && npm install' })
