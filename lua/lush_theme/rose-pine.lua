@@ -210,7 +210,7 @@ local theme = lush(function()
 		-- TSBoolean            { },    -- For booleans.
 		-- TSCharacter          { },    -- For characters.
 		TSComment({ fg = p.inactive }), -- For comment blocks.
-		TSConstructor({ fg = p.subtle }), -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+		TSConstructor({ fg = p.text }), -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
 		-- TSConditional        { },    -- For keywords related to conditionnals.
 		-- TSConstant           { },    -- For constants
 		TSConstBuiltin({ fg = p.love }), -- For constant that are built in the language: `nil` in Lua.
