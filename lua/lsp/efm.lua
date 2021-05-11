@@ -10,11 +10,6 @@ local stylua = {
 	formatStdin = true,
 }
 
-local pandoc = {
-	formatCommand = 'pandoc -f markdown -t gfm -sp --tab-stop=2',
-	formatStdin = true,
-}
-
 local languages = {
 	json = { prettier },
 	yaml = { prettier },
@@ -26,8 +21,8 @@ local languages = {
 	svelte = { prettier },
 	html = { prettier },
 	css = { prettier },
+	markdown = { prettier },
 	lua = { stylua },
-	markdown = { pandoc },
 }
 
 return {

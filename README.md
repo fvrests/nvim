@@ -4,8 +4,11 @@ Looking for Rosé Pine? There are wip [Lush](https://github.com/rktjmp/lush.nvim
 
 ## Formatters
 
-
 **Prettier**
+
+`npm install --global prettier`
+
+_or_
 
 `npm install --save-dev prettier`
 
@@ -13,9 +16,3 @@ Looking for Rosé Pine? There are wip [Lush](https://github.com/rktjmp/lush.nvim
 
 `brew install rust`
 `cargo install stylua`
-
-**Pandoc**
-
-> Currently not working on Apple Silicon :(
-
-`brew install pandoc`

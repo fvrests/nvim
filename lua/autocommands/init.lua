@@ -27,6 +27,7 @@ local extensions = {
 	'*.css',
 	'*.json',
 	'*.yaml',
+	'*.md',
 	'*.lua',
 }
 
