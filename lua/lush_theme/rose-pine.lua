@@ -89,7 +89,7 @@ local theme = lush(function()
 		-- styling for that group (meaning they mostly get styled as Normal)
 		-- or leave them commented to apply vims default colouring or linking.
 
-		Comment({ fg = p.inactive }), -- any comment
+		Comment({ fg = p.inactive, gui = 'italic' }), -- any comment
 		-- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
 		-- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		-- Cursor       { }, -- character under the cursor
@@ -242,7 +242,7 @@ local theme = lush(function()
 		-- TSAttribute          { },    -- (unstable) TODO: docs
 		-- TSBoolean            { },    -- For booleans.
 		-- TSCharacter          { },    -- For characters.
-		TSComment({ fg = p.inactive }), -- For comment blocks.
+		TSComment({ fg = Comment.fg, gui = Comment.gui }), -- For comment blocks.
 		TSConstructor({ fg = p.text }), -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
 		-- TSConditional        { },    -- For keywords related to conditionnals.
 		-- TSConstant           { },    -- For constants
