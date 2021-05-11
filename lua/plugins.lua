@@ -13,6 +13,9 @@ return require('packer').startup(function(use)
 	-- plugin manager
 	use('wbthomason/packer.nvim')
 
+	-- zen
+	use('junegunn/goyo.vim')
+
 	-- bufferline
 	use('romgrk/barbar.nvim')
 
