@@ -22,25 +22,58 @@
 --  `:lua require('lush').ify()`
 
 local lush = require('lush')
-local hsl = lush.hsl
+-- local hsl = lush.hsl
+local g = vim.g -- necessary because lush is executed in a bare environment
 
 local p = {
-	base = hsl('#232136'),
-	surface = hsl('#2a273f'),
-	overlay = hsl('#393552'),
-	inactive = hsl('#59546d'),
-	subtle = hsl('#817c9c'),
-	text = hsl('#e0def4'),
-	love = hsl('#eb6f92'),
-	gold = hsl('#f6c177'),
-	rose = hsl('#ea9a97'),
-	pine = hsl('#3e8fb0'),
-	foam = hsl('#9ccfd8'),
-	iris = hsl('#c4a7e7'),
-	highlight = hsl('#312f44'),
-	highlight_inactive = hsl('#2a283d'),
-	highlight_overlay = hsl('#3f3c53'),
+	base = '#232136',
+	surface = '#2a273f',
+	overlay = '#393552',
+	inactive = '#59546d',
+	subtle = '#817c9c',
+	text = '#e0def4',
+	love = '#eb6f92',
+	gold = '#f6c177',
+	rose = '#ea9a97',
+	pine = '#3e8fb0',
+	foam = '#9ccfd8',
+	iris = '#c4a7e7',
+	highlight = '#312f44',
+	highlight_inactive = '#2a283d',
+	highlight_overlay = '#3f3c53',
 }
+
+-- black
+g.terminal_color_0 = p.overlay
+g.terminal_color_8 = p.subtle
+
+-- red
+g.terminal_color_4 = p.love
+g.terminal_color_12 = p.love
+
+-- green
+g.terminal_color_2 = p.pine
+g.terminal_color_10 = p.pine
+
+-- yellow
+g.terminal_color_6 = p.gold
+g.terminal_color_14 = p.gold
+
+-- blue
+g.terminal_color_1 = p.foam
+g.terminal_color_9 = p.foam
+
+-- magenta
+g.terminal_color_5 = p.iris
+g.terminal_color_13 = p.iris
+
+-- cyan
+g.terminal_color_3 = p.rose
+g.terminal_color_11 = p.rose
+
+-- white
+g.terminal_color_7 = p.text
+g.terminal_color_15 = p.text
 
 local theme = lush(function()
 	return {
