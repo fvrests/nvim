@@ -8,9 +8,7 @@ end
 
 -- Auto compile changed plugins
 vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
-
-return require('packer').startup(function(use)
-	-- plugin manager
+return require('packer').startup(function(use) -- plugin manager
 	use('wbthomason/packer.nvim')
 
 	-- zen
@@ -36,8 +34,8 @@ return require('packer').startup(function(use)
 	-- comments
 	use('terrortylor/nvim-comment')
 
-	-- theming
-	use('rktjmp/lush.nvim')
+	-- theme
+	use('rose-pine/nvim')
 
 	-- lsp / completions
 	use('neovim/nvim-lspconfig')
