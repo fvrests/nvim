@@ -15,4 +15,5 @@ _or_
 **Stylua**
 
 `brew install rust`
+
 `cargo install stylua`
