@@ -70,6 +70,10 @@ local function setup_servers()
 			config = vim.tbl_extend('force', config, require('lsp/js-ts'))
 		end
 
+		if server == 'svelte' then
+			config = vim.tbl_extend('force', config, require('lsp/svelte'))
+		end
+
 		if server == 'efm' then
 			config = vim.tbl_extend('force', config, require('lsp/efm'))
 		end
