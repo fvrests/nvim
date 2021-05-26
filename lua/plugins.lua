@@ -35,7 +35,7 @@ return require('packer').startup(function(use) -- plugin manager
 	use('terrortylor/nvim-comment')
 
 	-- theme
-	use('rose-pine/nvim')
+	use({ 'rose-pine/neovim', branch = 'dev' })
 
 	-- lsp / completions
 	use('neovim/nvim-lspconfig')
