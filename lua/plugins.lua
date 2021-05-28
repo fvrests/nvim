@@ -11,9 +11,6 @@ vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 return require('packer').startup(function(use) -- plugin manager
 	use('wbthomason/packer.nvim')
 
-	-- zen
-	use('junegunn/goyo.vim')
-
 	-- bufferline
 	use('romgrk/barbar.nvim')
 
@@ -28,8 +25,6 @@ return require('packer').startup(function(use) -- plugin manager
 
 	-- treesitter
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-	use('windwp/nvim-ts-autotag')
-	use('JoosepAlviste/nvim-ts-context-commentstring')
 
 	-- comments
 	use('terrortylor/nvim-comment')
