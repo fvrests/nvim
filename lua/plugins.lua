@@ -33,6 +33,7 @@ return require('packer').startup(function(use) -- plugin manager
 	use({ 'rose-pine/neovim', branch = 'dev' })
 
 	-- lsp / completions
+	use('nvim-treesitter/playground')
 	use({ 'terrortylor/nvim-comment', config = function()
 		require('nvim_comment').setup({})
 	end })
