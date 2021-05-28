@@ -33,6 +33,9 @@ return require('packer').startup(function(use) -- plugin manager
 	use({ 'rose-pine/neovim', branch = 'dev' })
 
 	-- lsp / completions
+	use({ 'terrortylor/nvim-comment', config = function()
+		require('nvim_comment').setup({})
+	end })
 	use('neovim/nvim-lspconfig')
 	use('kabouzeid/nvim-lspinstall')
 	use('hrsh7th/nvim-compe')
