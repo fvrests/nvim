@@ -10,29 +10,13 @@ end
 vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 return require('packer').startup(function(use) -- plugin manager
 	use('wbthomason/packer.nvim')
-
-	-- bufferline
 	use('romgrk/barbar.nvim')
-
-	-- file explorer
 	use('kyazdani42/nvim-tree.lua')
-
-	-- fuzzy finder
 	use({
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
 	})
-
-	-- treesitter
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-
-	-- comments
-	use('terrortylor/nvim-comment')
-
-	-- theme
-	use({ 'rose-pine/neovim', branch = 'dev' })
-
-	-- lsp / completions
 	use('nvim-treesitter/playground')
 	use({ 'terrortylor/nvim-comment', config = function()
 		require('nvim_comment').setup({})
@@ -43,7 +27,5 @@ return require('packer').startup(function(use) -- plugin manager
 	use('hrsh7th/nvim-compe')
 	use('hrsh7th/vim-vsnip')
 	use('rafamadriz/friendly-snippets')
-
-	-- markdown preview
 	use({ 'iamcco/markdown-preview.nvim', ft = { 'markdown' }, run = 'cd app && npm install' })
 end)
