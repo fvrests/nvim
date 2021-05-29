@@ -1,4 +1,4 @@
-local on_attach = function(client, _)
+local on_attach = function(client)
 	-- Disable tsserver formatting (prefer prettier)
 	client.resolved_capabilities.document_formatting = false
 end
