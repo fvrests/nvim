@@ -28,7 +28,8 @@ require('lspinstall/servers').newlua = vim.tbl_extend('error', lua_config, {
 	uninstall_script = nil,
 })
 
-local on_attach = function(client, bufnr)
+local on_attach = function()
+	vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
 end
 
 local function make_config()
