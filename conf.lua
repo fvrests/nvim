@@ -1,0 +1,10 @@
+O.colorscheme = 'rose-pine'
+vim.g.rose_pine_variant = 'base'
+O.show_cursor_line = true
+O.show_indent_guides = true
+O.show_line_numbers = true
+O.show_on_hover.line_diagnostics = false
+O.show_on_hover.signature_help = false
+O.statusline.enabled = true
+O.tab_size = 4
+O.wrap_lines = true
