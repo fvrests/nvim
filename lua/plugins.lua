@@ -8,7 +8,8 @@ end
 
 -- Auto compile changed plugins
 vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
-return require('packer').startup(function(use) -- plugin manager
+
+return require('packer').startup(function(use)
 	use('wbthomason/packer.nvim')
 	use('romgrk/barbar.nvim')
 	use('kyazdani42/nvim-tree.lua')
@@ -28,6 +29,8 @@ return require('packer').startup(function(use) -- plugin manager
 			})
 		end,
 	})
+	-- Playground
+	-- We mainly use this for :TSHighlightCapturesUnderCursor
 	use('nvim-treesitter/playground')
 	use({ 'terrortylor/nvim-comment', config = function()
 		require('nvim_comment').setup({})
