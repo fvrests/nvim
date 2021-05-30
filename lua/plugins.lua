@@ -16,7 +16,18 @@ return require('packer').startup(function(use) -- plugin manager
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
 	})
-	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+	use({
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = function()
+			require('nvim-treesitter.configs').setup({
+				ensure_installed = 'all',
+				ignore_install = { 'haskell' },
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	})
 	use('nvim-treesitter/playground')
 	use({ 'terrortylor/nvim-comment', config = function()
 		require('nvim_comment').setup({})
