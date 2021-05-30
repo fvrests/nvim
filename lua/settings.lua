@@ -1,34 +1,33 @@
-vim.o.mouse = 'a'
-vim.o.hidden = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.smartindent = true
-vim.o.shiftwidth = O.tab_size
-vim.o.tabstop = O.tab_size
-vim.o.shortmess = vim.o.shortmess .. 'c'
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.updatetime = 300
-vim.o.pumheight = 10
+vim.opt.hidden = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.mouse = 'a'
+vim.opt.pumheight = 10
+vim.opt.shortmess:append('c')
+vim.opt.signcolumn = 'yes'
+vim.opt.smartindent = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.updatetime = 300
+vim.opt.backup = false
+vim.opt.writebackup = false
 
-vim.o.laststatus = O.statusline.enabled and 2 or 0
+vim.opt.cursorline = O.show_cursor_line
+vim.opt.number = O.show_line_numbers
+vim.opt.shiftwidth = O.tab_size
+vim.opt.tabstop = O.tab_size
+vim.opt.wrap = O.wrap_lines
+
+vim.opt.laststatus = O.statusline.enabled and 2 or 0
 if O.statusline.left ~= nil then
-	vim.o.statusline = vim.o.statusline .. O.statusline.left
+	vim.opt.statusline:append(O.statusline.left)
 end
 
 if O.statusline.right ~= nil then
-	vim.o.statusline = vim.o.statusline .. '%=' .. O.statusline.right
+	vim.opt.statusline:append('%=' .. O.statusline.right)
 end
 
 if O.show_indent_guides then
-	vim.wo.list = true
-	vim.o.listchars = 'tab:┊ '
+	vim.opt.list = true
+	vim.opt.listchars = { tab = '┊ ' }
 end
-
-vim.bo.undofile = true
-
-vim.wo.number = O.show_line_numbers
-vim.wo.wrap = O.wrap_lines
-vim.wo.signcolumn = 'yes'

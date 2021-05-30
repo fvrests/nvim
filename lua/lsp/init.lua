@@ -87,5 +87,11 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 	underline = true,
 	signs = true,
 })
--- vim.cmd([[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]])
--- vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])
+
+if O.show_diagnostics_on_hover then
+	vim.cmd([[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]])
+end
+
+if O.show_signature_help_on_hover then
+	vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])
+end
