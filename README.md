@@ -19,6 +19,5 @@ npm install --save-dev prettier
 **Stylua**
 
 ```sh
-brew install rust
 cargo install stylua
 ```
