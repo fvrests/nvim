@@ -135,6 +135,16 @@ packer.startup(function(use)
 	})
 
 	use({
+		"hrsh7th/vim-vsnip",
+		after = "nvim-compe",
+	})
+
+	use({
+		"rafamadriz/friendly-snippets",
+		after = "nvim-compe",
+	})
+
+	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
 	})
