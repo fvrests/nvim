@@ -1,5 +1,5 @@
 O.colorscheme = 'rose-pine'
-vim.g.rose_pine_variant = 'base'
+vim.g.rose_pine_variant = 'dawn'
 O.show_cursor_line = true
 O.show_indent_guides = true
 O.show_line_numbers = true
