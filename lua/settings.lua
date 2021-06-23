@@ -12,6 +12,11 @@ vim.opt.updatetime = 300
 vim.opt.backup = false
 vim.opt.writebackup = false
 
+if not O.colorscheme == nil then
+	vim.opt.termguicolors = true
+	vim.cmd('colorscheme ' .. O.colorscheme)
+end
+
 vim.opt.cursorline = O.show_cursor_line
 vim.opt.number = O.show_line_numbers
 vim.opt.shiftwidth = O.tab_size
