@@ -9,40 +9,137 @@ end
 -- Auto compile changed plugins
 vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
-return require('packer').startup(function(use)
+local packer = require('packer')
+
+packer.init({
+	git = {
+		clone_timeout = 350,
+	},
+})
+
+packer.startup(function(use)
 	use('wbthomason/packer.nvim')
-	use('romgrk/barbar.nvim')
-	use('kyazdani42/nvim-tree.lua')
-	use({
-		'nvim-telescope/telescope.nvim',
-		requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
-	})
+
 	use({
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate',
 		config = function()
 			require('nvim-treesitter.configs').setup({
 				ensure_installed = 'all',
 				ignore_install = { 'haskell' },
-				highlight = { enable = true },
-				indent = { enable = true },
+				highlight = {
+					enable = true,
+				},
+				indent = {
+					enable = true,
+				},
+				-- From nvim-ts-context-commentstring
+				context_commentstring = {
+					enable = true,
+				},
 			})
 		end,
+		run = ':TSUpdate',
 	})
-	-- Playground
-	-- We mainly use this for :TSHighlightCapturesUnderCursor
-	use('nvim-treesitter/playground')
+
+	use({
+		'JoosepAlviste/nvim-ts-context-commentstring',
+		after = 'nvim-treesitter',
+	})
+
+	use({
+		'nvim-treesitter/playground',
+		cmd = { 'TSHighlightCapturesUnderCursor', 'TSPlaygroundToggle' },
+	})
+
+	use({
+		'rose-pine/neovim',
+		as = 'rose-pine',
+		config = function()
+			vim.cmd('colorscheme rose-pine')
+		end,
+	})
+
+	use({
+		'windwp/nvim-autopairs',
+		config = function()
+			require('nvim-autopairs').setup({ check_ts = true })
+		end,
+	})
+
+	use({
+		'iamcco/markdown-preview.nvim',
+		run = 'cd app && npm install',
+	})
+
+	use({
+		'kyazdani42/nvim-tree.lua',
+		config = function()
+			vim.g.nvim_tree_auto_close = 1
+			vim.g.nvim_tree_side = 'right'
+			vim.g.nvim_tree_ignore = { '.git' }
+		end,
+	})
+
+	use({
+		'romgrk/barbar.nvim',
+		-- TODO: This crashes barbar when saving plugins.lua
+		config = function()
+			vim.g.bufferline = {
+				animation = false,
+				icon_separator_active = '',
+				icon_separator_inactive = '',
+				icons = false,
+				no_name_title = '[ New buffer ]',
+			}
+		end,
+	})
+
 	use({ 'terrortylor/nvim-comment', config = function()
 		require('nvim_comment').setup({})
 	end })
-	use({ 'windwp/nvim-autopairs', config = function()
-		require('nvim-autopairs').setup()
-	end })
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
+
 	use('neovim/nvim-lspconfig')
-	use('kabouzeid/nvim-lspinstall')
-	use('hrsh7th/nvim-compe')
-	use('hrsh7th/vim-vsnip')
-	use('rafamadriz/friendly-snippets')
-	use({ 'iamcco/markdown-preview.nvim', ft = { 'markdown' }, run = 'cd app && npm install' })
+
+	use({
+		'kabouzeid/nvim-lspinstall',
+		requires = 'nvim-lspconfig',
+	})
+
+	use({
+		'hrsh7th/nvim-compe',
+		config = function()
+			vim.opt.completeopt = 'menuone,noselect'
+
+			require('compe').setup({
+				enabled = true,
+				autocomplete = true,
+				debug = false,
+				min_length = 1,
+				preselect = 'enable',
+				throttle_time = 80,
+				source_timeout = 200,
+				resolve_timeout = 800,
+				incomplete_delay = 400,
+				max_abbr_width = 100,
+				max_kind_width = 100,
+				max_menu_width = 100,
+				documentation = true,
+
+				source = {
+					path = true,
+					buffer = true,
+					calc = true,
+					nvim_lsp = true,
+					nvim_lua = true,
+					tags = true,
+					treesitter = true,
+				},
+			})
+		end,
+	})
+
+	use({
+		'nvim-telescope/telescope.nvim',
+		requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
+	})
 end)
