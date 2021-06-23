@@ -12,10 +12,9 @@ vim.opt.updatetime = 300
 vim.opt.backup = false
 vim.opt.writebackup = false
 
-if not O.colorscheme == nil then
-	vim.opt.termguicolors = true
-	vim.cmd('colorscheme ' .. O.colorscheme)
-end
+-- TODO: Ensure O.colorscheme isn't nil
+vim.opt.termguicolors = true
+vim.cmd("colorscheme " .. O.colorscheme)
 
 vim.opt.cursorline = O.show_cursor_line
 vim.opt.number = O.show_line_numbers
