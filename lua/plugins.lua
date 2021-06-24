@@ -87,9 +87,12 @@ packer.startup(function(use)
 		end,
 	})
 
-	use({ "terrortylor/nvim-comment", config = function()
-		require("nvim_comment").setup({})
-	end })
+	use({
+		"terrortylor/nvim-comment",
+		config = function()
+			require("nvim_comment").setup({})
+		end,
+	})
 
 	use("neovim/nvim-lspconfig")
 
