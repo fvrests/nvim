@@ -28,9 +28,6 @@ packer.startup(function(use)
 				highlight = {
 					enable = true,
 				},
-				indent = {
-					enable = true,
-				},
 				-- From nvim-ts-context-commentstring
 				context_commentstring = {
 					enable = true,
