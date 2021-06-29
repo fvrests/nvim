@@ -15,6 +15,7 @@ vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
 
 -- toggle word highlight
+vim.api.nvim_set_keymap('n', '<leader>h', ':let @/=""<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h', ':set hlsearch!<cr>', { noremap = true, silent = true })
 
 -- switch buffers
