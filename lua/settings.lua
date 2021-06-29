@@ -11,6 +11,8 @@ vim.opt.splitright = true
 vim.opt.updatetime = 300
 vim.opt.backup = false
 vim.opt.writebackup = false
+vim.opt.undodir = vim.fn.stdpath('cache') .. '/undo'
+vim.opt.undofile = true
 
 -- TODO: Ensure O.colorscheme isn't nil
 vim.opt.termguicolors = true
