@@ -26,7 +26,7 @@ local function make_config()
 end
 
 local function install_servers()
-	local required_servers = { 'lua', 'efm', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'bash', 'json' }
+	local required_servers = { 'lua', 'efm', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'json' }
 	local installed_servers = require('lspinstall').installed_servers()
 	for _, server in pairs(required_servers) do
 		if not vim.tbl_contains(installed_servers, server) then
@@ -54,6 +54,7 @@ local function setup_servers()
 		if server == 'html' then
 			config = vim.tbl_extend('force', config, require('lsp/html'))
 		end
+
 		if server == 'efm' then
 			config = vim.tbl_extend('force', config, require('lsp/efm'))
 		end
