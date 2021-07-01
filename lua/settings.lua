@@ -1,10 +1,10 @@
 vim.opt.hidden = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.mouse = "a"
+vim.opt.mouse = 'a'
 vim.opt.pumheight = 10
-vim.opt.shortmess:append("c")
-vim.opt.signcolumn = "yes"
+vim.opt.shortmess:append('c')
+vim.opt.signcolumn = 'yes'
 vim.opt.smartindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -17,7 +17,7 @@ vim.opt.undofile = true
 
 -- TODO: Ensure O.colorscheme isn't nil
 vim.opt.termguicolors = true
-vim.cmd("colorscheme " .. O.colorscheme)
+vim.cmd('colorscheme ' .. O.colorscheme)
 
 vim.opt.cursorline = O.show_cursor_line
 vim.opt.number = O.show_line_numbers
@@ -31,10 +31,11 @@ if O.statusline.left ~= nil then
 end
 
 if O.statusline.right ~= nil then
-	vim.opt.statusline:append("%=" .. O.statusline.right)
+	vim.opt.statusline:append('%=')
+	vim.opt.statusline:append(O.statusline.right)
 end
 
 if O.show_indent_guides then
 	vim.opt.list = true
-	vim.opt.listchars = { tab = "┊ " }
+	vim.opt.listchars = { tab = '┊ ' }
 end
