@@ -51,6 +51,9 @@ local function setup_servers()
 			config = vim.tbl_extend('force', config, require('lsp/svelte'))
 		end
 
+		if server == 'html' then
+			config = vim.tbl_extend('force', config, require('lsp/html'))
+		end
 		if server == 'efm' then
 			config = vim.tbl_extend('force', config, require('lsp/efm'))
 		end
