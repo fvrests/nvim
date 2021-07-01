@@ -61,6 +61,11 @@ packer.startup(function(use)
 	})
 
 	use({
+		'mvllow/peachy-neovim-theme',
+		as = 'peachy',
+	})
+
+	use({
 		'windwp/nvim-autopairs',
 		config = function()
 			require('nvim-autopairs').setup({ check_ts = true })
