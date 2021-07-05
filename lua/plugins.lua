@@ -80,9 +80,13 @@ packer.startup(function(use)
 	use({
 		'kyazdani42/nvim-tree.lua',
 		config = function()
+			local tree_cb = require('nvim-tree.config').nvim_tree_callback
 			vim.g.nvim_tree_auto_close = 1
 			vim.g.nvim_tree_side = 'right'
 			vim.g.nvim_tree_ignore = { '.git' }
+			vim.g.nvim_tree_bindings = {
+				{ key = 'v', cb = tree_cb 'vsplit' },
+			}
 		end,
 	})
 
