@@ -37,6 +37,12 @@ vim.api.nvim_set_keymap('x', 'K', ":move '<-2<cr>gv=gv", { noremap = true, silen
 -- escape
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
 
+-- packer
+vim.api.nvim_set_keymap('n', '<leader>pi', ':PackerInstall<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>pu', ':PackerUpdate<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>pc', ':PackerCompile<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ps', ':PackerSync<cr>', { noremap = true, silent = true })
+
 -- nvim-tree
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
 
