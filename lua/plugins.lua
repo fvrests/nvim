@@ -23,24 +23,14 @@ packer.startup(function(use)
 	use({
 		'folke/which-key.nvim',
 		config = function()
-			require('which-key').setup({})
+			require('p-which-key')
 		end,
 	})
 
 	use({
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
-			require('nvim-treesitter.configs').setup({
-				ensure_installed = 'all',
-				ignore_install = { 'haskell' },
-				highlight = {
-					enable = true,
-				},
-				-- From nvim-ts-context-commentstring
-				context_commentstring = {
-					enable = true,
-				},
-			})
+			require('p-treesitter')
 		end,
 		run = ':TSUpdate',
 	})
@@ -68,7 +58,7 @@ packer.startup(function(use)
 	use({
 		'windwp/nvim-autopairs',
 		config = function()
-			require('nvim-autopairs').setup({ check_ts = true })
+			require('p-autopairs')
 		end,
 	})
 
@@ -80,63 +70,21 @@ packer.startup(function(use)
 	use({
 		'kyazdani42/nvim-tree.lua',
 		config = function()
-			vim.g.nvim_tree_show_icons = {
-				git = 1,
-				folders = 1,
-				files = 0,
-				folder_arrows = 0,
-			}
-
-			vim.g.nvim_tree_icons = {
-				-- default = '',
-				-- symlink = '',
-				git = {
-					unstaged = '',
-					staged = 's',
-					unmerged = '',
-					renamed = 'r',
-					deleted = '',
-					untracked = 'u',
-					ignored = '',
-				},
-				folder = {
-					default = '',
-					open = '',
-					empty = '',
-					empty_open = '',
-					symlink = '',
-				},
-			}
-
-			local tree_cb = require('nvim-tree.config').nvim_tree_callback
-
-			vim.g.nvim_tree_auto_close = 1
-			vim.g.nvim_tree_side = 'right'
-			vim.g.nvim_tree_ignore = { '.git' }
-			vim.g.nvim_tree_bindings = {
-				{ key = 'v', cb = tree_cb('vsplit') },
-			}
+			require('p-tree')
 		end,
 	})
 
 	use({
 		'romgrk/barbar.nvim',
-		-- TODO: This crashes barbar when saving plugins.lua
 		config = function()
-			vim.g.bufferline = {
-				animation = false,
-				icon_separator_active = '',
-				icon_separator_inactive = '',
-				icons = false,
-				no_name_title = '[ New buffer ]',
-			}
+			require('p-barbar')
 		end,
 	})
 
 	use({
 		'terrortylor/nvim-comment',
 		config = function()
-			require('nvim_comment').setup({})
+			require('p-comment')
 		end,
 	})
 
@@ -150,23 +98,7 @@ packer.startup(function(use)
 	use({
 		'hrsh7th/nvim-compe',
 		config = function()
-			vim.opt.completeopt = 'menuone,noselect'
-
-			require('compe').setup({
-				enabled = true,
-				autocomplete = true,
-				documentation = true,
-
-				source = {
-					path = {},
-					buffer = {},
-					calc = {},
-					nvim_lsp = {},
-					treesitter = {},
-					spell = {},
-					vsnip = {},
-				},
-			})
+			require('p-compe')
 		end,
 	})
 
@@ -188,7 +120,7 @@ packer.startup(function(use)
 	use({
 		'lewis6991/gitsigns.nvim',
 		config = function()
-			require('gitsigns').setup()
+			require('p-gitsigns')
 		end,
 		requires = { 'nvim-lua/plenary.nvim' },
 	})
