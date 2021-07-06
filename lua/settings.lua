@@ -24,12 +24,6 @@ vim.opt.wrap = O.wrap_lines
 vim.opt.laststatus = O.statusline.enabled and 2 or 0
 if O.statusline.left ~= nil then
 	vim.opt.statusline:append(O.statusline.left)
-
-	-- TODO check if gitsigns exists
-	vim.opt.statusline:append(' ')
-	vim.cmd("set statusline+=%{get(b:,'gitsigns_head','')}")
-	vim.opt.statusline:append(' ')
-	vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")
 end
 
 if O.statusline.right ~= nil then
