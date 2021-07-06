@@ -1,4 +1,3 @@
-local lspconfig = require('lspconfig')
 
 local prettier = {
 	formatCommand = 'prettier --stdin-filepath ${INPUT}',
@@ -29,14 +28,14 @@ local languages = {
 }
 
 return {
-	root_dir = lspconfig.util.root_pattern('.git', 'package.json'),
+	-- root_dir = lspconfig.util.root_pattern('.git', 'package.json'),
 	filetypes = vim.tbl_keys(languages),
 	init_options = {
 		documentFormatting = true,
 		codeAction = true,
 	},
 	settings = {
-		rootMarkers = { '.git/' },
+		rootMarkers = { '.git/', 'package.json' },
 		languages = languages,
 	},
 }
