@@ -91,7 +91,7 @@ vim.api.nvim_set_keymap('i', '<s-tab>', 'v:lua.s_tab_complete()', { silent = tru
 vim.api.nvim_set_keymap('s', '<s-tab>', 'v:lua.s_tab_complete()', { silent = true, expr = true })
 -- vim.api.nvim_set_keymap('i', '<cr>', [[compe#confirm('<cr>')]], { silent = true, expr = true })
 require('nvim-autopairs.completion.compe').setup({
-	map_cr = true, --  map <CR> on insert mode
+	map_cr = true, --  map <cr> on insert mode
 	map_complete = true, -- it will auto insert `(` after select function or method item
 })
 vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { silent = true, expr = true })
