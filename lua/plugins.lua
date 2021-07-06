@@ -80,6 +80,34 @@ packer.startup(function(use)
 	use({
 		'kyazdani42/nvim-tree.lua',
 		config = function()
+			vim.g.nvim_tree_show_icons = {
+				git = 1,
+				folders = 1,
+				files = 0,
+				folder_arrows = 0,
+			}
+
+			vim.g.nvim_tree_icons = {
+				-- default = '',
+				-- symlink = '',
+				git = {
+					unstaged = '',
+					staged = 's',
+					unmerged = '',
+					renamed = 'r',
+					deleted = '',
+					untracked = 'u',
+					ignored = '',
+				},
+				folder = {
+					default = '',
+					open = '',
+					empty = '',
+					empty_open = '',
+					symlink = '',
+				},
+			}
+
 			local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
 			vim.g.nvim_tree_auto_close = 1
