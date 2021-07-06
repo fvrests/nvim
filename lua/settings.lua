@@ -15,10 +15,6 @@ vim.opt.writebackup = false
 vim.opt.undodir = vim.fn.stdpath('cache') .. '/undo'
 vim.opt.undofile = true
 
--- TODO: Ensure O.colorscheme isn't nil
-vim.opt.termguicolors = true
-vim.cmd('colorscheme ' .. O.colorscheme)
-
 vim.opt.cursorline = O.show_cursor_line
 vim.opt.number = O.show_line_numbers
 vim.opt.shiftwidth = O.tab_size
