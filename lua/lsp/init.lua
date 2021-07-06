@@ -1,3 +1,20 @@
+vim.fn.sign_define(
+    "LspDiagnosticsSignError",
+    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
+)
+vim.fn.sign_define(
+    "LspDiagnosticsSignWarning",
+    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
+)
+vim.fn.sign_define(
+    "LspDiagnosticsSignHint",
+    {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
+)
+vim.fn.sign_define(
+    "LspDiagnosticsSignInformation",
+    {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
+)
+
 local on_attach = function(client)
 	if client.resolved_capabilities.document_formatting then
 		vim.api.nvim_command([[augroup Format]])
@@ -81,21 +98,27 @@ set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 set_keymap('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
+set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
 set_keymap('n', '<leader>ltd', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 set_keymap('n', '<leader>lrn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 set_keymap('n', '<leader>lca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+set_keymap('n', '<leader>lre', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	virtual_text = false,
-	underline = true,
-	signs = true,
+	signs = O.lsp.signs,
+	underline = O.lsp.underline,
+	update_in_insert = O.lsp.update_in_insert,
+	virtual_text = {
+        enabled = O.lsp.virtual_text,
+        prefix = "",
+        spacing = 0,
+    }
 })
 
-if O.show_diagnostics_on_hover then
+if O.lsp.on_hover.line_diagnostics then
 	vim.cmd([[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]])
 end
 
-if O.show_signature_help_on_hover then
+if O.lsp.on_hover.signature_help then
 	vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])
 end
