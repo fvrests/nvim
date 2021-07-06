@@ -1,16 +1,25 @@
 O = {
 	colorscheme = 'rose-pine',
-	show_indent_guides = false,
-	show_line_numbers = true,
-	show_on_hover = {
-		line_diagnostics = false,
-		signature_help = false,
+	editor = {
+		cursorline = false,
+		indent_guides = false,
+		line_numbers = true,
+		tab_size = 4,
+		wrap_lines = true,
+	},
+	lsp = {
+		signs = true,
+		underline = true,
+		update_in_insert = false,
+		virtual_text = false,
+		on_hover = {
+			line_diagnostics = false,
+			signature_help = false,
+		},
 	},
 	statusline = {
 		enabled = false,
 		left = '%f',
 		right = '%l:%c',
 	},
-	tab_size = 4,
-	wrap_lines = true,
 }

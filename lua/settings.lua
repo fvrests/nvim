@@ -15,11 +15,11 @@ vim.opt.writebackup = false
 vim.opt.undodir = vim.fn.stdpath('cache') .. '/undo'
 vim.opt.undofile = true
 
-vim.opt.cursorline = O.show_cursor_line
-vim.opt.number = O.show_line_numbers
-vim.opt.shiftwidth = O.tab_size
-vim.opt.tabstop = O.tab_size
-vim.opt.wrap = O.wrap_lines
+vim.opt.cursorline = O.editor.cursorline
+vim.opt.number = O.editor.line_numbers
+vim.opt.shiftwidth = O.editor.tab_size
+vim.opt.tabstop = O.editor.tab_size
+vim.opt.wrap = O.editor.wrap_lines
 
 vim.opt.laststatus = O.statusline.enabled and 2 or 0
 if O.statusline.left ~= nil then
@@ -31,7 +31,7 @@ if O.statusline.right ~= nil then
 	vim.opt.statusline:append(O.statusline.right)
 end
 
-if O.show_indent_guides then
+if O.editor.indent_guides then
 	vim.opt.list = true
 	vim.opt.listchars = { tab = '┊ ' }
 end
