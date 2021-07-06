@@ -41,8 +41,8 @@ vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
 
 -- barbar
-vim.api.nvim_set_keymap('n', '}', ':BufferNext<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '{', ':BufferPrevious<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<tab>', ':BufferNext<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<s-tab>', ':BufferPrevious<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bd', ':BufferClose<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bo', ':BufferCloseAllButCurrent<cr>', { noremap = true, silent = true })
 
