@@ -1,18 +1,18 @@
 vim.fn.sign_define(
-    "LspDiagnosticsSignError",
-    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
+	'LspDiagnosticsSignError',
+	{ texthl = 'LspDiagnosticsSignError', text = '', numhl = 'LspDiagnosticsSignError' }
 )
 vim.fn.sign_define(
-    "LspDiagnosticsSignWarning",
-    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
+	'LspDiagnosticsSignWarning',
+	{ texthl = 'LspDiagnosticsSignWarning', text = '', numhl = 'LspDiagnosticsSignWarning' }
 )
 vim.fn.sign_define(
-    "LspDiagnosticsSignHint",
-    {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
+	'LspDiagnosticsSignHint',
+	{ texthl = 'LspDiagnosticsSignHint', text = '', numhl = 'LspDiagnosticsSignHint' }
 )
 vim.fn.sign_define(
-    "LspDiagnosticsSignInformation",
-    {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
+	'LspDiagnosticsSignInformation',
+	{ texthl = 'LspDiagnosticsSignInformation', text = '', numhl = 'LspDiagnosticsSignInformation' }
 )
 
 local on_attach = function(client)
@@ -22,7 +22,6 @@ local on_attach = function(client)
 		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync(nil, 1000)]])
 		vim.api.nvim_command([[augroup END]])
 	end
-	vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
 end
 
 local function make_config()
@@ -109,10 +108,10 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 	underline = O.lsp.underline,
 	update_in_insert = O.lsp.update_in_insert,
 	virtual_text = {
-        enabled = O.lsp.virtual_text,
-        prefix = "",
-        spacing = 0,
-    }
+		enabled = O.lsp.virtual_text,
+		prefix = '',
+		spacing = 0,
+	},
 })
 
 if O.lsp.on_hover.line_diagnostics then
