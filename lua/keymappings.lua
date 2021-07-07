@@ -18,10 +18,6 @@ vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h', ':let @/=""<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h', ':set hlsearch!<cr>', { noremap = true, silent = true })
 
--- switch buffers
-vim.api.nvim_set_keymap('n', '}', ':bnext<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '{', ':bprevious<cr>', { noremap = true, silent = true })
-
 -- reselect after visual indent
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
