@@ -21,9 +21,9 @@ packer.startup(function(use)
 	use('wbthomason/packer.nvim')
 
 	use({
-		'sbdchd/neoformat',
+		'mhartington/formatter.nvim',
 		config = function()
-			require('p-neoformat')
+			require('p-formatter')
 		end,
 	})
 
@@ -53,7 +53,8 @@ packer.startup(function(use)
 	})
 
 	use({
-		'rose-pine/neovim',
+		'~/Developer/rose-pine-neovim',
+		-- 'rose-pine/neovim',
 		as = 'rose-pine',
 	})
 
