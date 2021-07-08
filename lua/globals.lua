@@ -2,6 +2,7 @@ O = {
 	colorscheme = 'rose-pine',
 	editor = {
 		cursorline = false,
+		format_on_save = true,
 		indent_guides = false,
 		line_numbers = true,
 		tab_size = 4,

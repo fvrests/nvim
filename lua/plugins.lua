@@ -21,6 +21,13 @@ packer.startup(function(use)
 	use('wbthomason/packer.nvim')
 
 	use({
+		'sbdchd/neoformat',
+		config = function()
+			require('p-neoformat')
+		end,
+	})
+
+	use({
 		'folke/which-key.nvim',
 		config = function()
 			require('p-which-key')

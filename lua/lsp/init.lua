@@ -15,15 +15,6 @@ vim.fn.sign_define(
 	{ texthl = 'LspDiagnosticsSignInformation', text = '', numhl = 'LspDiagnosticsSignInformation' }
 )
 
-local on_attach = function(client)
-	if client.resolved_capabilities.document_formatting then
-		vim.api.nvim_command([[augroup Format]])
-		vim.api.nvim_command([[autocmd! * <buffer>]])
-		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync(nil, 1000)]])
-		vim.api.nvim_command([[augroup END]])
-	end
-end
-
 local function make_config()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -37,12 +28,12 @@ local function make_config()
 
 	return {
 		capabilities = capabilities,
-		on_attach = on_attach,
+		-- on_attach = on_attach,
 	}
 end
 
 local function install_servers()
-	local required_servers = { 'lua', 'efm', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'json' }
+	local required_servers = { 'lua', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'json', 'graphql' }
 	local installed_servers = require('lspinstall').installed_servers()
 	for _, server in pairs(required_servers) do
 		if not vim.tbl_contains(installed_servers, server) then
@@ -71,10 +62,6 @@ local function setup_servers()
 			config = vim.tbl_extend('force', config, require('lsp/html'))
 		end
 
-		if server == 'efm' then
-			config = vim.tbl_extend('force', config, require('lsp/efm'))
-		end
-
 		if server == 'lua' then
 			config = vim.tbl_extend('force', config, require('lsp/lua'))
 		end
@@ -96,6 +83,7 @@ local opts = { noremap = true, silent = true }
 set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 set_keymap('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+set_keymap('n', '<leader>li', '<cmd>LspInfo<cr>', opts)
 set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
 set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
 set_keymap('n', '<leader>ltd', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)

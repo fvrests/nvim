@@ -1,5 +1,13 @@
 local utils = {}
 
+function utils.reload_config()
+	vim.cmd('source ~/.config/nvim/conf.lua')
+	vim.cmd('source ~/.config/nvim/lua/plugins.lua')
+	vim.cmd('source ~/.config/nvim/lua/p-neoformat/init.lua')
+	vim.cmd(':PackerCompile')
+	vim.cmd(':PackerInstall')
+end
+
 function utils.define_augroups(definitions)
 	-- Create autocommand groups based on the passed definitions
 	--
@@ -38,6 +46,11 @@ utils.define_augroups({
 			'BufNewFile',
 			'*',
 			'setlocal formatoptions-=c formatoptions-=r formatoptions-=o',
+		},
+		{
+			'BufWritePost',
+			'conf.lua',
+			'lua require("utils").reload_config()',
 		},
 	},
 	_auto_resize = {

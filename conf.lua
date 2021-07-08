@@ -1,6 +1,7 @@
 O.editor.colorscheme = 'rose-pine'
 vim.g.rose_pine_variant = 'dawn'
 O.editor.cursorline = true
+O.editor.format_on_save = true
 O.editor.indent_guides = false
 O.editor.line_numbers = true
 O.editor.tab_size = 4
