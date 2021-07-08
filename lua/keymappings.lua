@@ -35,7 +35,6 @@ vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
 
 -- packer
 vim.api.nvim_set_keymap('n', '<leader>pi', ':PackerInstall<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>pu', ':PackerUpdate<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>pc', ':PackerCompile<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ps', ':PackerSync<cr>', { noremap = true, silent = true })
 
@@ -51,6 +50,28 @@ vim.api.nvim_set_keymap('n', '<leader>bo', ':BufferCloseAllButCurrent<cr>', { no
 -- telescope
 vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>/', ':Telescope live_grep<cr>', { noremap = true, silent = true })
+
+-- lsp
+vim.api.nvim_set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>li', '<cmd>LspInfo<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	'n',
+	'<leader>lk',
+	'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	'n',
+	'<leader>ltd',
+	'<cmd>lua vim.lsp.buf.type_definition()<cr>',
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap('n', '<leader>lrn', '<cmd>lua vim.lsp.buf.rename()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lre', '<cmd>lua vim.lsp.buf.references()<cr>', { noremap = true, silent = true })
 
 -- nvim-compe
 local t = function(str)
