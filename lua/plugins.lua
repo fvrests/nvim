@@ -39,6 +39,7 @@ packer.startup(function(use)
 		config = function()
 			require('p-treesitter')
 		end,
+		run = ':TSUpdate',
 	})
 
 	use({
