@@ -4,19 +4,17 @@
 
 ## Formatters
 
-**Prettier**
+**prettier**
 
 ```sh
-npm install --global prettier
+npm install prettier
 ```
 
-_or_
+**rustfmt**
 
-```sh
-npm install --save-dev prettier
-```
+Comes with [rustup](https://rustup.rs)
 
-**Stylua**
+**stylua**
 
 ```sh
 cargo install stylua

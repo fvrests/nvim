@@ -8,6 +8,16 @@ local prettier = {
 	end,
 }
 
+local rustfmt = {
+	function()
+		return {
+			exe = 'rustfmt',
+			args = { '--emit=stdout' },
+			stdin = true,
+		}
+	end,
+}
+
 local shfmt = {
 	function()
 		return {
@@ -41,9 +51,13 @@ require('formatter').setup({
 		vue = prettier,
 		json = prettier,
 		markdown = prettier,
+
+		rust = rustfmt,
+
 		bash = shfmt,
 		sh = shfmt,
 		zsh = shfmt,
+
 		lua = stylua,
 	},
 })
@@ -53,7 +67,7 @@ if O.editor.format_on_save then
 		autoformat = {
 			{
 				'BufWritePre',
-				'*.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.svelte,*.vue,*.json,*.md,*.lua,*.sh,*.zsh*',
+				'*.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.svelte,*.vue,*.json,*.md,*.rs,*.lua,*.sh,*.zsh*',
 				'FormatWrite',
 			},
 		},
