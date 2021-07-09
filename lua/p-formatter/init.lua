@@ -1,18 +1,28 @@
-local stylua = {
-	function()
-		return {
-			exe = 'stylua',
-			args = { '--search-parent-directories', '-' },
-			stdin = true,
-		}
-	end,
-}
-
 local prettier = {
 	function()
 		return {
 			exe = 'prettier',
 			args = { '--stdin-filepath', vim.api.nvim_buf_get_name(0) },
+			stdin = true,
+		}
+	end,
+}
+
+local shfmt = {
+	function()
+		return {
+			exe = 'shfmt',
+			args = { '-' },
+			stdin = true,
+		}
+	end,
+}
+
+local stylua = {
+	function()
+		return {
+			exe = 'stylua',
+			args = { '--search-parent-directories', '-' },
 			stdin = true,
 		}
 	end,
@@ -31,6 +41,9 @@ require('formatter').setup({
 		vue = prettier,
 		json = prettier,
 		markdown = prettier,
+		bash = shfmt,
+		sh = shfmt,
+		zsh = shfmt,
 		lua = stylua,
 	},
 })
@@ -40,7 +53,7 @@ if O.editor.format_on_save then
 		autoformat = {
 			{
 				'BufWritePre',
-				'*.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.svelte,*.vue,*.json,*.md,*.lua',
+				'*.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.svelte,*.vue,*.json,*.md,*.lua,*.sh,*.zsh*',
 				'FormatWrite',
 			},
 		},
