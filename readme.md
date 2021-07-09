@@ -14,6 +14,12 @@ npm install prettier
 
 Comes with [rustup](https://rustup.rs)
 
+**shfmt**
+
+```sh
+brew install shfmt
+```
+
 **stylua**
 
 ```sh
