@@ -42,8 +42,8 @@ vim.api.nvim_set_keymap('n', '<leader>ps', ':PackerSync<cr>', { noremap = true, 
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
 
 -- barbar
-vim.api.nvim_set_keymap('n', '<tab>', ':BufferNext<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<s-tab>', ':BufferPrevious<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'L', ':BufferNext<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'H', ':BufferPrevious<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bd', ':BufferClose<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bo', ':BufferCloseAllButCurrent<cr>', { noremap = true, silent = true })
 
@@ -54,7 +54,7 @@ vim.api.nvim_set_keymap('n', '<leader>/', ':Telescope live_grep<cr>', { noremap 
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>li', '<cmd>LspInfo<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	'n',
