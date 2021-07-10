@@ -75,11 +75,6 @@ packer.startup(function(use)
 	})
 
 	use({
-		'iamcco/markdown-preview.nvim',
-		run = 'cd app && npm install',
-	})
-
-	use({
 		'kyazdani42/nvim-tree.lua',
 		config = function()
 			require('p-tree')
