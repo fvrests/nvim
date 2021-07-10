@@ -33,19 +33,9 @@ end
 utils.define_augroups({
 	_general_settings = {
 		{
-			'BufWinEnter',
+			'BufEnter',
 			'*',
-			'setlocal formatoptions-=c formatoptions-=r formatoptions-=o',
-		},
-		{
-			'BufRead',
-			'*',
-			'setlocal formatoptions-=c formatoptions-=r formatoptions-=o',
-		},
-		{
-			'BufNewFile',
-			'*',
-			'setlocal formatoptions-=c formatoptions-=r formatoptions-=o',
+			'setlocal formatoptions-=o',
 		},
 		{
 			'BufWritePost',
