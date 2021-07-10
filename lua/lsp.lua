@@ -11,7 +11,6 @@ local function make_config()
 
 	return {
 		capabilities = capabilities,
-		-- on_attach = on_attach,
 	}
 end
 
