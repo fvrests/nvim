@@ -77,7 +77,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 	update_in_insert = O.lsp.update_in_insert,
 	virtual_text = {
 		enabled = O.lsp.virtual_text,
-		prefix = '',
+		prefix = '━',
 		spacing = 0,
 	},
 })
