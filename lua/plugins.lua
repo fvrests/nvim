@@ -53,8 +53,7 @@ packer.startup(function(use)
 	})
 
 	use({
-		'~/Developer/rose-pine-neovim',
-		-- 'rose-pine/neovim',
+		'rose-pine/neovim',
 		as = 'rose-pine',
 	})
 
