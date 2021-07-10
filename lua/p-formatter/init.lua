@@ -66,9 +66,9 @@ if O.editor.format_on_save then
 	require('utils').define_augroups({
 		autoformat = {
 			{
-				'BufWritePre',
-				'*.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.svelte,*.vue,*.json,*.md,*.rs,*.lua,*.sh,*.zsh*',
-				'FormatWrite',
+				'BufWritePost',
+				'*',
+				':silent FormatWrite',
 			},
 		},
 	})
