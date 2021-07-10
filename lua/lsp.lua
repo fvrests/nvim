@@ -16,7 +16,7 @@ local function make_config()
 end
 
 local function install_servers()
-	local required_servers = { 'lua', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'json' }
+	local required_servers = { 'lua', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'json', 'rust' }
 	local installed_servers = require('lspinstall').installed_servers()
 	for _, server in pairs(required_servers) do
 		if not vim.tbl_contains(installed_servers, server) then
