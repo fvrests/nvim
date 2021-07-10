@@ -1,20 +1,3 @@
-vim.fn.sign_define(
-	'LspDiagnosticsSignError',
-	{ texthl = 'LspDiagnosticsSignError', text = '', numhl = 'LspDiagnosticsSignError' }
-)
-vim.fn.sign_define(
-	'LspDiagnosticsSignWarning',
-	{ texthl = 'LspDiagnosticsSignWarning', text = '', numhl = 'LspDiagnosticsSignWarning' }
-)
-vim.fn.sign_define(
-	'LspDiagnosticsSignHint',
-	{ texthl = 'LspDiagnosticsSignHint', text = '', numhl = 'LspDiagnosticsSignHint' }
-)
-vim.fn.sign_define(
-	'LspDiagnosticsSignInformation',
-	{ texthl = 'LspDiagnosticsSignInformation', text = '', numhl = 'LspDiagnosticsSignInformation' }
-)
-
 local function make_config()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
