@@ -20,7 +20,7 @@ O = {
 	},
 	statusline = {
 		enabled = false,
-		left = '%f',
-		right = '%l:%c',
+		lhs = '%f',
+		rhs = '%l:%c',
 	},
 }
