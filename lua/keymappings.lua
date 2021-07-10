@@ -56,26 +56,21 @@ vim.api.nvim_set_keymap('n', '<leader>th', ':TSBufToggle highlight<cr>', { norem
 vim.api.nvim_set_keymap('n', '<leader>tc', ':TSHighlightCapturesUnderCursor<cr>', { noremap = true, silent = true })
 
 -- lsp
-vim.api.nvim_set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>li', '<cmd>LspInfo<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ldc', ':lua vim.lsp.buf.declaration()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ldf', ':lua vim.lsp.buf.definition()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>li', ':LspInfo<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	'n',
 	'<leader>lk',
-	'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
+	':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap(
-	'n',
-	'<leader>ltd',
-	'<cmd>lua vim.lsp.buf.type_definition()<cr>',
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap('n', '<leader>lrn', '<cmd>lua vim.lsp.buf.rename()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>lca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>lre', '<cmd>lua vim.lsp.buf.references()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lf', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ltd', ':lua vim.lsp.buf.type_definition()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lrn', ':lua vim.lsp.buf.rename()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lca', ':lua vim.lsp.buf.code_action()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lre', ':lua vim.lsp.buf.references()<cr>', { noremap = true, silent = true })
 
 -- nvim-compe
 local t = function(str)
