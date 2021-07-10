@@ -9,6 +9,7 @@ O.editor.wrap_lines = false
 
 O.lsp.on_hover.line_diagnostics = false
 O.lsp.on_hover.signature_help = false
+O.lsp.servers = { 'lua', 'typescript', 'html', 'svelte', 'css', 'tailwindcss', 'json', 'rust' }
 O.lsp.signs = true
 O.lsp.underline = true
 O.lsp.update_in_insert = false
