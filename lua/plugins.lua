@@ -64,6 +64,11 @@ packer.startup(function(use)
 	})
 
 	use({
+		'windwp/nvim-ts-autotag',
+		event = 'InsertEnter',
+	})
+
+	use({
 		'windwp/nvim-autopairs',
 		config = function()
 			require('p-autopairs')
