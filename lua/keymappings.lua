@@ -51,6 +51,10 @@ vim.api.nvim_set_keymap('n', '<leader>bo', ':BufferCloseAllButCurrent<cr>', { no
 vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>/', ':Telescope live_grep<cr>', { noremap = true, silent = true })
 
+-- treesitter
+vim.api.nvim_set_keymap('n', '<leader>th', ':TSBufToggle highlight<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tc', ':TSHighlightCapturesUnderCursor<cr>', { noremap = true, silent = true })
+
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', { noremap = true, silent = true })
