@@ -1,27 +1,40 @@
-[neovim](https://github.com/neovim/neovim) config used in [dots](https://github.com/mvllow/dots)
+# nvim
 
-> Theme used is [Rosé Pine](https://github.com/rose-pine/neovim)
+A minimal Neovim config
 
-## Formatters
-
-**prettier**
+## Usage
 
 ```sh
-npm install prettier
+mv ~/.config/nvim ~/.config/nvim.old
+git clone https://github.com/mvllow/nvim ~/.config/nvim
 ```
 
-**rustfmt**
+### Lsp
 
-Comes with [rustup](https://rustup.rs)
+To automatically install a set of language servers, update the user config:
 
-**shfmt**
-
-```sh
-brew install shfmt
+```lua
+O.lsp.servers = { 'lua', 'typescript' }
 ```
 
-**stylua**
+Install individual language servers via `:LspInstall <server>`.
 
-```sh
-cargo install stylua
+### Formatters
+
+Install your preferred formatters. By default, we support:
+
+- `npm install prettier`
+- rustfmt via [rustup](https://rustup.rs)
+- `brew install shfmt`
+- `cargo install stylua`
+
+Enable format on save:
+
+```lua
+O.editor.format_on_save = true
 ```
+
+## Related
+
+- [mvllow/dots](https://github.com/mvllow/dots)
+- [Rosé Pine theme](https://github.com/rose-pine/neovim)
