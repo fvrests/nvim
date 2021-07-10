@@ -23,13 +23,13 @@ vim.opt.tabstop = O.editor.tab_size
 vim.opt.wrap = O.editor.wrap_lines
 
 vim.opt.laststatus = O.statusline.enabled and 2 or 0
-if O.statusline.left ~= nil then
-	vim.opt.statusline:append(O.statusline.left)
+if O.statusline.lhs ~= nil then
+	vim.opt.statusline:append(O.statusline.lhs)
 end
 
-if O.statusline.right ~= nil then
+if O.statusline.rhs ~= nil then
 	vim.opt.statusline:append('%=')
-	vim.opt.statusline:append(O.statusline.right)
+	vim.opt.statusline:append(O.statusline.rhs)
 end
 
 if O.editor.indent_guides then
