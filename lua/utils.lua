@@ -54,8 +54,8 @@ utils.define_augroups({
 		},
 	},
 	_auto_resize = {
-		-- will cause split windows to be resized evenly if main window is resized
-		{ 'VimResized ', '*', 'wincmd =' },
+		-- Update equal split width on window resize
+		{ 'VimResized ', '*', 'tabdo wincmd =' },
 	},
 })
 
