@@ -9,6 +9,7 @@ O = {
 		wrap_lines = true,
 	},
 	lsp = {
+		servers = {},
 		signs = true,
 		underline = true,
 		update_in_insert = false,
