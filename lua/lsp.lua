@@ -71,19 +71,6 @@ require('lspinstall').post_install_hook = function()
 	vim.cmd('bufdo e')
 end
 
-local set_keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-set_keymap('n', '<leader>ldc', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-set_keymap('n', '<leader>ldf', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-set_keymap('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-set_keymap('n', '<leader>li', '<cmd>LspInfo<cr>', opts)
-set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
-set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
-set_keymap('n', '<leader>ltd', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-set_keymap('n', '<leader>lrn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-set_keymap('n', '<leader>lca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-set_keymap('n', '<leader>lre', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	signs = O.lsp.signs,
 	underline = O.lsp.underline,
