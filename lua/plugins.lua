@@ -25,6 +25,7 @@ packer.startup(function(use)
 		config = function()
 			require('p-formatter')
 		end,
+		event = 'BufRead',
 	})
 
 	use({
@@ -32,6 +33,7 @@ packer.startup(function(use)
 		config = function()
 			require('p-which-key')
 		end,
+		event = 'BufWinEnter',
 	})
 
 	use({
@@ -45,11 +47,13 @@ packer.startup(function(use)
 	use({
 		'JoosepAlviste/nvim-ts-context-commentstring',
 		after = 'nvim-treesitter',
+		event = 'BufRead',
 	})
 
 	use({
 		'nvim-treesitter/playground',
 		cmd = { 'TSHighlightCapturesUnderCursor', 'TSPlaygroundToggle' },
+		event = 'BufRead',
 	})
 
 	use({
@@ -69,9 +73,11 @@ packer.startup(function(use)
 
 	use({
 		'windwp/nvim-autopairs',
+		-- after = { 'telescope.nvim' },
 		config = function()
 			require('p-autopairs')
 		end,
+		-- event = 'InsertEnter',
 	})
 
 	use({
@@ -86,6 +92,7 @@ packer.startup(function(use)
 		config = function()
 			require('p-barbar')
 		end,
+		-- event = 'BufWinEnter',
 	})
 
 	use({
@@ -93,6 +100,7 @@ packer.startup(function(use)
 		config = function()
 			require('p-comment')
 		end,
+		event = 'BufWinEnter',
 	})
 
 	use('neovim/nvim-lspconfig')
@@ -102,21 +110,23 @@ packer.startup(function(use)
 		requires = 'nvim-lspconfig',
 	})
 
+	-- Autocomplete
 	use({
 		'hrsh7th/nvim-compe',
 		config = function()
 			require('p-compe')
 		end,
+		-- event = 'InsertEnter',
 	})
 
 	use({
 		'hrsh7th/vim-vsnip',
-		after = 'nvim-compe',
+		event = 'InsertEnter',
 	})
 
 	use({
 		'rafamadriz/friendly-snippets',
-		after = 'nvim-compe',
+		event = 'InsertEnter',
 	})
 
 	use({
@@ -129,6 +139,6 @@ packer.startup(function(use)
 		config = function()
 			require('p-gitsigns')
 		end,
-		requires = { 'nvim-lua/plenary.nvim' },
+		event = 'BufRead',
 	})
 end)
