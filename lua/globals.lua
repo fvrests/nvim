@@ -24,4 +24,11 @@ O = {
 		lhs = '%f',
 		rhs = '%l:%c',
 	},
+	noop = {
+		treesitter = {
+			highlight = {
+				enable = true,
+			},
+		},
+	},
 }
