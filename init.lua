@@ -31,7 +31,16 @@ require('utils')
 if O.editor.colorscheme ~= nil then
 	vim.cmd('colorscheme ' .. O.editor.colorscheme)
 else
-	vim.g.syntax = false
+	-- Disable all syntax highlighting
+	-- Goal(wip): Make a usable environment with no colour
+	--   * Remove any default colours, eg. line numbers
+
+	O.noop.treesitter.highlight.enable = false
+	vim.cmd('syntax off')
+	vim.cmd('set nohlsearch')
+	vim.cmd('set t_Co=0')
+	-- Fix barbar complaining about `Special`
+	vim.cmd('hi Special ctermfg=None')
 end
 require('keymappings')
 require('lsp')
