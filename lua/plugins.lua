@@ -28,6 +28,8 @@ packer.startup(function(use)
 		event = 'BufRead',
 	})
 
+	use('tjdevries/astronauta.nvim')
+
 	use({
 		'folke/which-key.nvim',
 		config = function()
