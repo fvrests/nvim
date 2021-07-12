@@ -30,6 +30,29 @@ function utils.define_augroups(definitions)
 	end
 end
 
+function utils.save_without_formatting()
+	-- Temporarily disable format on save
+	vim.cmd([[if exists('#autoformat#BufWritePost')
+    :autocmd! autoformat
+    endif]])
+
+	-- Save file
+	vim.cmd(':w')
+
+	-- Re-enable format on save if previously enabled
+	if O.editor.format_on_save then
+		require('utils').define_augroups({
+			autoformat = {
+				{
+					'BufWritePost',
+					'*',
+					':silent FormatWrite',
+				},
+			},
+		})
+	end
+end
+
 utils.define_augroups({
 	_general_settings = {
 		{

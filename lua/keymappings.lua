@@ -73,6 +73,15 @@ vim.api.nvim_set_keymap('n', '<leader>lrn', ':lua vim.lsp.buf.rename()<cr>', { n
 vim.api.nvim_set_keymap('n', '<leader>lca', ':lua vim.lsp.buf.code_action()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>lre', ':lua vim.lsp.buf.references()<cr>', { noremap = true, silent = true })
 
+-- formatter.nvim
+vim.api.nvim_set_keymap('n', '<leader>lf', ':Format<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	'n',
+	'<leader>lF',
+	":lua require('utils').save_without_formatting()<cr>",
+	{ noremap = true, silent = true }
+)
+
 -- nvim-compe
 local t = function(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
