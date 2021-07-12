@@ -39,15 +39,10 @@ vim.api.nvim_set_keymap(
 	'<c-w><c-l>',
 	{ noremap = true, silent = true }
 )
--- vim.api.nvim_set_keymap('n', '<leader>wf', '<c-w><c-r>', { noremap = true, silent = true })
 
 -- move through wrapped lines
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
-
--- toggle word highlight
--- vim.api.nvim_set_keymap('n', '<leader>h', ':let @/=""<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>h', ':set hlsearch!<cr>', { noremap = true, silent = true })
 
 -- reselect after visual indent
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
@@ -79,14 +74,6 @@ vim.api.nvim_set_keymap(
 -- escape
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
 
--- packer
--- vim.api.nvim_set_keymap('n', '<leader>pi', ':PackerInstall<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>pc', ':PackerCompile<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>ps', ':PackerSync<cr>', { noremap = true, silent = true })
-
--- nvim-tree
--- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
-
 -- barbar
 vim.api.nvim_set_keymap(
 	'n',
@@ -100,42 +87,6 @@ vim.api.nvim_set_keymap(
 	':BufferPrevious<cr>',
 	{ noremap = true, silent = true }
 )
--- vim.api.nvim_set_keymap('n', '<leader>bd', ':BufferClose<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>bo', ':BufferCloseAllButCurrent<cr>', { noremap = true, silent = true })
-
--- telescope
--- vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>/', ':Telescope live_grep<cr>', { noremap = true, silent = true })
-
--- treesitter
--- vim.api.nvim_set_keymap('n', '<leader>th', ':TSBufToggle highlight<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>tc', ':TSHighlightCapturesUnderCursor<cr>', { noremap = true, silent = true })
-
--- lsp
--- vim.api.nvim_set_keymap('n', '<leader>ldc', ':lua vim.lsp.buf.declaration()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>ldf', ':lua vim.lsp.buf.definition()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>li', ':LspInfo<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap(
--- 	'n',
--- 	'<leader>lk',
--- 	':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
--- 	{ noremap = true, silent = true }
--- )
--- vim.api.nvim_set_keymap('n', '<leader>lf', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>ltd', ':lua vim.lsp.buf.type_definition()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>lrn', ':lua vim.lsp.buf.rename()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>lca', ':lua vim.lsp.buf.code_action()<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>lre', ':lua vim.lsp.buf.references()<cr>', { noremap = true, silent = true })
-
--- formatter.nvim
--- vim.api.nvim_set_keymap('n', '<leader>lf', ':Format<cr>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap(
--- 	'n',
--- 	'<leader>lF',
--- 	":lua require('utils').save_without_formatting()<cr>",
--- 	{ noremap = true, silent = true }
--- )
 
 -- nvim-compe
 local t = function(str)
