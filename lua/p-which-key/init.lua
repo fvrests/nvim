@@ -96,7 +96,7 @@ wk.register({
 		R = { '<cmd>Telescope registers<cr>', 'Registers' },
 		t = { '<cmd>Telescope live_grep<cr>', 'Text' },
 	},
-	T = {
+	t = {
 		name = 'Treesitter',
 		i = { '<cmd>TSConfigInfo<cr>', 'Info' },
 		b = { '<cmd>TSBufToggle highlight', 'Toggle highlight' },
