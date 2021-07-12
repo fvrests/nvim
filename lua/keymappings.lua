@@ -9,6 +9,7 @@ vim.api.nvim_set_keymap('n', '<c-h>', '<c-w><c-h>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<c-j>', '<c-w><c-j>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<c-k>', '<c-w><c-k>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<c-l>', '<c-w><c-l>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>wf', '<c-w><c-r>', { noremap = true, silent = true })
 
 -- move through wrapped lines
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
