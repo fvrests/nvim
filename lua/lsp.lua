@@ -70,19 +70,24 @@ require('lspinstall').post_install_hook = function()
 	vim.cmd('bufdo e')
 end
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	signs = O.lsp.signs,
-	underline = O.lsp.underline,
-	update_in_insert = O.lsp.update_in_insert,
-	virtual_text = {
-		enabled = O.lsp.virtual_text,
-		prefix = '━',
-		spacing = 0,
-	},
-})
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+	vim.lsp.diagnostic.on_publish_diagnostics,
+	{
+		signs = O.lsp.signs,
+		underline = O.lsp.underline,
+		update_in_insert = O.lsp.update_in_insert,
+		virtual_text = {
+			enabled = O.lsp.virtual_text,
+			prefix = '━',
+			spacing = 0,
+		},
+	}
+)
 
 if O.lsp.on_hover.line_diagnostics then
-	vim.cmd([[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]])
+	vim.cmd(
+		[[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
+	)
 end
 
 if O.lsp.on_hover.signature_help then

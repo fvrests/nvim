@@ -2,7 +2,10 @@ function NvimTreeOSOpen()
 	local lib = require('nvim-tree.lib')
 	local node = lib.get_node_at_cursor()
 	if node then
-		vim.fn.jobstart("open '" .. node.absolute_path .. "' &", { detach = true })
+		vim.fn.jobstart(
+			"open '" .. node.absolute_path .. "' &",
+			{ detach = true }
+		)
 	end
 end
 
