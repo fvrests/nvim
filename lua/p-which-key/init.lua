@@ -1,6 +1,10 @@
 local wk = require('which-key')
 
-wk.register({
+local opts = {
+	prefix = '<leader>',
+}
+
+local mappings = {
 	['c'] = { '<cmd>BufferClose<cr>', 'Close buffer' },
 	['e'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle explorer' },
 	['f'] = { '<cmd>Telescope find_files<cr>', 'Find file' },
@@ -105,6 +109,6 @@ wk.register({
 			'Highlight active captures',
 		},
 	},
-}, {
-	prefix = '<leader>',
-})
+}
+
+wk.register(mappings, opts)
