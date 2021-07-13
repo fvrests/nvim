@@ -112,7 +112,7 @@ local mappings = {
 	t = {
 		name = 'Treesitter',
 		i = { '<cmd>TSConfigInfo<cr>', 'Info' },
-		b = { '<cmd>TSBufToggle highlight', 'Toggle highlight' },
+		h = { '<cmd>TSBufToggle highlight<cr>', 'Toggle highlight' },
 		c = {
 			'<cmd>TSHighlightCapturesUnderCursor<cr>',
 			'Highlight active captures',
