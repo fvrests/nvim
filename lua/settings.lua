@@ -15,6 +15,7 @@ vim.opt.writebackup = false
 vim.opt.undodir = vim.fn.stdpath('cache') .. '/undo'
 vim.opt.undofile = true
 vim.opt.scrolloff = 8
+vim.opt.completeopt = 'menuone,noselect'
 
 vim.opt.cursorline = O.editor.cursorline
 vim.opt.number = O.editor.line_numbers

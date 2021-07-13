@@ -1,4 +1,3 @@
-vim.opt.completeopt = 'menuone,noselect'
 
 require('compe').setup({
 	enabled = true,
