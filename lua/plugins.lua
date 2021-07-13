@@ -90,7 +90,7 @@ packer.startup(function(use)
 
 	use({
 		'kyazdani42/nvim-tree.lua',
-		commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
+		commit = 'fd7f60e242205ea9efc9649101c81a07d5f458bb',
 		config = function()
 			require('p-tree')
 		end,
