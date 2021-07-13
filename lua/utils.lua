@@ -8,6 +8,13 @@ function utils.reload_config()
 	vim.cmd(':PackerInstall')
 end
 
+function utils.keymap(mode, lhs, rhs, opts)
+	mode = mode or 'n'
+	opts = opts or { noremap = true, silent = true }
+
+	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+end
+
 function utils.define_augroups(definitions)
 	-- Create autocommand groups based on the passed definitions
 	--
