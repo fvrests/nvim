@@ -1,94 +1,38 @@
-vim.api.nvim_set_keymap(
-	'n',
-	'<space>',
-	'<nop>',
-	{ noremap = true, silent = true }
-)
+local keymap = require('utils').keymap
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<space>', '<nop>', opts)
 vim.g.mapleader = ' '
 
--- clear highlights
-vim.api.nvim_set_keymap(
-	'n',
-	'<esc>',
-	':noh<cr>',
-	{ noremap = true, silent = true }
-)
+-- Clear match highlights
+keymap('n', '<esc>', ':noh<cr>', opts)
 
--- simplify split movements
-vim.api.nvim_set_keymap(
-	'n',
-	'<c-h>',
-	'<c-w><c-h>',
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	'n',
-	'<c-j>',
-	'<c-w><c-j>',
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	'n',
-	'<c-k>',
-	'<c-w><c-k>',
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	'n',
-	'<c-l>',
-	'<c-w><c-l>',
-	{ noremap = true, silent = true }
-)
+-- Navigate splits
+keymap('n', '<c-h>', '<c-w><c-h>', opts)
+keymap('n', '<c-j>', '<c-w><c-j>', opts)
+keymap('n', '<c-k>', '<c-w><c-k>', opts)
+keymap('n', '<c-l>', '<c-w><c-l>', opts)
 
--- move through wrapped lines
-vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
+-- Move through wrap lines
+keymap('n', 'j', 'gj', opts)
+keymap('n', 'k', 'gk', opts)
 
--- reselect after visual indent
-vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
+-- Reselect visual after indent
+keymap('v', '<', '<gv', opts)
+keymap('v', '>', '>gv', opts)
 
--- search visually selected text (consistent `*` behaviour)
-vim.api.nvim_set_keymap('n', '*', [[*N]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap(
-	'v',
-	'*',
-	[[y/\V<c-r>=escape(@",'/\')<cr><cr>N]],
-	{ noremap = true, silent = true }
-)
+-- Search selected text
+-- Consistent `*` behaviour
+keymap('n', '*', [[*N]], opts)
+keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>N]], opts)
 
--- bubble lines
-vim.api.nvim_set_keymap(
-	'x',
-	'J',
-	":move '>+1<cr>gv=gv",
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	'x',
-	'K',
-	":move '<-2<cr>gv=gv",
-	{ noremap = true, silent = true }
-)
+-- Bubble lines
+keymap('x', 'J', ":move '>+1<cr>gv=gv", opts)
+keymap('x', 'K', ":move '<-2<cr>gv=gv", opts)
 
--- escape
-vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
+-- Escape
+keymap('i', 'jk', '<esc>', opts)
 
--- barbar
-vim.api.nvim_set_keymap(
-	'n',
-	'L',
-	':BufferNext<cr>',
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	'n',
-	'H',
-	':BufferPrevious<cr>',
-	{ noremap = true, silent = true }
-)
-
-
-
-
-
+-- Buffers
+keymap('n', 'L', ':BufferNext<cr>', opts)
+keymap('n', 'H', ':BufferPrevious<cr>', opts)
