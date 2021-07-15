@@ -15,7 +15,7 @@ local opts = {
 
 local mappings = {
 	['c'] = { '<cmd>BufferClose<cr>', 'Close buffer' },
-	['e'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle explorer' },
+	['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
 	['f'] = { '<cmd>Telescope find_files<cr>', 'Find file' },
 	['h'] = { '<cmd>let @/=""<cr>', 'Clear match highlight' },
 	b = {
