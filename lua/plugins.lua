@@ -70,22 +70,15 @@ packer.startup(function(use)
 	})
 
 	use({
-		'mvllow/peachy-neovim-theme',
-		as = 'peachy',
-	})
-
-	use({
 		'windwp/nvim-ts-autotag',
 		event = 'InsertEnter',
 	})
 
 	use({
 		'windwp/nvim-autopairs',
-		-- after = { 'telescope.nvim' },
 		config = function()
 			require('p-autopairs')
 		end,
-		-- event = 'InsertEnter',
 	})
 
 	use({
@@ -101,7 +94,6 @@ packer.startup(function(use)
 		config = function()
 			require('p-barbar')
 		end,
-		-- event = 'BufWinEnter',
 	})
 
 	use({
@@ -119,13 +111,11 @@ packer.startup(function(use)
 		requires = 'nvim-lspconfig',
 	})
 
-	-- Autocomplete
 	use({
 		'hrsh7th/nvim-compe',
 		config = function()
 			require('p-compe')
 		end,
-		-- event = 'InsertEnter',
 	})
 
 	use({
