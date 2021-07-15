@@ -1,4 +1,3 @@
-local keymap = require('utils').keymap
 local M = {}
 
 require('toggleterm').setup({
