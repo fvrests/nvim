@@ -25,6 +25,12 @@ packer.init({
 
 packer.startup(function(use)
 	use('wbthomason/packer.nvim')
+	use({
+		'akinsho/nvim-toggleterm.lua',
+		config = function()
+			require('p-terminal')
+		end,
+	})
 
 	use({
 		'mhartington/formatter.nvim',
