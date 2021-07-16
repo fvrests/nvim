@@ -1,38 +1,37 @@
 local keymap = require('utils').keymap
-local opts = { noremap = true, silent = true }
 
-keymap('n', '<space>', '<nop>', opts)
+keymap('n', '<space>', '<nop>')
 vim.g.mapleader = ' '
 
 -- Clear match highlights
-keymap('n', '<esc>', ':noh<cr>', opts)
+keymap('n', '<esc>', ':noh<cr>')
 
 -- Navigate splits
-keymap('n', '<c-h>', '<c-w><c-h>', opts)
-keymap('n', '<c-j>', '<c-w><c-j>', opts)
-keymap('n', '<c-k>', '<c-w><c-k>', opts)
-keymap('n', '<c-l>', '<c-w><c-l>', opts)
+keymap('n', '<c-h>', '<c-w><c-h>')
+keymap('n', '<c-j>', '<c-w><c-j>')
+keymap('n', '<c-k>', '<c-w><c-k>')
+keymap('n', '<c-l>', '<c-w><c-l>')
 
 -- Move through wrap lines
-keymap('n', 'j', 'gj', opts)
-keymap('n', 'k', 'gk', opts)
+keymap('n', 'j', 'gj')
+keymap('n', 'k', 'gk')
 
 -- Reselect visual after indent
-keymap('v', '<', '<gv', opts)
-keymap('v', '>', '>gv', opts)
+keymap('v', '<', '<gv')
+keymap('v', '>', '>gv')
 
 -- Search selected text
 -- Consistent `*` behaviour
-keymap('n', '*', [[*N]], opts)
-keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>N]], opts)
+keymap('n', '*', [[*N]])
+keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>N]])
 
 -- Bubble lines
-keymap('x', 'J', ":move '>+1<cr>gv=gv", opts)
-keymap('x', 'K', ":move '<-2<cr>gv=gv", opts)
+keymap('x', 'J', ":move '>+1<cr>gv=gv")
+keymap('x', 'K', ":move '<-2<cr>gv=gv")
 
 -- Escape
-keymap('i', 'jk', '<esc>', opts)
+keymap('i', 'jk', '<esc>')
 
 -- Buffers
-keymap('n', 'L', ':BufferNext<cr>', opts)
-keymap('n', 'H', ':BufferPrevious<cr>', opts)
+keymap('n', 'L', ':BufferNext<cr>')
+keymap('n', 'H', ':BufferPrevious<cr>')
