@@ -15,14 +15,6 @@ function utils.keymap(mode, lhs, rhs, opts)
 end
 
 function utils.define_augroups(definitions)
-	-- Create autocommand groups based on the passed definitions
-	--
-	-- The key will be the name of the group, and each definition
-	-- within the group should have:
-	--    1. Trigger
-	--    2. Pattern
-	--    3. Text
-	-- just like how they would normally be defined from Vim itself
 	for group_name, definition in pairs(definitions) do
 		vim.cmd('augroup ' .. group_name)
 		vim.cmd('autocmd!')
@@ -75,8 +67,8 @@ utils.define_augroups({
 			'lua require("utils").reload_config()',
 		},
 	},
-	_auto_resize = {
-		-- Update equal split width on window resize
+	_resize_splits = {
+		-- Set equal split width on window resize
 		{ 'VimResized ', '*', 'tabdo wincmd =' },
 	},
 })
