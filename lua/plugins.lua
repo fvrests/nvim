@@ -25,6 +25,7 @@ packer.init({
 
 packer.startup(function(use)
 	use('wbthomason/packer.nvim')
+
 	use({
 		'akinsho/nvim-toggleterm.lua',
 		config = function()
@@ -70,15 +71,9 @@ packer.startup(function(use)
 		event = 'BufRead',
 	})
 
-	use({
-		'rose-pine/neovim',
-		as = 'rose-pine',
-	})
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
 
-	use({
-		'windwp/nvim-ts-autotag',
-		event = 'InsertEnter',
-	})
+	use({ 'windwp/nvim-ts-autotag', event = 'InsertEnter' })
 
 	use({
 		'windwp/nvim-autopairs',
@@ -105,17 +100,14 @@ packer.startup(function(use)
 	use({
 		'terrortylor/nvim-comment',
 		config = function()
-			require('modules.comment')
+			require('nvim_comment').setup()
 		end,
 		event = 'BufWinEnter',
 	})
 
 	use('neovim/nvim-lspconfig')
 
-	use({
-		'kabouzeid/nvim-lspinstall',
-		requires = 'nvim-lspconfig',
-	})
+	use({ 'kabouzeid/nvim-lspinstall', requires = 'nvim-lspconfig' })
 
 	use({
 		'hrsh7th/nvim-compe',
@@ -124,15 +116,9 @@ packer.startup(function(use)
 		end,
 	})
 
-	use({
-		'hrsh7th/vim-vsnip',
-		event = 'InsertEnter',
-	})
+	use({ 'hrsh7th/vim-vsnip', event = 'InsertEnter' })
 
-	use({
-		'rafamadriz/friendly-snippets',
-		event = 'InsertEnter',
-	})
+	use({ 'rafamadriz/friendly-snippets', event = 'InsertEnter' })
 
 	use({
 		'nvim-telescope/telescope.nvim',
@@ -142,7 +128,7 @@ packer.startup(function(use)
 	use({
 		'lewis6991/gitsigns.nvim',
 		config = function()
-			require('modules.gitsigns')
+			require('gitsigns').setup()
 		end,
 		event = 'BufRead',
 	})
