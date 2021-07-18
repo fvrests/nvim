@@ -1,5 +1,6 @@
 local keymap = require('utils').keymap
 
+-- Any <leader> keymaps can be found in /lua/modules/which-key.lua
 keymap('n', '<space>', '<nop>')
 vim.g.mapleader = ' '
 
@@ -20,8 +21,7 @@ keymap('n', 'k', 'gk')
 keymap('v', '<', '<gv')
 keymap('v', '>', '>gv')
 
--- Search selected text
--- Consistent `*` behaviour
+-- Search selected text (consistent with `*` behaviour)
 keymap('n', '*', [[*N]])
 keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>N]])
 
