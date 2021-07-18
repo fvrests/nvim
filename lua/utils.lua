@@ -80,6 +80,18 @@ utils.define_augroups({
 		-- Update equal split width on window resize
 		{ 'VimResized ', '*', 'tabdo wincmd =' },
 	},
+	_reset_kitty = {
+		{
+			'VimEnter',
+			'*',
+			'silent !kitty @ --to=$KITTY_LISTEN_ON set-spacing padding=0',
+		},
+		{
+			'VimLeave',
+			'*',
+			'silent !kitty @ --to=$KITTY_LISTEN_ON set-spacing padding=5',
+		},
+	},
 })
 
 return utils
