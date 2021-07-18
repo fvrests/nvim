@@ -28,14 +28,14 @@ packer.startup(function(use)
 	use({
 		'akinsho/nvim-toggleterm.lua',
 		config = function()
-			require('p-terminal')
+			require('modules.terminal')
 		end,
 	})
 
 	use({
 		'mhartington/formatter.nvim',
 		config = function()
-			require('p-formatter')
+			require('modules.formatter')
 		end,
 		event = 'BufRead',
 	})
@@ -45,7 +45,7 @@ packer.startup(function(use)
 	use({
 		'folke/which-key.nvim',
 		config = function()
-			require('p-which-key')
+			require('modules.which-key')
 		end,
 		event = 'BufWinEnter',
 	})
@@ -53,7 +53,7 @@ packer.startup(function(use)
 	use({
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
-			require('p-treesitter')
+			require('modules.treesitter')
 		end,
 		run = ':TSUpdate',
 	})
@@ -83,7 +83,7 @@ packer.startup(function(use)
 	use({
 		'windwp/nvim-autopairs',
 		config = function()
-			require('p-autopairs')
+			require('modules.autopairs')
 		end,
 	})
 
@@ -91,21 +91,21 @@ packer.startup(function(use)
 		'kyazdani42/nvim-tree.lua',
 		commit = 'fd7f60e242205ea9efc9649101c81a07d5f458bb',
 		config = function()
-			require('p-tree')
+			require('modules.explorer')
 		end,
 	})
 
 	use({
 		'romgrk/barbar.nvim',
 		config = function()
-			require('p-barbar')
+			require('modules.bufferline')
 		end,
 	})
 
 	use({
 		'terrortylor/nvim-comment',
 		config = function()
-			require('p-comment')
+			require('modules.comment')
 		end,
 		event = 'BufWinEnter',
 	})
@@ -120,7 +120,7 @@ packer.startup(function(use)
 	use({
 		'hrsh7th/nvim-compe',
 		config = function()
-			require('p-compe')
+			require('modules.completion')
 		end,
 	})
 
@@ -142,7 +142,7 @@ packer.startup(function(use)
 	use({
 		'lewis6991/gitsigns.nvim',
 		config = function()
-			require('p-gitsigns')
+			require('modules.gitsigns')
 		end,
 		event = 'BufRead',
 	})
