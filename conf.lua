@@ -1,5 +1,7 @@
 O.editor.colorscheme = 'rose-pine'
-vim.g.rose_pine_variant = 'dawn'
+vim.g.rose_pine_variant = 'base'
+vim.g.rose_pine_enable_italics = false
+vim.g.rose_pine_disable_background = false
 O.editor.cursorline = true
 O.editor.format_on_save = true
 O.editor.indent_guides = false
