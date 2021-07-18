@@ -3,7 +3,6 @@ local utils = {}
 function utils.reload_config()
 	vim.cmd('source ~/.config/nvim/conf.lua')
 	vim.cmd('source ~/.config/nvim/lua/plugins.lua')
-	-- vim.cmd('source ~/.config/nvim/lua/p-formatter/init.lua')
 	vim.cmd(':PackerCompile')
 	vim.cmd(':PackerInstall')
 end
