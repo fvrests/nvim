@@ -73,7 +73,7 @@ packer.startup(function(use)
 
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
 
-	use({ 'windwp/nvim-ts-autotag', event = 'InsertEnter' })
+	use('windwp/nvim-ts-autotag')
 
 	use({
 		'windwp/nvim-autopairs',
