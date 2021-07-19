@@ -26,22 +26,37 @@ packer.init({
 packer.startup(function(use)
 	use('wbthomason/packer.nvim')
 
-	use({
-		'akinsho/nvim-toggleterm.lua',
-		config = function()
-			require('modules.terminal')
-		end,
-	})
+	use('tjdevries/astronauta.nvim')
 
 	use({
-		'mhartington/formatter.nvim',
+		'nvim-treesitter/nvim-treesitter',
 		config = function()
-			require('modules.formatter')
+			require('modules.treesitter')
 		end,
+		run = ':TSUpdate',
+	})
+	use({
+		'JoosepAlviste/nvim-ts-context-commentstring',
+		after = 'nvim-treesitter',
 		event = 'BufRead',
 	})
+	use({
+		'nvim-treesitter/playground',
+		cmd = { 'TSHighlightCapturesUnderCursor', 'TSPlaygroundToggle' },
+		event = 'BufRead',
+	})
+	use('windwp/nvim-ts-autotag')
+	use({
+		'windwp/nvim-autopairs',
+		config = function()
+			require('modules.autopairs')
+		end,
+	})
 
-	use('tjdevries/astronauta.nvim')
+	use({
+		'rose-pine/neovim',
+		as = 'rose-pine',
+	})
 
 	use({
 		'folke/which-key.nvim',
@@ -52,33 +67,22 @@ packer.startup(function(use)
 	})
 
 	use({
-		'nvim-treesitter/nvim-treesitter',
+		'nvim-telescope/telescope.nvim',
+		requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
+	})
+
+	use({
+		'mhartington/formatter.nvim',
 		config = function()
-			require('modules.treesitter')
+			require('modules.formatter')
 		end,
-		run = ':TSUpdate',
-	})
-
-	use({
-		'JoosepAlviste/nvim-ts-context-commentstring',
-		after = 'nvim-treesitter',
 		event = 'BufRead',
 	})
 
 	use({
-		'nvim-treesitter/playground',
-		cmd = { 'TSHighlightCapturesUnderCursor', 'TSPlaygroundToggle' },
-		event = 'BufRead',
-	})
-
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
-
-	use('windwp/nvim-ts-autotag')
-
-	use({
-		'windwp/nvim-autopairs',
+		'romgrk/barbar.nvim',
 		config = function()
-			require('modules.autopairs')
+			require('modules.bufferline')
 		end,
 	})
 
@@ -90,12 +94,17 @@ packer.startup(function(use)
 		end,
 	})
 
+	use('neovim/nvim-lspconfig')
+	use('kabouzeid/nvim-lspinstall')
+
 	use({
-		'romgrk/barbar.nvim',
+		'hrsh7th/nvim-compe',
 		config = function()
-			require('modules.bufferline')
+			require('modules.completion')
 		end,
 	})
+	use({ 'hrsh7th/vim-vsnip', event = 'InsertEnter' })
+	use({ 'rafamadriz/friendly-snippets', event = 'InsertEnter' })
 
 	use({
 		'terrortylor/nvim-comment',
@@ -105,31 +114,18 @@ packer.startup(function(use)
 		event = 'BufWinEnter',
 	})
 
-	use('neovim/nvim-lspconfig')
-
-	use({ 'kabouzeid/nvim-lspinstall', requires = 'nvim-lspconfig' })
-
-	use({
-		'hrsh7th/nvim-compe',
-		config = function()
-			require('modules.completion')
-		end,
-	})
-
-	use({ 'hrsh7th/vim-vsnip', event = 'InsertEnter' })
-
-	use({ 'rafamadriz/friendly-snippets', event = 'InsertEnter' })
-
-	use({
-		'nvim-telescope/telescope.nvim',
-		requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
-	})
-
 	use({
 		'lewis6991/gitsigns.nvim',
 		config = function()
 			require('gitsigns').setup()
 		end,
 		event = 'BufRead',
+	})
+
+	use({
+		'akinsho/nvim-toggleterm.lua',
+		config = function()
+			require('modules.terminal')
+		end,
 	})
 end)
