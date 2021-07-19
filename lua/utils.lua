@@ -42,7 +42,7 @@ function utils.save_without_formatting()
 
 	-- Re-enable format on save if previously enabled
 	if O.editor.format_on_save then
-		require('utils').define_augroups({
+		utils.define_augroups({
 			autoformat = {
 				{
 					'BufWritePost',
