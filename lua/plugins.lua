@@ -106,13 +106,7 @@ packer.startup(function(use)
 	use({ 'hrsh7th/vim-vsnip', event = 'InsertEnter' })
 	use({ 'rafamadriz/friendly-snippets', event = 'InsertEnter' })
 
-	use({
-		'terrortylor/nvim-comment',
-		config = function()
-			require('nvim_comment').setup()
-		end,
-		event = 'BufWinEnter',
-	})
+	use('tpope/vim-commentary')
 
 	use({
 		'lewis6991/gitsigns.nvim',
