@@ -24,6 +24,10 @@ O = {
 		lhs = '%f',
 		rhs = '%l:%c',
 	},
+	treesitter = {
+		ensure_installed = 'maintained',
+		ignore_install = { 'haskell' },
+	},
 	noop = {
 		treesitter = {
 			highlight = {
