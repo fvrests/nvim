@@ -1,33 +1,35 @@
-local disabled_built_ins = {
-	'netrw',
-	'netrwPlugin',
-	'netrwSettings',
-	'netrwFileHandlers',
-	'gzip',
-	'zip',
-	'zipPlugin',
-	'tar',
-	'tarPlugin',
-	'man',
-	'getscript',
-	'getscriptPlugin',
-	'vimball',
-	'vimballPlugin',
-	'2html_plugin',
-	'logipat',
-	'rrhelper',
-	'spellfile_plugin',
-	-- 'matchit', 'matchparen', 'shada_plugin',
-}
-for _, plugin in pairs(disabled_built_ins) do
-	vim.g['loaded_' .. plugin] = 1
-end
+vim.cmd([[
+	syntax off
+	filetype off
+	filetype plugin indent off
+]])
+
+vim.opt.shadafile = 'NONE'
+vim.g.loaded_gzip = false
+vim.g.loaded_matchit = false
+vim.g.loaded_netrwPlugin = false
+vim.g.loaded_tarPlugin = false
+vim.g.loaded_zipPlugin = false
+vim.g.loaded_man = false
+vim.g.loaded_2html_plugin = false
+vim.g.loaded_remote_plugins = false
 
 require('globals')
 vim.cmd('luafile ' .. vim.fn.stdpath('config') .. '/conf.lua')
 require('settings')
-require('plugins')
-require('utils')
-vim.cmd('colorscheme ' .. O.editor.colorscheme)
 require('keymappings')
+require('plugins')
+vim.cmd('colorscheme ' .. O.editor.colorscheme)
+require('utils')
 require('lsp')
+
+vim.defer_fn(function()
+	vim.opt.shadafile = ''
+	vim.cmd([[
+		rshada!
+		doautocmd BufRead
+		syntax on
+		filetype on
+		filetype plugin indent on
+	]])
+end, 0)
