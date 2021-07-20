@@ -1,7 +1,5 @@
 vim.cmd([[
 	syntax off
-	filetype off
-	filetype plugin indent off
 ]])
 
 vim.opt.shadafile = 'NONE'
@@ -29,7 +27,5 @@ vim.defer_fn(function()
 		rshada!
 		doautocmd BufRead
 		syntax on
-		filetype on
-		filetype plugin indent on
 	]])
 end, 0)
