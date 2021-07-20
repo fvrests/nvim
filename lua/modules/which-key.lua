@@ -22,6 +22,11 @@ local mappings = {
 		name = 'Buffer',
 		c = { '<cmd>BufferClose<cr>', 'Close' },
 		o = { '<cmd>BufferCloseAllButCurrent<cr>', 'Close others' },
+		f = { '<cmd>silent FormatWrite<cr>', 'Format' },
+		F = {
+			"<cmd>lua require('utils').save_without_formatting()<cr>",
+			'Save without formatting',
+		},
 		n = { '<cmd>BufferNext<cr>', 'Next' },
 		p = { '<cmd>BufferPrevious<cr>', 'Prev' },
 		r = { '<c-w><c-r>', 'Swap splits' },
@@ -91,13 +96,6 @@ local mappings = {
 		t = {
 			'<cmd>lua vim.lsp.buf.type_definition()<cr>',
 			'Type definition',
-		},
-
-		-- TODO: Maybe find a better spot for formatting
-		f = { '<cmd>silent FormatWrite<cr>', 'Format' },
-		F = {
-			"<cmd>lua require('utils').save_without_formatting()<cr>",
-			'Save without formatting',
 		},
 	},
 	s = {
