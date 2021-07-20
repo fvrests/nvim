@@ -30,29 +30,5 @@ O.statusline.enabled = true
 O.statusline.lhs = '%f'
 O.statusline.rhs = '%l:%c'
 
-O.treesitter.ensure_installed = {
-	'bash',
-	'comment',
-	'css',
-	'elm',
-	'fish',
-	'go',
-	'graphql',
-	'html',
-	'javascript',
-	'jsdoc',
-	'json',
-	'jsonc',
-	'lua',
-	'php',
-	'python',
-	'ruby',
-	'rust',
-	'scss',
-	'svelte',
-	'toml',
-	'tsx',
-	'typescript',
-	'vue',
-	'yaml',
-}
+O.treesitter.ensure_installed = 'maintained'
+O.treesitter.ignore_install = { 'haskell' }
