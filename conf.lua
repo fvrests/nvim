@@ -9,8 +9,8 @@ O.editor.line_numbers = true
 O.editor.tab_size = 4
 O.editor.wrap_lines = false
 
-O.lsp.on_hover.line_diagnostics = false
-O.lsp.on_hover.signature_help = false
+O.lsp.on_hover.line_diagnostics = true
+O.lsp.on_hover.signature_help = true
 O.lsp.servers = {
 	'lua',
 	'typescript',
@@ -24,7 +24,7 @@ O.lsp.servers = {
 O.lsp.signs = true
 O.lsp.underline = true
 O.lsp.update_in_insert = false
-O.lsp.virtual_text = true
+O.lsp.virtual_text = false
 
 O.statusline.enabled = true
 O.statusline.lhs = '%f'
