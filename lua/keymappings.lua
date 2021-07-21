@@ -35,3 +35,6 @@ keymap('i', 'jk', '<esc>')
 -- Buffers
 keymap('n', 'L', ':BufferNext<cr>')
 keymap('n', 'H', ':BufferPrevious<cr>')
+
+-- Hover information
+keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>')
