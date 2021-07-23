@@ -88,7 +88,9 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 		signs = O.lsp.signs,
 		underline = O.lsp.underline,
 		update_in_insert = O.lsp.update_in_insert,
-		virtual_text = O.lsp.virtual_text,
+		virtual_text = O.lsp.virtual_text and {
+			prefix = O.lsp.icons.diagnostics_prefix,
+		},
 	}
 )
 

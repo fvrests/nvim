@@ -30,6 +30,7 @@ O = {
 	},
 	lsp = {
 		icons = {
+			diagnostics_prefix = '■ ',
 			error = '×',
 			hint = '?',
 			info = 'i',
