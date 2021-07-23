@@ -113,7 +113,10 @@ packer.startup(function(use)
 		end,
 		event = 'BufRead',
 	})
-	use({ 'kabouzeid/nvim-lspinstall', module = 'lspinstall' })
+	use({
+		'kabouzeid/nvim-lspinstall',
+		module = 'lspinstall',
+	})
 
 	use({
 		'hrsh7th/nvim-compe',
