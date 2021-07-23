@@ -1,3 +1,15 @@
+local signs = {
+	Error = O.lsp.icons.error,
+	Warning = O.lsp.icons.warning,
+	Hint = O.lsp.icons.hint,
+	Information = O.lsp.icons.info,
+}
+
+for type, icon in pairs(signs) do
+	local hl = 'LspDiagnosticsSign' .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+end
+
 local function make_config()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true

@@ -20,26 +20,26 @@ vim.g.nvim_tree_icons = {
 	default = '',
 	symlink = '',
 	git = {
-		unstaged = '×',
-		staged = '✓',
-		unmerged = '◇',
-		renamed = '➜',
-		deleted = ' ',
-		untracked = '★',
-		ignored = '◌',
+		deleted = O.git.icons.deleted,
+		ignored = O.git.icons.ignored,
+		renamed = O.git.icons.renamed,
+		staged = O.git.icons.stages,
+		unmerged = O.git.icons.unmerged,
+		unstaged = O.git.icons.unstaged,
+		untracked = O.git.icons.untracked,
 	},
 	folder = {
-		default = '>',
-		open = '▼',
-		empty = '≥',
-		empty_open = '≤',
-		symlink = '↔',
+		default = O.editor.icons.folder,
+		empty = O.editor.icons.folder_empty,
+		empty_open = O.editor.icons.folder_empty_open,
+		open = O.editor.icons.folder_open,
+		symlink = O.editor.icons.symlink,
 	},
 	lsp = {
-		hint = '?',
-		info = 'i',
-		warning = '△',
-		error = '×',
+		error = O.lsp.icons.error,
+		hint = O.lsp.icons.hint,
+		info = O.lsp.icons.info,
+		warning = O.lsp.icons.warning,
 	},
 }
 
@@ -52,6 +52,6 @@ vim.g.nvim_tree_bindings = {
 }
 vim.g.nvim_tree_git_hl = true
 vim.g.nvim_tree_ignore = { '.git' }
-vim.g.nvim_tree_lsp_diagnostics = true
+vim.g.nvim_tree_lsp_diagnostics = false
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_side = 'right'
