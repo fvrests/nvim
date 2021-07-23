@@ -19,7 +19,6 @@ require('keymappings')
 require('plugins')
 vim.cmd('colorscheme ' .. O.editor.colorscheme)
 require('utils')
-require('lsp')
 
 vim.defer_fn(function()
 	vim.opt.shadafile = ''
