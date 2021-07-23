@@ -156,6 +156,6 @@ packer.startup(function(use)
 
 	use({
 		'kdheepak/lazygit.nvim',
-		cmd = { 'LazyGit', 'LazyGitConfig' },
+		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
 	})
 end)
