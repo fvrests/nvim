@@ -117,9 +117,7 @@ packer.startup(function(use)
 	})
 
 	use({
-		'akinsho/nvim-toggleterm.lua',
 		config = function()
-			require('modules.terminal')
 		end,
 	})
 end)
