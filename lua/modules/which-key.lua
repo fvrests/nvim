@@ -58,10 +58,6 @@ local mappings = {
 			'<cmd>Telescope git_bcommits<cr>',
 			'Checkout commit (for current file)',
 		},
-		g = {
-			"<cmd>lua require 'modules.terminal'._lazygit_toggle()<cr>",
-			'Lazygit',
-		},
 	},
 	l = {
 		name = 'LSP',
