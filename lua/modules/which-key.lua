@@ -58,6 +58,10 @@ local mappings = {
 			'<cmd>Telescope git_bcommits<cr>',
 			'Checkout commit (for current file)',
 		},
+		g = {
+			'<cmd>LazyGit<cr>',
+			'LazyGit',
+		},
 	},
 	l = {
 		name = 'LSP',

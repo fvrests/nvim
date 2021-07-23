@@ -153,4 +153,9 @@ packer.startup(function(use)
 			require('gitsigns').setup()
 		end,
 	})
+
+	use({
+		'kdheepak/lazygit.nvim',
+		cmd = { 'LazyGit', 'LazyGitConfig' },
+	})
 end)
