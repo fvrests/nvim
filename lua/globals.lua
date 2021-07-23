@@ -39,7 +39,7 @@ O = {
 			line_diagnostics = false,
 			signature_help = false,
 		},
-		servers = {},
+		servers = { 'lua' },
 		signs = true,
 		underline = true,
 		update_in_insert = false,
