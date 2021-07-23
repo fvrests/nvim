@@ -53,4 +53,5 @@ vim.g.nvim_tree_bindings = {
 vim.g.nvim_tree_git_hl = true
 vim.g.nvim_tree_ignore = { '.git' }
 vim.g.nvim_tree_lsp_diagnostics = true
+vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_side = 'right'
