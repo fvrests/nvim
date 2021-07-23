@@ -26,15 +26,15 @@ keymap('n', '*', [[*N]])
 keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>N]])
 
 -- Bubble lines
-keymap('x', 'J', ":move '>+1<cr>gv=gv")
-keymap('x', 'K', ":move '<-2<cr>gv=gv")
+keymap('x', 'J', "<cmd>move '>+1<cr>gv=gv")
+keymap('x', 'K', "<cmd>move '<-2<cr>gv=gv")
 
 -- Escape
 keymap('i', 'jk', '<esc>')
 
 -- Buffers
-keymap('n', 'L', ':BufferNext<cr>')
-keymap('n', 'H', ':BufferPrevious<cr>')
+keymap('n', 'L', '<cmd>BufferNext<cr>')
+keymap('n', 'H', '<cmd>BufferPrevious<cr>')
 
 -- Hover information
-keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>')
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
