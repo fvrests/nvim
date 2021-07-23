@@ -27,8 +27,3 @@ O.lsp.update_in_insert = false
 O.lsp.virtual_text = true
 
 O.statusline.enabled = false
-O.statusline.lhs = '%f'
-O.statusline.rhs = '%l:%c'
-
-O.treesitter.ensure_installed = 'maintained'
-O.treesitter.ignore_install = { 'haskell' }
