@@ -16,6 +16,16 @@ if not O.editor.format_on_save then
 		endif]])
 end
 
+local gofmt = {
+	function()
+		return {
+			exe = 'gofmt',
+			args = {},
+			stdin = true,
+		}
+	end,
+}
+
 local prettier = {
 	function()
 		return {
@@ -59,6 +69,8 @@ local stylua = {
 require('formatter').setup({
 	logging = false,
 	filetype = {
+		go = gofmt,
+
 		javascript = prettier,
 		javascriptreact = prettier,
 		typescript = prettier,

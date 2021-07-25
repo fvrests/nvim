@@ -20,6 +20,7 @@ O.lsp.servers = {
 	'tailwindcss',
 	'json',
 	'rust',
+	'go',
 }
 O.lsp.signs = true
 O.lsp.underline = true
