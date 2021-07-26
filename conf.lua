@@ -25,6 +25,6 @@ O.lsp.servers = {
 O.lsp.signs = true
 O.lsp.underline = true
 O.lsp.update_in_insert = false
-O.lsp.virtual_text = true
+O.lsp.virtual_text = false
 
 O.statusline.enabled = false
