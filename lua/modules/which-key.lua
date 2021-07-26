@@ -67,6 +67,10 @@ local mappings = {
 		name = 'LSP',
 		a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code action' },
 		d = {
+			'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
+			'Line diagnostics',
+		},
+		D = {
 			'<cmd>Telescope lsp_document_diagnostics<cr>',
 			'Document diagnostics',
 		},
@@ -81,10 +85,6 @@ local mappings = {
 		i = { '<cmd>LspInfo<cr>', 'Info' },
 		j = { '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', 'Next diagnostic' },
 		k = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', 'Prev diagnostic' },
-		l = {
-			'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
-			'Line diagnostics',
-		},
 		q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },
 		r = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
 		s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document symbols' },
