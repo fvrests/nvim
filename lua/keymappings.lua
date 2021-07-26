@@ -39,3 +39,4 @@ keymap('n', 'H', '<cmd>BufferPrevious<cr>')
 -- Leader shortcuts
 -- These should be shorter versions of their which-key equivalent
 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
