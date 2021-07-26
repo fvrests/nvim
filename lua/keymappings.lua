@@ -36,5 +36,6 @@ keymap('i', 'jk', '<esc>')
 keymap('n', 'L', '<cmd>BufferNext<cr>')
 keymap('n', 'H', '<cmd>BufferPrevious<cr>')
 
--- Hover information
+-- Leader shortcuts
+-- These should be shorter versions of their which-key equivalent
 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
