@@ -164,4 +164,12 @@ packer.startup(function(use)
 		ft = { 'markdown' },
 		run = 'cd app && npm install',
 	})
+
+	use({
+		'~/dev/modes.nvim',
+		config = function()
+			require('modes').setup()
+		end,
+		event = 'BufRead',
+	})
 end)
