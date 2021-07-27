@@ -127,11 +127,11 @@ packer.startup(function(use)
 		requires = {
 			{
 				'hrsh7th/vim-vsnip',
-				event = 'InsertCharPre',
+				event = 'InsertEnter',
 			},
 			{
 				'rafamadriz/friendly-snippets',
-				event = 'InsertCharPre',
+				event = 'InsertEnter',
 			},
 		},
 	})
