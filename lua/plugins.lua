@@ -158,4 +158,10 @@ packer.startup(function(use)
 		'kdheepak/lazygit.nvim',
 		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
 	})
+
+	use({
+		'iamcco/markdown-preview.nvim',
+		ft = { 'markdown' },
+		run = 'cd app && npm install',
+	})
 end)
