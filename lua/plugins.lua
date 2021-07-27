@@ -126,8 +126,8 @@ packer.startup(function(use)
 		event = 'InsertEnter',
 		requires = {
 			{
-				'hrsh7th/vim-vsnip',
-				event = 'InsertEnter',
+				'L3MON4D3/LuaSnip',
+				after = 'nvim-compe',
 			},
 			{
 				'rafamadriz/friendly-snippets',

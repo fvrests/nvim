@@ -11,9 +11,11 @@ require('compe').setup({
 		buffer = {},
 		calc = {},
 		nvim_lsp = {},
+		nvim_lua = {},
+		zsh = {},
 		treesitter = {},
 		spell = {},
-		vsnip = {},
+		luansip = { priority = 100000 },
 	},
 })
 
@@ -31,11 +33,11 @@ end
 -- - jump to prev/next snippet's placeholder
 _G.tab_complete = function()
 	if vim.fn.pumvisible() == 1 then
-		return t('<c-n>')
-	elseif vim.fn.call('vsnip#available', { 1 }) == 1 then
-		return t('<plug>(vsnip-expand-or-jump)')
+		return t('<C-n>')
+	elseif require('luasnip').expand_or_jumpable() then
+		return t("<cmd>lua require'luasnip'.jump(1)<Cr>")
 	elseif check_back_space() then
-		return t('<tab>')
+		return t('<Tab>')
 	else
 		return vim.fn['compe#complete']()
 	end
@@ -43,11 +45,11 @@ end
 
 _G.s_tab_complete = function()
 	if vim.fn.pumvisible() == 1 then
-		return t('<c-p>')
-	elseif vim.fn.call('vsnip#jumpable', { -1 }) == 1 then
-		return t('<plug>(vsnip-jump-prev)')
+		return t('<C-p>')
+	elseif require('luasnip').jumpable(-1) then
+		return t("<cmd>lua require'luasnip'.jump(-1)<CR>")
 	else
-		return t('<s-tab>')
+		return t('<S-Tab>')
 	end
 end
 
