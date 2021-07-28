@@ -32,11 +32,9 @@ keymap('x', 'K', "<cmd>move '<-2<cr>gv=gv")
 -- Escape
 keymap('i', 'jk', '<esc>')
 
--- Buffers
-keymap('n', 'L', '<cmd>BufferNext<cr>')
-keymap('n', 'H', '<cmd>BufferPrevious<cr>')
-
 -- Leader shortcuts
 -- These should be shorter versions of their which-key equivalent
+keymap('n', 'L', '<cmd>BufferNext<cr>')
+keymap('n', 'H', '<cmd>BufferPrevious<cr>')
 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
