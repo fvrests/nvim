@@ -28,3 +28,28 @@ O.lsp.update_in_insert = false
 O.lsp.virtual_text = false
 
 O.statusline.enabled = false
+
+O.plugins = {
+	{
+		'norcalli/nvim-colorizer.lua',
+		config = function()
+			require('colorizer').setup()
+		end,
+	},
+	{
+		'mvllow/modes.nvim',
+		config = function()
+			require('modes').setup()
+		end,
+		event = 'BufRead',
+	},
+	{
+		'kdheepak/lazygit.nvim',
+		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
+	},
+	{
+		'iamcco/markdown-preview.nvim',
+		ft = { 'markdown' },
+		run = 'cd app && npm install',
+	},
+}

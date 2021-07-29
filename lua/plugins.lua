@@ -22,50 +22,49 @@ packer.init({
 	},
 })
 
-packer.startup(function(use)
-	use('wbthomason/packer.nvim')
+local plugins = {
+	'wbthomason/packer.nvim',
+	'tjdevries/astronauta.nvim',
 
-	use({
+	{
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require('modules.treesitter')
 		end,
 		event = 'BufRead',
 		run = 'TSUpdate',
-	})
+	},
 
-	use({
+	{
 		'JoosepAlviste/nvim-ts-context-commentstring',
 		after = 'nvim-treesitter',
-	})
+	},
 
-	use({
+	{
 		'nvim-treesitter/playground',
 		after = 'nvim-treesitter',
 		cmd = { 'TSHighlightCapturesUnderCursor', 'TSPlaygroundToggle' },
-	})
+	},
 
-	use({
+	{
 		'windwp/nvim-ts-autotag',
 		after = 'nvim-treesitter',
-	})
+	},
 
-	use('tjdevries/astronauta.nvim')
-
-	use({
+	{
 		'rose-pine/neovim',
 		as = 'rose-pine',
-	})
+	},
 
-	use({
+	{
 		'folke/which-key.nvim',
 		config = function()
 			require('modules.which-key')
 		end,
 		keys = '<space>',
-	})
+	},
 
-	use({
+	{
 		'nvim-telescope/telescope.nvim',
 		cmd = 'Telescope',
 		module = 'telescope',
@@ -73,17 +72,17 @@ packer.startup(function(use)
 			{ 'nvim-lua/plenary.nvim', module = 'plenary' },
 			{ 'nvim-lua/popup.nvim', module = 'popup' },
 		},
-	})
+	},
 
-	use({
+	{
 		'mhartington/formatter.nvim',
 		config = function()
 			require('modules.formatter')
 		end,
 		event = 'BufRead',
-	})
+	},
 
-	use({
+	{
 		'romgrk/barbar.nvim',
 		config = function()
 			require('modules.bufferline')
@@ -91,9 +90,9 @@ packer.startup(function(use)
 		disable = not utils.file_exists(
 			config_path .. '/plugin/packer_compiled.lua'
 		),
-	})
+	},
 
-	use({
+	{
 		'kyazdani42/nvim-tree.lua',
 		cmd = {
 			'NvimTreeClipboard',
@@ -106,21 +105,21 @@ packer.startup(function(use)
 		config = function()
 			require('modules.explorer')
 		end,
-	})
+	},
 
-	use({
+	{
 		'neovim/nvim-lspconfig',
 		config = function()
 			require('modules.lsp-config')
 		end,
 		event = 'BufRead',
-	})
-	use({
+	},
+	{
 		'kabouzeid/nvim-lspinstall',
 		module = 'lspinstall',
-	})
+	},
 
-	use({
+	{
 		'hrsh7th/nvim-compe',
 		config = function()
 			require('modules.completion')
@@ -136,17 +135,17 @@ packer.startup(function(use)
 				event = 'InsertEnter',
 			},
 		},
-	})
+	},
 
-	use({
+	{
 		'windwp/nvim-autopairs',
 		after = 'nvim-compe',
 		config = function()
 			require('modules.autopairs')
 		end,
-	})
+	},
 
-	use({
+	{
 		'terrortylor/nvim-comment',
 		config = function()
 			require('nvim_comment').setup({
@@ -155,32 +154,23 @@ packer.startup(function(use)
 				end,
 			})
 		end,
-	})
+	},
 
-	use({
+	{
 		'lewis6991/gitsigns.nvim',
 		config = function()
 			require('gitsigns').setup()
 		end,
 		event = 'BufRead',
-	})
+	},
+}
 
-	use({
-		'kdheepak/lazygit.nvim',
-		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
-	})
-
-	use({
-		'iamcco/markdown-preview.nvim',
-		ft = { 'markdown' },
-		run = 'cd app && npm install',
-	})
-
-	use({
-		'mvllow/modes.nvim',
-		config = function()
-			require('modes').setup()
-		end,
-		event = 'BufRead',
-	})
+packer.startup(function(use)
+	if O.plugins ~= nil then
+		for _, ps in ipairs({ plugins, O.plugins }) do
+			for _, p in ipairs(ps) do
+				use(p)
+			end
+		end
+	end
 end)
