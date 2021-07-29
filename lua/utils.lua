@@ -65,23 +65,4 @@ function utils.save_without_formatting()
 	end
 end
 
-utils.define_augroups({
-	_general_settings = {
-		{
-			'BufEnter',
-			'*',
-			'setlocal formatoptions-=o',
-		},
-		{
-			'BufWritePost',
-			'conf.lua',
-			'lua require("utils").reload_config()',
-		},
-	},
-	_resize_splits = {
-		-- Set equal split width on window resize
-		{ 'VimResized ', '*', 'tabdo wincmd =' },
-	},
-})
-
 return utils
