@@ -149,7 +149,6 @@ packer.startup(function(use)
 		end,
 	})
 
-	-- use('tpope/vim-commentary')
 	use({
 		'terrortylor/nvim-comment',
 		config = function()
