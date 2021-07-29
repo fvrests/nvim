@@ -64,6 +64,9 @@ if [ $(which nvim) ]; then
 	git clone https://github.com/wbthomason/packer.nvim \
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+	echo "Generating default files"
+	nvim --headless -u NORC +qall
+
 	echo "Installing plugins"
 	nvim --headless \
 		+'autocmd User PackerComplete sleep 100m | qall' \
