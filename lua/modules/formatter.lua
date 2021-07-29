@@ -1,5 +1,5 @@
 if O.editor.format_on_save then
-	require('utils').define_augroups({
+	require('autocommands').define_augroups({
 		autoformat = {
 			{
 				'BufWritePost',
