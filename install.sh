@@ -31,6 +31,7 @@ if [ $(which nvim) ]; then
 		~/.config/nvim
 
 	if ! [ -e "$HOME/.config/nvim/conf.lua" ]; then
+		echo
 		echo "- Found user config"
 		cp ~/.config/nvim/conf.example.lua \
 			~/.config/nvim/conf.lua
