@@ -30,8 +30,11 @@ if [ $(which nvim) ]; then
 	git clone https://github.com/mvllow/nvim \
 		~/.config/nvim
 
-	cp ~/.config/nvim/conf.example.lua \
-		~/.config/nvim/conf.lua
+	if ! [ -e "$HOME/.config/nvim/conf.lua" ]; then
+		echo "- Found user config"
+		cp ~/.config/nvim/conf.example.lua \
+			~/.config/nvim/conf.lua
+	fi
 
 	echo
 	echo "- Installing plugin manager"
