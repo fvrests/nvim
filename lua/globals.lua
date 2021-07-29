@@ -1,6 +1,6 @@
 O = {
-	colorscheme = 'rose-pine',
 	editor = {
+		colorscheme = 'rose-pine',
 		cursorline = false,
 		format_on_save = true,
 		icons = {
