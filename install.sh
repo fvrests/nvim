@@ -4,15 +4,17 @@ nvim_config_path="$HOME/.config/nvim"
 nvim_resource_path="$HOME/.local/share/nvim/site/pack/packer"
 
 clear
-echo "mvllow/nvim\n"
+echo "mvllow/nvim"
+echo
 
 if [ -e $nvim_config_path -o -e $nvim_resource_path ]; then
-	echo "\033[1;31mThe following will be deleted:\033[0m"
+	echo "The following will be deleted:"
 	echo
 	echo "  $nvim_config_path"
 	echo "  $nvim_resource_path"
 	echo
 	read -r -p "Are you sure? [y/N] " response
+	echo
 	if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		rm -rf "$nvim_config_path"
 		rm -rf "$nvim_resource_path"
