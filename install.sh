@@ -3,8 +3,8 @@
 clear
 echo "mvllow/nvim\n"
 
-nvim_config_path=$HOME/.config/nvim
-nvim_resource_path=$HOME/.local/share/nvim
+nvim_config_path="$HOME/.config/nvim"
+nvim_resource_path="$HOME/.local/share/nvim"
 
 maybe_delete_neovim_config() {
 	echo "\033[1;31mThe following will be deleted:\033[0m"
