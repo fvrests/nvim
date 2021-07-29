@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 clear
 echo "mvllow/nvim\n"
