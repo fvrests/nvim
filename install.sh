@@ -33,10 +33,12 @@ if [ $(which nvim) ]; then
 	cp ~/.config/nvim/conf.example.lua \
 		~/.config/nvim/conf.lua
 
+	echo
 	echo "- Installing plugin manager"
 	git clone https://github.com/wbthomason/packer.nvim \
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+	echo
 	echo "- Installing plugins"
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
