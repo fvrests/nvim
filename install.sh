@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+nvim_config_path="$HOME/.config/nvim"
+nvim_resource_path="$HOME/.local/share/nvim/site/pack/packer"
 
 clear
 echo "mvllow/nvim\n"
-
-nvim_config_path="$HOME/.config/nvim"
-nvim_resource_path="$HOME/.local/share/nvim"
 
 if [ -e $nvim_config_path -o -e $nvim_resource_path ]; then
 	echo "\033[1;31mThe following will be deleted:\033[0m"
