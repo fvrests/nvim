@@ -2,11 +2,12 @@
 
 A minimal Neovim config
 
-## Usage
+## Install
+
+> Any destructive actions must be confirmed before proceeding
 
 ```sh
-mv ~/.config/nvim ~/.config/nvim.old
-git clone https://github.com/mvllow/nvim ~/.config/nvim
+bash <(curl -s https://raw.githubusercontent.com/mvllow/nvim/main/install.sh)
 ```
 
 ### Lsp
