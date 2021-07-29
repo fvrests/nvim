@@ -26,20 +26,21 @@ if [ -e $nvim_config_path -o -e $nvim_resource_path ]; then
 fi
 
 if [ $(which nvim) ]; then
-	echo "Getting config"
+	echo "- Getting config"
 	git clone https://github.com/mvllow/nvim \
 		~/.config/nvim
 
 	cp ~/.config/nvim/conf.example.lua \
 		~/.config/nvim/conf.lua
 
-	echo "Installing plugin manager"
+	echo "- Installing plugin manager"
 	git clone https://github.com/wbthomason/packer.nvim \
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-	echo "Installing plugins"
+	echo "- Installing plugins"
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+	echo
 	echo "Done"
 	echo
 else
