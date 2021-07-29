@@ -1,8 +1,6 @@
 local utils = require('utils')
 local config_path = vim.fn.stdpath('config')
 
-vim.opt.shadafile = 'NONE'
-
 local disabled_built_ins = {
 	'netrw',
 	'netrwPlugin',
@@ -66,11 +64,3 @@ utils.define_augroups({
 		{ 'VimResized ', '*', 'tabdo wincmd =' },
 	},
 })
-
-vim.defer_fn(function()
-	vim.opt.shadafile = ''
-	vim.cmd([[
-		rshada!
-		doautocmd BufRead
-	]])
-end, 0)
