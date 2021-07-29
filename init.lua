@@ -1,7 +1,3 @@
-vim.cmd([[
-	syntax off
-]])
-
 vim.opt.shadafile = 'NONE'
 
 local disabled_built_ins = {
@@ -50,6 +46,5 @@ vim.defer_fn(function()
 	vim.cmd([[
 		rshada!
 		doautocmd BufRead
-		syntax on
 	]])
 end, 0)
