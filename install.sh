@@ -44,7 +44,6 @@ while getopts oh option; do
 done
 
 if [ -e $nvim_config_path -o -e $nvim_resource_path ]; then
-	echo
 	echo "\033[1;33mFound existing neovim config\033[0m"
 	echo
 	echo "  $nvim_config_path"
@@ -54,7 +53,6 @@ if [ -e $nvim_config_path -o -e $nvim_resource_path ]; then
 fi
 
 if [ $(which nvim) ]; then
-	echo
 	echo "Getting config"
 	git clone https://github.com/mvllow/nvim \
 		~/.config/nvim
@@ -74,7 +72,6 @@ if [ $(which nvim) ]; then
 	echo "Done"
 	echo
 else
-	echo
 	echo "Neovim is not installed."
 	echo
 	exit 2
