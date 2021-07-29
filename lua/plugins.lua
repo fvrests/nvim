@@ -12,9 +12,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.api.nvim_command('packadd packer.nvim')
 end
 
--- Auto compile changed plugins
-vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
-
 local packer = require('packer')
 local utils = require('utils')
 local config_path = vim.fn.stdpath('config')
