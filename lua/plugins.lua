@@ -91,7 +91,7 @@ packer.startup(function(use)
 		config = function()
 			require('modules.bufferline')
 		end,
-		disable = utils.file_exists(
+		disable = not utils.file_exists(
 			config_path .. '/plugin/packer_compiled.lua'
 		),
 	})
