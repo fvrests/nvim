@@ -35,6 +35,7 @@ O.plugins = {
 		config = function()
 			require('colorizer').setup()
 		end,
+		disable = false,
 	},
 	{
 		'mvllow/modes.nvim',
@@ -42,14 +43,17 @@ O.plugins = {
 			require('modes').setup()
 		end,
 		event = 'BufRead',
+		disable = false,
 	},
 	{
 		'kdheepak/lazygit.nvim',
 		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
+		disable = false,
 	},
 	{
 		'iamcco/markdown-preview.nvim',
 		ft = { 'markdown' },
 		run = 'cd app && npm install',
+		disable = false,
 	},
 }
