@@ -34,7 +34,15 @@ vim.cmd('luafile ' .. vim.fn.stdpath('config') .. '/conf.lua')
 require('settings')
 require('keymappings')
 require('plugins')
-vim.cmd('colorscheme ' .. O.editor.colorscheme)
+
+if
+	require('utils').file_exists(
+		vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
+	)
+then
+	vim.cmd('colorscheme ' .. O.editor.colorscheme)
+end
+
 require('utils')
 
 vim.defer_fn(function()

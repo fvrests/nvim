@@ -7,6 +7,17 @@ function utils.reload_config()
 	vim.cmd(':PackerInstall')
 end
 
+function utils.file_exists(name)
+	local f = io.open(name, 'r')
+
+	if f ~= nil then
+		io.close(f)
+		return true
+	else
+		return false
+	end
+end
+
 function utils.keymap(mode, lhs, rhs, opts)
 	mode = mode or 'n'
 	opts = opts or { noremap = true, silent = true }
