@@ -65,15 +65,7 @@ if [ $(which nvim) ]; then
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 	echo "Installing plugins"
-	nvim --headless \
-		+'autocmd User PackerComplete sleep 100m | qall' \
-		+PackerInstall
-	nvim --headless \
-		+'autocmd User PackerComplete sleep 100m | qall' \
-		+PackerCompile
-	nvim --headless \
-		+'autocmd User PackerComplete sleep 10m | qall' \
-		+PackerSync
+	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 	echo "Done"
 	echo
