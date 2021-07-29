@@ -71,6 +71,9 @@ if [ $(which nvim) ]; then
 	nvim --headless \
 		+'autocmd User PackerComplete sleep 100m | qall' \
 		+PackerInstall
+	nvim --headless \
+		+'autocmd User PackerComplete sleep 10m | qall' \
+		+PackerSync
 
 	echo "Done"
 	echo
