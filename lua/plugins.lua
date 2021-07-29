@@ -16,6 +16,8 @@ end
 vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 local packer = require('packer')
+local utils = require('utils')
+local config_path = vim.fn.stdpath('config')
 
 packer.init({
 	git = {
@@ -89,6 +91,9 @@ packer.startup(function(use)
 		config = function()
 			require('modules.bufferline')
 		end,
+		disable = utils.file_exists(
+			config_path .. '/plugin/packer_compiled.lua'
+		),
 	})
 
 	use({
