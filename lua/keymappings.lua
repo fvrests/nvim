@@ -34,7 +34,7 @@ keymap('i', 'jk', '<esc>')
 
 -- Leader shortcuts
 -- These should be shorter versions of their which-key equivalent
-keymap('n', '}', '<cmd>BufferNext<cr>')
-keymap('n', '{', '<cmd>BufferPrevious<cr>')
+keymap('n', 'L', '<cmd>BufferNext<cr>')
+keymap('n', 'H', '<cmd>BufferPrevious<cr>')
 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
