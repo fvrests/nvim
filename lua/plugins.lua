@@ -85,7 +85,7 @@ local plugins = {
 	{
 		'romgrk/barbar.nvim',
 		config = function()
-			require('modules.bufferline')
+			require('modules.barbar')
 		end,
 		disable = not utils.file_exists(
 			config_path .. '/plugin/packer_compiled.lua'
@@ -103,14 +103,14 @@ local plugins = {
 			'NvimTreeToggle',
 		},
 		config = function()
-			require('modules.explorer')
+			require('modules.tree')
 		end,
 	},
 
 	{
 		'neovim/nvim-lspconfig',
 		config = function()
-			require('modules.lsp-config')
+			require('modules.lsp')
 		end,
 		event = 'BufRead',
 	},
@@ -122,13 +122,16 @@ local plugins = {
 	{
 		'hrsh7th/nvim-compe',
 		config = function()
-			require('modules.completion')
+			require('modules.compe')
 		end,
 		event = 'InsertEnter',
 		requires = {
 			{
 				'L3MON4D3/LuaSnip',
-				after = 'nvim-compe',
+				config = function()
+					require('modules.luasnip')
+				end,
+				event = 'InsertEnter',
 			},
 			{
 				'rafamadriz/friendly-snippets',
@@ -148,18 +151,14 @@ local plugins = {
 	{
 		'terrortylor/nvim-comment',
 		config = function()
-			require('nvim_comment').setup({
-				hook = function()
-					require('ts_context_commentstring.internal').update_commentstring()
-				end,
-			})
+			require('modules.comment')
 		end,
 	},
 
 	{
 		'lewis6991/gitsigns.nvim',
 		config = function()
-			require('gitsigns').setup()
+			require('modules.gitsigns')
 		end,
 		event = 'BufRead',
 	},

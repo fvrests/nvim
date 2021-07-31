@@ -5,5 +5,5 @@ vim.g.bufferline = {
 	icon_separator_active = '',
 	icon_separator_inactive = '',
 	icons = false,
-	no_name_title = '(New buffer)',
+	no_name_title = '[New buffer]',
 }

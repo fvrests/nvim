@@ -47,9 +47,15 @@ local mappings = {
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", 'Next hunk' },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", 'Prev hunk' },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", 'Blame' },
-		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", 'Preview hunk' },
+		p = {
+			"<cmd>lua require 'gitsigns'.preview_hunk()<cr>",
+			'Preview hunk',
+		},
 		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", 'Reset hunk' },
-		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", 'Reset buffer' },
+		R = {
+			"<cmd>lua require 'gitsigns'.reset_buffer()<cr>",
+			'Reset buffer',
+		},
 		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", 'Stage hunk' },
 		u = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
@@ -91,8 +97,14 @@ local mappings = {
 			'Format',
 		},
 		i = { '<cmd>LspInfo<cr>', 'Info' },
-		j = { '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', 'Next diagnostic' },
-		k = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', 'Prev diagnostic' },
+		j = {
+			'<cmd>lua vim.lsp.diagnostic.goto_next()<cr>',
+			'Next diagnostic',
+		},
+		k = {
+			'<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>',
+			'Prev diagnostic',
+		},
 		q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },
 		r = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
 		s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document symbols' },
