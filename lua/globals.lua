@@ -1,5 +1,6 @@
 O = {
 	editor = {
+		clipboard = '',
 		colorscheme = 'rose-pine',
 		cursorline = false,
 		format_on_save = true,

@@ -18,6 +18,7 @@ vim.opt.scrolloff = 8
 vim.opt.completeopt = 'menuone,noselect'
 vim.opt.lazyredraw = true
 vim.opt.termguicolors = true
+vim.opt.clipboard = O.editor.clipboard
 
 vim.opt.cursorline = O.editor.cursorline
 vim.opt.number = O.editor.line_numbers

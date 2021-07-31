@@ -1,3 +1,4 @@
+O.editor.clipboard = 'unnamedplus'
 O.editor.colorscheme = 'rose-pine'
 vim.g.rose_pine_variant = 'rose-pine'
 vim.g.rose_pine_enable_italics = false
