@@ -26,8 +26,10 @@ keymap('n', '*', [[*N]])
 keymap('v', '*', [[y/\V<c-r>=escape(@",'/\')<cr><cr>N]])
 
 -- Bubble lines
-keymap('x', 'J', "<cmd>move '>+1<cr>gv=gv")
-keymap('x', 'K', "<cmd>move '<-2<cr>gv=gv")
+keymap('n', '-', ':m .+1<cr>==')
+keymap('n', '_', ':m .-2<cr>==')
+keymap('v', '-', ":m '>+1<cr>gv=gv")
+keymap('v', '_', ":m '<-2<cr>gv=gv")
 
 -- Escape
 keymap('i', 'jk', '<esc>')
