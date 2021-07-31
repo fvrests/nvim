@@ -7,15 +7,9 @@ function utils.reload_config()
 	vim.cmd(':PackerInstall')
 end
 
-function utils.file_exists(name)
-	local f = io.open(name, 'r')
-
-	if f ~= nil then
-		io.close(f)
-		return true
-	else
-		return false
-	end
+function utils.file_exists(fname)
+	local stat = vim.loop.fs_stat(fname)
+	return (stat and stat.type) or false
 end
 
 function utils.disable_built_ins()
