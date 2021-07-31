@@ -39,6 +39,7 @@ local mappings = {
 		i = { '<cmd>PackerInstall<cr>', 'Install' },
 		r = { "<cmd>lua require('utils').reload_config()<cr>", 'Reload' },
 		s = { '<cmd>PackerSync<cr>', 'Sync' },
+		S = { '<cmd>PackerStatus<cr>', 'Status' },
 		u = { '<cmd>PackerUpdate<cr>', 'Update' },
 	},
 	g = {
