@@ -61,7 +61,7 @@ local plugins = {
 		config = function()
 			require('modules.which-key')
 		end,
-		keys = '<space>',
+		event = 'BufWinEnter',
 	},
 
 	{
