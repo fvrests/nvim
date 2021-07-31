@@ -38,3 +38,11 @@ keymap('n', 'L', '<cmd>BufferNext<cr>')
 keymap('n', 'H', '<cmd>BufferPrevious<cr>')
 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
+
+-- Add user keymaps
+if O.keymaps ~= nil then
+	for _, k in pairs(O.keymaps) do
+		-- TODO: check that `k` has 3 values
+		keymap(k[1], k[2], k[3])
+	end
+end

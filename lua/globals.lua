@@ -63,5 +63,7 @@ O = {
 			},
 		},
 	},
+	keymaps = {},
+	leader_keymaps = {},
 	plugins = {},
 }

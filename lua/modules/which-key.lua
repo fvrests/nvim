@@ -128,4 +128,17 @@ local mappings = {
 	},
 }
 
+for lhs, rhs in pairs(O.leader_keymaps) do
+	if type(rhs) == 'table' then
+		for key, value in pairs(rhs) do
+			-- TODO: this seems messy
+			if mappings[lhs] and mappings[lhs][key] then
+				mappings[lhs][key] = value
+			end
+		end
+	else
+		mappings[lhs] = rhs
+	end
+end
+
 wk.register(mappings, opts)

@@ -30,31 +30,38 @@ O.lsp.virtual_text = false
 
 O.statusline.enabled = false
 
+O.keymaps = {
+	{ 'n', '}', '<cmd>BufferNext<cr>' },
+	{ 'n', '{', '<cmd>BufferPrevious<cr>' },
+}
+
+O.leader_keymaps = {
+	['/'] = { '<cmd>CommentToggle<cr>', 'Comment' },
+	s = {
+		p = { '<cmd>Telescope planets<cr>', 'Planets' },
+	},
+}
+
 O.plugins = {
 	{
 		'norcalli/nvim-colorizer.lua',
 		config = function()
 			require('colorizer').setup()
 		end,
-		disable = false,
 	},
 	{
 		'mvllow/modes.nvim',
 		config = function()
 			require('modes').setup()
 		end,
-		event = 'BufRead',
-		disable = false,
 	},
 	{
 		'kdheepak/lazygit.nvim',
 		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
-		disable = false,
 	},
 	{
 		'iamcco/markdown-preview.nvim',
 		ft = { 'markdown' },
 		run = 'cd app && npm install',
-		disable = false,
 	},
 }
