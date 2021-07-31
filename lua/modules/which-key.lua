@@ -136,7 +136,6 @@ for lhs, rhs in pairs(O.leader_keymaps) do
 			else
 				mappings[lhs] = rhs
 			end
-			-- table.insert(mappings[lhs], rhs)
 		end
 	else
 		mappings[lhs] = rhs
