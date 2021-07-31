@@ -33,6 +33,7 @@ O.statusline.enabled = false
 O.keymaps = {
 	{ 'n', '}', '<cmd>BufferNext<cr>' },
 	{ 'n', '{', '<cmd>BufferPrevious<cr>' },
+	{ 'v', '<leader>/', ":'<,'>CommentToggle<cr>" },
 }
 
 O.leader_keymaps = {
