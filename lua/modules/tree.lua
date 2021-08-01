@@ -47,8 +47,9 @@ local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_bindings = {
-	{ key = 'v', cb = tree_cb('vsplit') },
 	{ key = 'O', cb = ':lua NvimTreeOSOpen()<cr>' },
+	{ key = 'v', cb = tree_cb('vsplit') },
+	{ key = '?', cb = tree_cb('toggle_help') },
 }
 vim.g.nvim_tree_git_hl = true
 vim.g.nvim_tree_ignore = { '.git' }
