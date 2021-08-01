@@ -15,7 +15,6 @@ vim.opt.writebackup = false
 vim.opt.undodir = vim.fn.stdpath('cache') .. '/undo'
 vim.opt.undofile = true
 vim.opt.scrolloff = 8
-vim.opt.completeopt = 'menuone,noselect'
 vim.opt.lazyredraw = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = O.editor.clipboard

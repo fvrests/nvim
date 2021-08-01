@@ -1,20 +1,16 @@
 local keymap = require('utils').keymap
 
-require('compe').setup({
-	enabled = true,
-	autocomplete = true,
-	documentation = true,
+vim.opt.completeopt = 'menuone,noselect'
 
+-- Compe setup
+require('compe').setup({
 	source = {
-		path = {},
-		buffer = {},
-		calc = {},
-		nvim_lsp = {},
-		nvim_lua = {},
-		zsh = {},
-		treesitter = {},
-		spell = {},
-		luansip = true,
+		path = true,
+		nvim_lsp = true,
+		luasnip = true,
+		buffer = true,
+		calc = true,
+		spell = true,
 	},
 })
 
