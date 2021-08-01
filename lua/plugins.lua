@@ -61,7 +61,7 @@ local plugins = {
 		config = function()
 			require('modules.which-key')
 		end,
-		event = 'BufWinEnter',
+		keys = '<space>',
 	},
 
 	{
@@ -131,7 +131,7 @@ local plugins = {
 		config = function()
 			require('modules.luasnip')
 		end,
-		event = 'BufWinEnter',
+		event = 'InsertCharPre',
 		requires = {
 			{ 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
 		},
