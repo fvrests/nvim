@@ -1,4 +1,4 @@
-O.editor.clipboard = 'unnamedplus'
+-- O.editor.clipboard = 'unnamedplus'
 O.editor.colorscheme = 'rose-pine'
 vim.g.rose_pine_variant = 'rose-pine'
 vim.g.rose_pine_enable_italics = false
@@ -14,14 +14,14 @@ O.lsp.on_hover.line_diagnostics = false
 O.lsp.on_hover.signature_help = false
 O.lsp.servers = {
 	'lua',
-	'typescript',
-	'html',
-	'svelte',
-	'css',
-	'tailwindcss',
-	'json',
-	'rust',
-	'go',
+	-- 'typescript',
+	-- 'html',
+	-- 'svelte',
+	-- 'css',
+	-- 'tailwindcss',
+	-- 'json',
+	-- 'rust',
+	-- 'go',
 }
 O.lsp.signs = true
 O.lsp.underline = true
