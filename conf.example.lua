@@ -55,6 +55,7 @@ O.plugins = {
 		config = function()
 			require('modes').setup()
 		end,
+		event = 'BufRead',
 	},
 	{
 		'kdheepak/lazygit.nvim',
