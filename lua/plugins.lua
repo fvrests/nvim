@@ -125,18 +125,15 @@ local plugins = {
 			require('modules.compe')
 		end,
 		event = 'InsertEnter',
+	},
+	{
+		'L3MON4D3/LuaSnip',
+		config = function()
+			require('modules.luasnip')
+		end,
+		event = 'BufWinEnter',
 		requires = {
-			{
-				'L3MON4D3/LuaSnip',
-				config = function()
-					require('modules.luasnip')
-				end,
-				event = 'InsertEnter',
-			},
-			{
-				'rafamadriz/friendly-snippets',
-				event = 'InsertEnter',
-			},
+			{ 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
 		},
 	},
 
