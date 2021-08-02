@@ -16,6 +16,8 @@ vim.g.nvim_tree_show_icons = {
 	folder_arrows = 0,
 }
 
+vim.g.nvim_tree_symlink_arrow = O.icons.symlink
+
 vim.g.nvim_tree_icons = {
 	default = '',
 	symlink = '',
