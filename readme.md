@@ -27,7 +27,7 @@ Install your preferred formatters. By default, we support:
 - `npm install prettier`
 - rustfmt via [rustup](https://rustup.rs)
 - `brew install shfmt`
-- `cargo install stylua`
+- `brew install stylua`
 
 Enable format on save:
 
