@@ -1,4 +1,4 @@
-local keymap = require('utils').keymap
+local keymap = require('util').keymap
 
 -- Any <leader> keymaps can be found in /lua/modules/which-key.lua
 keymap('n', '<space>', '<nop>')

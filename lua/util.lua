@@ -1,18 +1,18 @@
-local utils = {}
+local util = {}
 
-function utils.reload_config()
+function util.reload_config()
 	vim.cmd('source ~/.config/nvim/conf.lua')
 	vim.cmd('source ~/.config/nvim/lua/plugins.lua')
 	vim.cmd(':PackerCompile')
 	vim.cmd(':PackerInstall')
 end
 
-function utils.file_exists(fname)
+function util.file_exists(fname)
 	local stat = vim.loop.fs_stat(fname)
 	return (stat and stat.type) or false
 end
 
-function utils.disable_built_ins()
+function util.disable_built_ins()
 	local disabled_built_ins = {
 		'netrw',
 		'netrwPlugin',
@@ -39,14 +39,14 @@ function utils.disable_built_ins()
 	end
 end
 
-function utils.keymap(mode, lhs, rhs, opts)
+function util.keymap(mode, lhs, rhs, opts)
 	mode = mode or 'n'
 	opts = opts or { noremap = true, silent = true }
 
 	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
 end
 
-function utils.save_without_formatting()
+function util.save_without_formatting()
 	-- Temporarily disable format on save
 	vim.cmd([[if exists('#autoformat#BufWritePost')
     :autocmd! autoformat
@@ -69,4 +69,4 @@ function utils.save_without_formatting()
 	end
 end
 
-return utils
+return util

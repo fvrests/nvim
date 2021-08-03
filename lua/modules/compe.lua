@@ -1,4 +1,4 @@
-local keymap = require('utils').keymap
+local keymap = require('util').keymap
 
 vim.opt.completeopt = 'menuone,noselect'
 

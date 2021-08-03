@@ -13,7 +13,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local packer = require('packer')
-local utils = require('utils')
+local util = require('util')
 local config_path = vim.fn.stdpath('config')
 
 packer.init({
@@ -87,7 +87,7 @@ local plugins = {
 		config = function()
 			require('modules.barbar')
 		end,
-		disable = not utils.file_exists(
+		disable = not util.file_exists(
 			config_path .. '/plugin/packer_compiled.lua'
 		),
 	},

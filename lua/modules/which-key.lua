@@ -26,7 +26,7 @@ local mappings = {
 		o = { '<cmd>BufferCloseAllButCurrent<cr>', 'Close others' },
 		f = { '<cmd>silent FormatWrite<cr>', 'Format' },
 		F = {
-			"<cmd>lua require('utils').save_without_formatting()<cr>",
+			"<cmd>lua require('util').save_without_formatting()<cr>",
 			'Save without formatting',
 		},
 		n = { '<cmd>BufferNext<cr>', 'Next' },
@@ -37,7 +37,7 @@ local mappings = {
 		name = 'Packer',
 		c = { '<cmd>PackerCompile<cr>', 'Compile' },
 		i = { '<cmd>PackerInstall<cr>', 'Install' },
-		r = { "<cmd>lua require('utils').reload_config()<cr>", 'Reload' },
+		r = { "<cmd>lua require('util').reload_config()<cr>", 'Reload' },
 		s = { '<cmd>PackerSync<cr>', 'Sync' },
 		S = { '<cmd>PackerStatus<cr>', 'Status' },
 		u = { '<cmd>PackerUpdate<cr>', 'Update' },

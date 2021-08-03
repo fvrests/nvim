@@ -1,11 +1,11 @@
-local utils = require('utils')
+local util = require('util')
 local config_path = vim.fn.stdpath('config')
 
-utils.disable_built_ins()
+util.disable_built_ins()
 
 require('globals')
 
-if utils.file_exists(config_path .. '/conf.lua') then
+if util.file_exists(config_path .. '/conf.lua') then
 	-- Grap user settings
 	vim.cmd('luafile ' .. config_path .. '/conf.lua')
 else
@@ -19,7 +19,7 @@ require('plugins')
 
 if
 	O.editor.colorscheme ~= nil
-	and utils.file_exists(config_path .. '/plugin/packer_compiled.lua')
+	and util.file_exists(config_path .. '/plugin/packer_compiled.lua')
 then
 	vim.cmd('colorscheme ' .. O.editor.colorscheme)
 end

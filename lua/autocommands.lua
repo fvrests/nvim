@@ -33,7 +33,7 @@ M.define_augroups({
 		{
 			'BufWritePost',
 			'conf.lua',
-			'lua require("utils").reload_config()',
+			'lua require("util").reload_config()',
 		},
 		{
 			'BufWritePost',
