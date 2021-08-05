@@ -24,6 +24,8 @@ packer.init({
 
 local plugins = {
 	'wbthomason/packer.nvim',
+	{ 'nvim-lua/plenary.nvim', module = 'plenary' },
+	{ 'nvim-lua/popup.nvim', module = 'popup' },
 
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -31,23 +33,16 @@ local plugins = {
 			require('modules.treesitter')
 		end,
 		event = 'BufRead',
-		run = 'TSUpdate',
-	},
-
-	{
-		'JoosepAlviste/nvim-ts-context-commentstring',
-		after = 'nvim-treesitter',
-	},
-
-	{
-		'nvim-treesitter/playground',
-		after = 'nvim-treesitter',
-		cmd = { 'TSHighlightCapturesUnderCursor', 'TSPlaygroundToggle' },
-	},
-
-	{
-		'windwp/nvim-ts-autotag',
-		after = 'nvim-treesitter',
+		run = ':TSUpdate',
+		opt = true,
+		requires = {
+			{
+				'nvim-treesitter/playground',
+				cmd = 'TSHighlightCapturesUnderCursor',
+			},
+			'JoosepAlviste/nvim-ts-context-commentstring',
+			'windwp/nvim-ts-autotag',
+		},
 	},
 
 	{
@@ -67,10 +62,8 @@ local plugins = {
 		'nvim-telescope/telescope.nvim',
 		cmd = 'Telescope',
 		module = 'telescope',
-		requires = {
-			{ 'nvim-lua/plenary.nvim', module = 'plenary' },
-			{ 'nvim-lua/popup.nvim', module = 'popup' },
-		},
+		requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
+		wants = { 'plenary.nvim', 'popup.nvim' },
 	},
 
 	{
@@ -78,6 +71,11 @@ local plugins = {
 		config = function()
 			require('modules.formatter')
 		end,
+		event = 'BufRead',
+	},
+
+	{
+		'editorconfig/editorconfig-vim',
 		event = 'BufRead',
 	},
 
@@ -93,14 +91,7 @@ local plugins = {
 
 	{
 		'kyazdani42/nvim-tree.lua',
-		cmd = {
-			'NvimTreeClipboard',
-			'NvimTreeClose',
-			'NvimTreeFindFile',
-			'NvimTreeOpen',
-			'NvimTreeRefresh',
-			'NvimTreeToggle',
-		},
+		cmd = 'NvimTreeToggle',
 		config = function()
 			require('modules.tree')
 		end,
@@ -111,7 +102,10 @@ local plugins = {
 		config = function()
 			require('modules.lsp')
 		end,
-		event = 'BufRead',
+		event = 'BufReadPre',
+		opt = true,
+		requires = 'folke/lua-dev.nvim',
+		wants = 'lua-dev.nvim',
 	},
 	{
 		'kabouzeid/nvim-lspinstall',
@@ -124,16 +118,18 @@ local plugins = {
 			require('modules.compe')
 		end,
 		event = 'InsertEnter',
-	},
-	{
-		'L3MON4D3/LuaSnip',
-		config = function()
-			require('modules.luasnip')
-		end,
-		event = 'InsertCharPre',
+		opt = true,
 		requires = {
-			{ 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
+			{
+				'L3MON4D3/LuaSnip',
+				config = function()
+					require('modules.luasnip')
+				end,
+				wants = 'friendly-snippets',
+			},
+			'rafamadriz/friendly-snippets',
 		},
+		wants = 'LuaSnip',
 	},
 
 	{
@@ -149,6 +145,11 @@ local plugins = {
 		config = function()
 			require('modules.comment')
 		end,
+		cmd = 'CommentToggle',
+		opt = true,
+		keys = { 'gc', 'gcc' },
+		requires = 'JoosepAlviste/nvim-ts-context-commentstring',
+		wants = 'nvim-ts-context-commentstring',
 	},
 
 	{
@@ -156,7 +157,9 @@ local plugins = {
 		config = function()
 			require('modules.gitsigns')
 		end,
-		event = 'BufRead',
+		event = 'BufReadPre',
+		requires = 'nvim-lua/plenary.nvim',
+		wants = 'plenary.nvim',
 	},
 }
 
