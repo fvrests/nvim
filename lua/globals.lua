@@ -55,12 +55,8 @@ O = {
 	treesitter = {
 		ensure_installed = 'maintained',
 		ignore_install = { 'haskell' },
-	},
-	noop = {
-		treesitter = {
-			highlight = {
-				enable = true,
-			},
+		highlight = {
+			enable = true,
 		},
 	},
 	keymaps = {},

@@ -5,7 +5,7 @@ require('nvim-treesitter.configs').setup({
 		enable = true,
 	},
 	highlight = {
-		enable = O.noop.treesitter.highlight.enable,
+		enable = O.treesitter.highlight.enable,
 	},
 	-- From nvim-ts-context-commentstring
 	context_commentstring = {
