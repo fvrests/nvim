@@ -1,4 +1,4 @@
--- O.editor.clipboard = 'unnamedplus'
+O.editor.clipboard = ''
 O.editor.colorscheme = 'rose-pine'
 vim.g.rose_pine_variant = 'rose-pine'
 vim.g.rose_pine_enable_italics = false
@@ -16,12 +16,13 @@ O.lsp.servers = {
 	'lua',
 	-- 'typescript',
 	-- 'html',
-	-- 'svelte',
 	-- 'css',
 	-- 'tailwindcss',
+	-- 'svelte',
 	-- 'json',
 	-- 'rust',
 	-- 'go',
+	-- ...
 }
 O.lsp.signs = true
 O.lsp.underline = true
@@ -55,21 +56,40 @@ O.plugins = {
 		config = function()
 			require('colorizer').setup()
 		end,
+		event = 'BufReadPre',
 	},
 	{
 		'mvllow/modes.nvim',
 		config = function()
 			require('modes').setup()
 		end,
-		event = 'BufRead',
+		event = 'BufReadPre',
 	},
 	{
 		'kdheepak/lazygit.nvim',
-		cmd = { 'LazyGit', 'LazyGitConfig', 'LazyGitFilter' },
+		cmd = { 'LazyGit' },
 	},
 	{
 		'iamcco/markdown-preview.nvim',
-		ft = { 'markdown' },
-		run = 'cd app && npm install',
+		run = function()
+			-- post-install hook
+			vim.fn['mkdp#util#install']()
+		end,
+		ft = 'markdown',
+		cmd = { 'MarkdownPreview' },
+	},
+	{
+		'akinsho/nvim-toggleterm.lua',
+		config = function()
+			require('toggleterm').setup({
+				direction = 'float',
+				open_mapping = [[<c-\>]],
+				close_on_exit = true,
+				float_opts = {
+					border = 'curved',
+				},
+			})
+		end,
+		keys = [[<c-\>]],
 	},
 }
