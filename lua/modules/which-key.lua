@@ -45,36 +45,22 @@ local mappings = {
 		S = { '<cmd>PackerStatus<cr>', 'Status' },
 		u = { '<cmd>PackerUpdate<cr>', 'Update' },
 	},
-	g = {
+	h = {
 		name = 'Git',
-		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", 'Next hunk' },
-		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", 'Prev hunk' },
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", 'Blame' },
-		p = {
-			"<cmd>lua require 'gitsigns'.preview_hunk()<cr>",
-			'Preview hunk',
-		},
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", 'Reset hunk' },
-		R = {
-			"<cmd>lua require 'gitsigns'.reset_buffer()<cr>",
-			'Reset buffer',
-		},
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", 'Stage hunk' },
-		u = {
-			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-			'Undo stage hunk',
-		},
+		s = 'Stage hunk',
+		u = 'Undo stage hunk',
+		r = 'Reset hunk',
+		R = 'Reset buffer',
+		p = 'Preview hunk',
+		b = 'Blame line',
 		o = { '<cmd>Telescope git_status<cr>', 'Open changed file' },
-		b = { '<cmd>Telescope git_branches<cr>', 'Checkout branch' },
+		B = { '<cmd>Telescope git_branches<cr>', 'Checkout branch' },
 		c = { '<cmd>Telescope git_commits<cr>', 'Checkout commit' },
 		C = {
 			'<cmd>Telescope git_bcommits<cr>',
 			'Checkout commit (for current file)',
 		},
-		g = {
-			'<cmd>LazyGit<cr>',
-			'LazyGit',
-		},
+		g = { '<cmd>LazyGit<cr>', 'LazyGit' },
 	},
 	l = {
 		name = 'LSP',
