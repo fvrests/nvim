@@ -37,9 +37,15 @@ O.keymaps = {
 }
 
 O.leader_keymaps = {
-	['/'] = { '<cmd>CommentToggle<cr>', 'Comment' },
-	s = {
-		p = { '<cmd>Telescope planets<cr>', 'Planets' },
+	normal = {
+		['/'] = { '<cmd>CommentToggle<cr>', 'Comment' },
+		s = {
+			p = { '<cmd>Telescope planets<cr>', 'Planets' },
+		},
+	},
+	visual = {
+
+		['/'] = { ":'<,'>CommentToggle<cr>", 'Comment' },
 	},
 }
 

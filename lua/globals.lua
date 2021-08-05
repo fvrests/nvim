@@ -65,7 +65,11 @@ O = {
 	},
 	-- User keymaps
 	keymaps = {},
-	leader_keymaps = {},
+	-- User <leader> keymaps
+	leader_keymaps = {
+		normal = {},
+		visual = {},
+	},
 	-- User plugins
 	plugins = {},
 }

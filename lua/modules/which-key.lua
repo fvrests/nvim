@@ -132,18 +132,6 @@ local mappings = {
 	},
 }
 
-for lhs, rhs in pairs(O.leader_keymaps) do
-	if type(rhs) == 'table' then
-		for key, value in pairs(rhs) do
-			if mappings[lhs] then
-				mappings[lhs][key] = value
-			else
-				mappings[lhs] = rhs
-			end
-		end
-	else
-		mappings[lhs] = rhs
-	end
-end
-
 wk.register(mappings, opts)
+wk.register(O.leader_keymaps.normal, { prefix = '<leader>', mode = 'n' })
+wk.register(O.leader_keymaps.visual, { prefix = '<leader>', mode = 'v' })
