@@ -3,10 +3,13 @@ local wk = require('which-key')
 wk.setup({
 	plugins = {
 		spelling = {
-			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-			suggestions = 20, -- how many suggestions should be shown in the list?
+			-- show spelling suggestions when pressing z=
+			enabled = true,
+			suggestions = 20,
 		},
 		presets = {
+			-- disable operators such as d and y
+			-- when enabled, this conflicts with modes.nvim
 			operators = false,
 		},
 	},
