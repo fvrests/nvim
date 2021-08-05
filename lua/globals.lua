@@ -1,5 +1,6 @@
 O = {
 	editor = {
+		---@usage '' or 'unnamedplus'
 		clipboard = '',
 		colorscheme = 'rose-pine',
 		cursorline = false,
@@ -41,6 +42,7 @@ O = {
 			line_diagnostics = false,
 			signature_help = false,
 		},
+		---@usage { 'lua', 'go' }
 		servers = { 'lua' },
 		signs = true,
 		underline = true,
@@ -53,13 +55,17 @@ O = {
 		rhs = '%l:%c',
 	},
 	treesitter = {
+		---@usage 'maintained' or 'all' or { 'lua', 'go' }
 		ensure_installed = 'maintained',
+		---@usage { 'haskell' }
 		ignore_install = { 'haskell' },
 		highlight = {
 			enable = true,
 		},
 	},
+	-- User keymaps
 	keymaps = {},
 	leader_keymaps = {},
+	-- User plugins
 	plugins = {},
 }
