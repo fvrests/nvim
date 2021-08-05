@@ -81,6 +81,7 @@ require('formatter').setup({
 		vue = prettier,
 		json = prettier,
 		markdown = prettier,
+		ruby = prettier,
 
 		rust = rustfmt,
 
