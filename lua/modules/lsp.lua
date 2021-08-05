@@ -1,3 +1,6 @@
+local lspconfig = require('lspconfig')
+local lspinstall = require('lspinstall')
+
 local signs = {
 	Error = O.lsp.icons.error,
 	Warning = O.lsp.icons.warning,
@@ -10,39 +13,32 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
-local function make_config()
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
-	capabilities.textDocument.completion.completionItem.resolveSupport = {
-		properties = {
-			'documentation',
-			'detail',
-			'additionalTextEdits',
-		},
-	}
-
-	return {
-		capabilities = capabilities,
-	}
-end
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+	properties = { 'documentation', 'detail', 'additionalTextEdits' },
+}
 
 local function install_servers()
 	local required_servers = O.lsp.servers
-	local installed_servers = require('lspinstall').installed_servers()
+	local installed_servers = lspinstall.installed_servers()
 	for _, server in pairs(required_servers) do
 		if not vim.tbl_contains(installed_servers, server) then
-			require('lspinstall').install_server(server)
+			lspinstall.install_server(server)
 		end
 	end
 end
 
 local function setup_servers()
-	require('lspinstall').setup()
+	lspinstall.setup()
+	require('lua-dev').setup()
 
-	local servers = require('lspinstall').installed_servers()
+	local servers = lspinstall.installed_servers()
 
 	for _, server in pairs(servers) do
-		local config = make_config()
+		local config = {
+			capabilities = capabilities,
+		}
 
 		if server == 'lua' then
 			config = vim.tbl_extend('force', config, {
@@ -70,14 +66,16 @@ local function setup_servers()
 			})
 		end
 
-		require('lspconfig')[server].setup(config)
+		lspconfig[server].setup(vim.tbl_deep_extend('force', {
+			capabilities = capabilities,
+		}, config))
 	end
 end
 
 install_servers()
 setup_servers()
 
-require('lspinstall').post_install_hook = function()
+lspinstall.post_install_hook = function()
 	setup_servers()
 	vim.cmd('bufdo e')
 end
