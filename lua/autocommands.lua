@@ -29,6 +29,12 @@ M.define_augroups({
 			'setlocal formatoptions-=o',
 		},
 	},
+	_markdown = {
+		{ 'FileType', 'markdown', 'setlocal expandtab' },
+		{ 'FileType', 'markdown', 'setlocal spell' },
+		{ 'FileType', 'markdown', 'setlocal ts=2 sts=2 sw=2' },
+		{ 'FileType', 'markdown', 'setlocal wrap' },
+	},
 	_hot_reload = {
 		{
 			'BufWritePost',

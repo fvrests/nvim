@@ -24,7 +24,6 @@ packer.init({
 
 local plugins = {
 	'wbthomason/packer.nvim',
-	'tjdevries/astronauta.nvim',
 
 	{
 		'nvim-treesitter/nvim-treesitter',
