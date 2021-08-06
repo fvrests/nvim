@@ -29,11 +29,16 @@ M.define_augroups({
 			'setlocal formatoptions-=o',
 		},
 	},
-	_markdown = {
+	_filetypes = {
 		{ 'FileType', 'markdown', 'setlocal expandtab' },
 		{ 'FileType', 'markdown', 'setlocal spell' },
 		{ 'FileType', 'markdown', 'setlocal ts=2 sts=2 sw=2' },
 		{ 'FileType', 'markdown', 'setlocal wrap' },
+		{
+			'FileType',
+			'toml',
+			'lua vim.api.nvim_buf_set_option(0, "commentstring", "# %s")',
+		},
 	},
 	_hot_reload = {
 		{
