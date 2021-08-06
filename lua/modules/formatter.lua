@@ -80,6 +80,7 @@ require('formatter').setup({
 		svelte = prettier,
 		vue = prettier,
 		json = prettier,
+		yaml = prettier,
 		markdown = prettier,
 		ruby = prettier,
 
