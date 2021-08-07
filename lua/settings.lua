@@ -23,7 +23,11 @@ vim.opt.cursorline = O.editor.cursorline
 vim.opt.number = O.editor.line_numbers
 vim.opt.shiftwidth = O.editor.tab_size
 vim.opt.tabstop = O.editor.tab_size
-vim.opt.wrap = O.editor.wrap_lines
+
+if O.editor.wrap_lines then
+	vim.opt.linebreak = true
+	vim.opt.wrap = true
+end
 
 vim.opt.laststatus = O.statusline.enabled and 2 or 0
 if O.statusline.lhs ~= nil then
