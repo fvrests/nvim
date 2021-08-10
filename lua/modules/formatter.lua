@@ -1,3 +1,5 @@
+local M = {}
+
 local gofmt = {
 	function()
 		return {
@@ -52,22 +54,36 @@ local stylua = {
 	end,
 }
 
-if O.editor.format_on_save then
-	require('autocommands').define_augroups({
+function M.enable_autoformat()
+	require('util').create_augroups({
 		autoformat = {
-			{
-				'BufWritePost',
-				'*',
-				':silent FormatWrite',
-			},
+			-- format on save
+			{ 'BufWritePost', '*', ':silent FormatWrite' },
 		},
 	})
 end
 
-if not O.editor.format_on_save then
-	vim.cmd([[if exists('#autoformat#BufWritePost')
-		:autocmd! autoformat
-		endif]])
+function M.disable_autoformat()
+	vim.cmd(
+		[[if exists('#autoformat#BufWritePost') :autocmd! autoformat endif]]
+	)
+end
+
+function M.save_without_formatting()
+	-- temporarily disable format on save
+	M.disable_autoformat()
+
+	-- save file
+	vim.cmd(':w')
+
+	-- re-enable format on save if previously enabled
+	M.enable_autoformat()
+end
+
+if O.editor.format_on_save then
+	M.enable_autoformat()
+else
+	M.disable_autoformat()
 end
 
 require('formatter').setup({
@@ -97,3 +113,5 @@ require('formatter').setup({
 		lua = stylua,
 	},
 })
+
+return M

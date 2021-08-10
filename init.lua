@@ -13,7 +13,6 @@ else
 end
 
 require('settings')
-require('autocommands')
 require('keymappings')
 require('plugins')
 
