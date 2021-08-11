@@ -1,5 +1,9 @@
+local keymap = require('util').keymap
 local lspconfig = require('lspconfig')
 local lspinstall = require('lspinstall')
+
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
 
 local signs = {
 	Error = O.lsp.icons.error,

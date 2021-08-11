@@ -1,3 +1,8 @@
+local keymap = require('util').keymap
+
+keymap('n', 'L', '<cmd>BufferNext<cr>')
+keymap('n', 'H', '<cmd>BufferPrevious<cr>')
+
 vim.g.bufferline = {
 	animation = false,
 	icon_close_tab = O.editor.icons.close,
