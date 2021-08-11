@@ -13,7 +13,7 @@ else
 end
 
 require('settings')
-require('keymappings')
+require('keymaps')
 require('plugins')
 
 if
