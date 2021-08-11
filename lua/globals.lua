@@ -16,6 +16,7 @@ O = {
 		},
 		indent_guides = false,
 		line_numbers = true,
+		show_sign_column = true,
 		tab_size = 4,
 		wrap_lines = true,
 	},

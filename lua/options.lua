@@ -4,7 +4,6 @@ vim.opt.smartcase = true
 vim.opt.mouse = 'a'
 vim.opt.pumheight = 10
 vim.opt.shortmess:append('c')
-vim.opt.signcolumn = 'yes'
 vim.opt.smartindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -21,6 +20,7 @@ vim.opt.termguicolors = true
 vim.opt.clipboard = O.editor.clipboard
 vim.opt.cursorline = O.editor.cursorline
 vim.opt.number = O.editor.line_numbers
+vim.opt.signcolumn = O.editor.show_sign_column and 'yes' or 'no'
 vim.opt.shiftwidth = O.editor.tab_size
 vim.opt.tabstop = O.editor.tab_size
 

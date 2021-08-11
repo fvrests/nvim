@@ -7,6 +7,7 @@ O.editor.cursorline = true
 O.editor.format_on_save = true
 O.editor.indent_guides = false
 O.editor.line_numbers = true
+O.editor.show_sign_column = true
 O.editor.tab_size = 4
 O.editor.wrap_lines = false
 
