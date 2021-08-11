@@ -51,7 +51,7 @@ O = {
 	},
 	statusline = {
 		enabled = false,
-		lhs = '%f',
+		lhs = '%f %m',
 		rhs = '%l:%c',
 	},
 	treesitter = {
