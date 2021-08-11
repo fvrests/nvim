@@ -11,6 +11,9 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	})
 end
 
+-- packer compile on save
+vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
+
 local util = require('util')
 local config_path = vim.fn.stdpath('config')
 
