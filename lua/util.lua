@@ -18,7 +18,7 @@ function util.create_augroups(definitions)
 end
 
 function util.reload_config()
-	vim.cmd('source ~/.config/nvim/conf.lua')
+	vim.cmd('source ~/.config/nvim/config.lua')
 	vim.cmd('source ~/.config/nvim/lua/plugins.lua')
 	vim.cmd(':PackerCompile')
 	vim.cmd(':PackerInstall')

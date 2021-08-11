@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+config_repo="https://github.com/mvllow/nvim"
+config_path="$HOME/.config/nvim"
+
 nvim_config_path="$HOME/.config/nvim"
 nvim_resource_path="$HOME/.local/share/nvim/site/pack/packer"
 
@@ -27,14 +30,12 @@ fi
 
 if [ $(which nvim) ]; then
 	echo "- Getting config"
-	git clone https://github.com/mvllow/nvim \
-		~/.config/nvim
+	git clone "$config_repo" "$config_path"
 
-	if ! [ -e "$HOME/.config/nvim/conf.lua" ]; then
+	if ! [ -e "$config_path/config.lua" ]; then
 		echo
 		echo "- Found user config"
-		cp ~/.config/nvim/conf.example.lua \
-			~/.config/nvim/conf.lua
+		cp "$config_path/config.example.lua" "$config_path/config.lua"
 	fi
 
 	echo
