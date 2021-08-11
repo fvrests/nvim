@@ -50,7 +50,7 @@ O = {
 		virtual_text = false,
 	},
 	statusline = {
-		enabled = false,
+		enabled = true,
 		lhs = '%f %m',
 		rhs = '%l:%c',
 	},

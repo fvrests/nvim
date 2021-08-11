@@ -29,8 +29,6 @@ O.lsp.underline = true
 O.lsp.update_in_insert = false
 O.lsp.virtual_text = false
 
-O.statusline.enabled = false
-
 O.keymaps = {
 	{ 'n', '}', '<cmd>BufferNext<cr>' },
 	{ 'n', '{', '<cmd>BufferPrevious<cr>' },
