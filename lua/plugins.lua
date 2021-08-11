@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath('data')
 	.. '/site/pack/packer/start/packer.nvim'
 
--- Install packer (plugin manager) if not already
+-- bootstrap packer.nvim
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.fn.system({
 		'git',

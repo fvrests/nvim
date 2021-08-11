@@ -20,8 +20,8 @@ end
 function util.reload_config()
 	vim.cmd('source ~/.config/nvim/config.lua')
 	vim.cmd('source ~/.config/nvim/lua/plugins.lua')
-	vim.cmd(':PackerCompile')
-	vim.cmd(':PackerInstall')
+	vim.cmd('PackerCompile')
+	vim.cmd('PackerInstall')
 end
 
 function util.file_exists(fname)
@@ -31,24 +31,24 @@ end
 
 function util.disable_built_ins()
 	local disabled_built_ins = {
-		'netrw',
-		'netrwPlugin',
-		'netrwSettings',
-		'netrwFileHandlers',
-		'gzip',
-		'zip',
-		'zipPlugin',
-		'tar',
-		'tarPlugin',
+		'2html_plugin',
 		'getscript',
 		'getscriptPlugin',
-		'vimball',
-		'vimballPlugin',
-		'2html_plugin',
+		'gzip',
 		'logipat',
+		'matchit',
+		'netrw',
+		'netrwFileHandlers',
+		'netrwPlugin',
+		'netrwSettings',
 		'rrhelper',
 		'spellfile_plugin',
-		'matchit',
+		'tar',
+		'tarPlugin',
+		'vimball',
+		'vimballPlugin',
+		'zip',
+		'zipPlugin',
 	}
 
 	for _, plugin in pairs(disabled_built_ins) do
