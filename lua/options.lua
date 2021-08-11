@@ -17,8 +17,8 @@ vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.lazyredraw = true
 vim.opt.termguicolors = true
-vim.opt.clipboard = O.editor.clipboard
 
+vim.opt.clipboard = O.editor.clipboard
 vim.opt.cursorline = O.editor.cursorline
 vim.opt.number = O.editor.line_numbers
 vim.opt.shiftwidth = O.editor.tab_size
