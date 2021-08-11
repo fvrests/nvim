@@ -12,7 +12,7 @@ else
 	print('Unable to find user config. Create one at ' .. config_file)
 end
 
-require('settings')
+require('options')
 require('keymaps')
 require('plugins')
 
