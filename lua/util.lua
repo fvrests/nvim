@@ -63,4 +63,20 @@ function util.keymap(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
 end
 
+util.create_augroups({
+	_ = {
+		-- stop o/O continuing comments
+		{ 'BufEnter', '*', 'setlocal formatoptions-=o' },
+
+		-- use 2 spaces; enable spell; enable wrap
+		{ 'FileType', 'markdown', 'setlocal et ts=2 sts=2 sw=2 spell wrap' },
+
+		-- reload (some) stuff when config changes
+		{ 'BufWritePost', 'config.lua', 'lua require("util").reload_config()' },
+
+		-- set equal split width on window resize
+		{ 'VimResized ', '*', 'tabdo wincmd =' },
+	},
+})
+
 return util
