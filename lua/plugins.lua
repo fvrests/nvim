@@ -9,18 +9,10 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 		'https://github.com/wbthomason/packer.nvim',
 		install_path,
 	})
-	vim.api.nvim_command('packadd packer.nvim')
 end
 
-local packer = require('packer')
 local util = require('util')
 local config_path = vim.fn.stdpath('config')
-
-packer.init({
-	git = {
-		clone_timeout = 350,
-	},
-})
 
 local plugins = {
 	'wbthomason/packer.nvim',
@@ -163,7 +155,7 @@ local plugins = {
 	},
 }
 
-packer.startup(function(use)
+require('packer').startup(function(use)
 	if O.plugins ~= nil then
 		for _, ps in ipairs({ plugins, O.plugins }) do
 			for _, p in ipairs(ps) do
