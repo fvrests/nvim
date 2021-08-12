@@ -5,32 +5,31 @@ vim.g.nvim_tree_show_icons = {
 	folder_arrows = 0,
 }
 
-vim.g.nvim_tree_symlink_arrow = O.editor.icons.symlink
 
 vim.g.nvim_tree_icons = {
 	default = '',
 	symlink = '',
 	git = {
-		deleted = O.git.icons.deleted,
-		ignored = O.git.icons.ignored,
-		renamed = O.git.icons.renamed,
-		staged = O.git.icons.stages,
-		unmerged = O.git.icons.unmerged,
-		unstaged = O.git.icons.unstaged,
-		untracked = O.git.icons.untracked,
+		deleted = O.icons.none,
+		ignored = O.icons.ignored,
+		renamed = O.icons.arrow,
+		staged = O.icons.check,
+		unmerged = O.icons.modified,
+		unstaged = O.icons.error,
+		untracked = O.icons.warning,
 	},
 	folder = {
-		default = O.editor.icons.folder,
-		empty = O.editor.icons.folder_empty,
-		empty_open = O.editor.icons.folder_empty_open,
-		open = O.editor.icons.folder_open,
-		symlink = O.editor.icons.symlink,
+		default = O.icons.folder,
+		empty = O.icons.folder,
+		empty_open = O.icons.folder_open,
+		open = O.icons.folder_open,
+		symlink = O.icons.arrow,
 	},
 	lsp = {
-		error = O.lsp.icons.error,
-		hint = O.lsp.icons.hint,
-		info = O.lsp.icons.info,
-		warning = O.lsp.icons.warning,
+		error = O.icons.error,
+		hint = O.icons.hint,
+		info = O.icons.info,
+		warning = O.icons.warning,
 	},
 }
 
@@ -40,3 +39,4 @@ vim.g.nvim_tree_ignore = { '.git' }
 vim.g.nvim_tree_lsp_diagnostics = false
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_side = 'right'
+vim.g.nvim_tree_symlink_arrow = O.icons.arrow

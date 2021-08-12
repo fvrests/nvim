@@ -6,10 +6,10 @@ keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
 
 local signs = {
-	Error = O.lsp.icons.error,
-	Warning = O.lsp.icons.warning,
-	Hint = O.lsp.icons.hint,
-	Information = O.lsp.icons.info,
+	Error = O.icons.error,
+	Hint = O.icons.hint,
+	Information = O.icons.info,
+	Warning = O.icons.warning,
 }
 
 for type, icon in pairs(signs) do
@@ -91,7 +91,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 		underline = O.lsp.underline,
 		update_in_insert = O.lsp.update_in_insert,
 		virtual_text = O.lsp.virtual_text and {
-			prefix = O.lsp.icons.diagnostics_prefix,
+			prefix = O.icons.modified
 		},
 	}
 )
