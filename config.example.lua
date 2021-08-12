@@ -1,3 +1,9 @@
+-- mvllow/nvim user config
+-- https://github.com/mvllow/nvim
+--
+-- If you haven't already, copy this file as config.lua.
+-- This is your personal config and will not be overwritten when updating.
+
 O.editor.clipboard = ''
 O.editor.colorscheme = 'rose-pine'
 vim.g.rose_pine_variant = 'rose-pine'
