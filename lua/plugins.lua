@@ -157,9 +157,21 @@ local plugins = {
 	},
 }
 
+local modules = {}
+
+for name, enabled in pairs(O.modules) do
+	if enabled then
+		local status_ok, module = pcall(require, 'modules/' .. name)
+
+		if status_ok then
+			table.insert(modules, module)
+		end
+	end
+end
+
 require('packer').startup(function(use)
 	if O.plugins ~= nil then
-		for _, ps in ipairs({ plugins, O.plugins }) do
+		for _, ps in ipairs({ plugins, modules, O.plugins }) do
 			for _, p in ipairs(ps) do
 				use(p)
 			end

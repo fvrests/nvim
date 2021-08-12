@@ -1,4 +1,8 @@
 O = {
+	-- enable optional pre-configured plugins
+	modules = {
+		modes = false,
+	},
 	editor = {
 		---@usage '' or 'unnamedplus'
 		clipboard = '',

@@ -55,18 +55,15 @@ O.leader_keymaps = {
 	},
 }
 
+O.modules = {
+	modes = true,
+}
+
 O.plugins = {
 	{
 		'norcalli/nvim-colorizer.lua',
 		config = function()
 			require('colorizer').setup({ '*' }, { names = false })
-		end,
-		event = 'BufReadPre',
-	},
-	{
-		'mvllow/modes.nvim',
-		config = function()
-			require('modes').setup()
 		end,
 		event = 'BufReadPre',
 	},
