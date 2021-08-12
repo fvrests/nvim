@@ -64,12 +64,19 @@ function util.keymap(mode, lhs, rhs, opts)
 end
 
 util.create_augroups({
-	_ = {
+	_general = {
 		-- stop o/O continuing comments
 		{ 'BufEnter', '*', 'setlocal formatoptions-=o' },
 
 		-- use 2 spaces; enable spell; enable wrap
 		{ 'FileType', 'markdown', 'setlocal et ts=2 sts=2 sw=2 spell wrap' },
+
+		-- set commentstrings
+		{
+			'FileType',
+			'fish,toml',
+			'lua vim.api.nvim_buf_set_option(0, "commentstring", "# %s")',
+		},
 
 		-- reload (some) stuff when config changes
 		{ 'BufWritePost', 'config.lua', 'lua require("util").reload_config()' },
