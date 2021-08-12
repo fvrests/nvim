@@ -130,16 +130,6 @@ local plugins = {
 		requires = 'JoosepAlviste/nvim-ts-context-commentstring',
 		wants = 'nvim-ts-context-commentstring',
 	},
-
-	{
-		'lewis6991/gitsigns.nvim',
-		config = function()
-			require('core.gitsigns')
-		end,
-		event = 'BufReadPre',
-		requires = 'nvim-lua/plenary.nvim',
-		wants = 'plenary.nvim',
-	},
 }
 
 local modules = {}

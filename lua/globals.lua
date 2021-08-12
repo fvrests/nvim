@@ -1,6 +1,7 @@
 O = {
 	-- Enable optional pre-configured plugins
 	modules = {
+		gitsigns = false,
 		modes = false,
 	},
 	editor = {
