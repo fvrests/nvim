@@ -1,5 +1,15 @@
 local M = {}
 
+local fish_indent = {
+	function()
+		return {
+			exe = 'fish_indent',
+			args = {},
+			stdin = true,
+		}
+	end,
+}
+
 local gofmt = {
 	function()
 		return {
@@ -89,6 +99,8 @@ end
 require('formatter').setup({
 	logging = false,
 	filetype = {
+		fish = fish_indent,
+
 		go = gofmt,
 
 		javascript = prettier,

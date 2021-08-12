@@ -29,7 +29,7 @@ local mappings = {
 		o = { '<cmd>BufferCloseAllButCurrent<cr>', 'close others' },
 		f = { '<cmd>silent FormatWrite<cr>', 'format' },
 		F = {
-			"<cmd>lua require('modules/formatter').save_without_formatting()<cr>",
+			"<cmd>lua require('core/formatter').save_without_formatting()<cr>",
 			'save without formatting',
 		},
 		n = { '<cmd>BufferNext<cr>', 'next' },

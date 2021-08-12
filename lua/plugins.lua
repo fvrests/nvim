@@ -20,12 +20,11 @@ local config_path = vim.fn.stdpath('config')
 local plugins = {
 	'wbthomason/packer.nvim',
 	{ 'nvim-lua/plenary.nvim', module = 'plenary' },
-	{ 'nvim-lua/popup.nvim', module = 'popup' },
 
 	{
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
-			require('modules.treesitter')
+			require('core.treesitter')
 		end,
 		event = 'BufRead',
 		run = ':TSUpdate',
@@ -48,7 +47,7 @@ local plugins = {
 	{
 		'folke/which-key.nvim',
 		config = function()
-			require('modules.which-key')
+			require('core.which-key')
 		end,
 		keys = '<space>',
 	},
@@ -57,14 +56,14 @@ local plugins = {
 		'nvim-telescope/telescope.nvim',
 		cmd = 'Telescope',
 		module = 'telescope',
-		requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
-		wants = { 'plenary.nvim', 'popup.nvim' },
+		requires = 'nvim-lua/plenary.nvim',
+		wants = 'plenary.nvim',
 	},
 
 	{
 		'mhartington/formatter.nvim',
 		config = function()
-			require('modules.formatter')
+			require('core.formatter')
 		end,
 		event = 'BufRead',
 	},
@@ -77,7 +76,7 @@ local plugins = {
 	{
 		'romgrk/barbar.nvim',
 		config = function()
-			require('modules.barbar')
+			require('core.barbar')
 		end,
 		disable = not util.file_exists(
 			config_path .. '/plugin/packer_compiled.lua'
@@ -88,14 +87,14 @@ local plugins = {
 		'kyazdani42/nvim-tree.lua',
 		cmd = 'NvimTreeToggle',
 		config = function()
-			require('modules.tree')
+			require('core.tree')
 		end,
 	},
 
 	{
 		'neovim/nvim-lspconfig',
 		config = function()
-			require('modules.lsp')
+			require('core.lsp')
 		end,
 		event = 'BufReadPre',
 		opt = true,
@@ -110,7 +109,7 @@ local plugins = {
 	{
 		'hrsh7th/nvim-compe',
 		config = function()
-			require('modules.compe')
+			require('core.compe')
 		end,
 		event = 'InsertEnter',
 		opt = true,
@@ -118,7 +117,7 @@ local plugins = {
 			{
 				'L3MON4D3/LuaSnip',
 				config = function()
-					require('modules.luasnip')
+					require('core.luasnip')
 				end,
 				wants = 'friendly-snippets',
 			},
@@ -131,14 +130,14 @@ local plugins = {
 		'windwp/nvim-autopairs',
 		after = 'nvim-compe',
 		config = function()
-			require('modules.autopairs')
+			require('core.autopairs')
 		end,
 	},
 
 	{
 		'terrortylor/nvim-comment',
 		config = function()
-			require('modules.comment')
+			require('core.comment')
 		end,
 		cmd = 'CommentToggle',
 		opt = true,
@@ -150,7 +149,7 @@ local plugins = {
 	{
 		'lewis6991/gitsigns.nvim',
 		config = function()
-			require('modules.gitsigns')
+			require('core.gitsigns')
 		end,
 		event = 'BufReadPre',
 		requires = 'nvim-lua/plenary.nvim',
