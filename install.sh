@@ -33,17 +33,14 @@ if [ $(which nvim) ]; then
 	git clone "$config_repo" "$config_path"
 
 	if ! [ -e "$config_path/config.lua" ]; then
-		echo
 		echo "- Found user config"
 		cp "$config_path/config.example.lua" "$config_path/config.lua"
 	fi
 
-	echo
 	echo "- Installing plugin manager"
 	git clone https://github.com/wbthomason/packer.nvim \
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-	echo
 	echo "- Installing plugins"
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 

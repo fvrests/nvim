@@ -1,5 +1,5 @@
 O = {
-	-- enable optional pre-configured plugins
+	-- Enable optional pre-configured plugins
 	modules = {
 		modes = false,
 	},

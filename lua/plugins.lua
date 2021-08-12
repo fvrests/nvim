@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath('data')
 	.. '/site/pack/packer/start/packer.nvim'
 
--- bootstrap packer.nvim
+-- Bootstrap packer.nvim
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.fn.system({
 		'git',
@@ -11,7 +11,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	})
 end
 
--- packer compile on save
+-- Packer compile on save
 vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
 
 local util = require('util')
@@ -20,7 +20,6 @@ local config_path = vim.fn.stdpath('config')
 local plugins = {
 	'wbthomason/packer.nvim',
 	{ 'nvim-lua/plenary.nvim', module = 'plenary' },
-
 	{
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
@@ -38,12 +37,7 @@ local plugins = {
 			'windwp/nvim-ts-autotag',
 		},
 	},
-
-	{
-		'rose-pine/neovim',
-		as = 'rose-pine',
-	},
-
+	{ 'rose-pine/neovim', as = 'rose-pine' },
 	{
 		'folke/which-key.nvim',
 		config = function()
@@ -51,7 +45,6 @@ local plugins = {
 		end,
 		keys = '<space>',
 	},
-
 	{
 		'nvim-telescope/telescope.nvim',
 		cmd = 'Telescope',
@@ -59,7 +52,6 @@ local plugins = {
 		requires = 'nvim-lua/plenary.nvim',
 		wants = 'plenary.nvim',
 	},
-
 	{
 		'mhartington/formatter.nvim',
 		config = function()
@@ -67,12 +59,10 @@ local plugins = {
 		end,
 		event = 'BufRead',
 	},
-
 	{
 		'editorconfig/editorconfig-vim',
 		event = 'BufRead',
 	},
-
 	{
 		'romgrk/barbar.nvim',
 		config = function()
@@ -82,7 +72,6 @@ local plugins = {
 			config_path .. '/plugin/packer_compiled.lua'
 		),
 	},
-
 	{
 		'kyazdani42/nvim-tree.lua',
 		cmd = 'NvimTreeToggle',
@@ -90,7 +79,6 @@ local plugins = {
 			require('core.tree')
 		end,
 	},
-
 	{
 		'neovim/nvim-lspconfig',
 		config = function()
@@ -105,7 +93,6 @@ local plugins = {
 		'kabouzeid/nvim-lspinstall',
 		module = 'lspinstall',
 	},
-
 	{
 		'hrsh7th/nvim-compe',
 		config = function()
@@ -125,7 +112,6 @@ local plugins = {
 		},
 		wants = 'LuaSnip',
 	},
-
 	{
 		'windwp/nvim-autopairs',
 		after = 'nvim-compe',
@@ -133,7 +119,6 @@ local plugins = {
 			require('core.autopairs')
 		end,
 	},
-
 	{
 		'terrortylor/nvim-comment',
 		config = function()
