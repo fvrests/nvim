@@ -24,10 +24,12 @@ Install individual language servers via `:LspInstall <server>`.
 
 Install your preferred formatters. By default, we support:
 
-- `npm install prettier`
+- fish_indent via [fish](https://fishshell.com)
+- gofmt via [go](https://golang.org)
+- prettier via `npm install prettier`
 - rustfmt via [rustup](https://rustup.rs)
-- `brew install shfmt`
-- `brew install stylua`
+- shfmt via `brew install shfmt`
+- stylua via `brew install stylua`
 
 Enable format on save:
 
