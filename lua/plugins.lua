@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath('data')
 	.. '/site/pack/packer/start/packer.nvim'
 
--- Bootstrap packer.nvim
+-- Install packer.nvim
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.fn.system({
 		'git',
@@ -11,20 +11,13 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	})
 end
 
--- Packer compile on save
-vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
-
 local plugins = {
 	'wbthomason/packer.nvim',
 	{ 'nvim-lua/plenary.nvim', module = 'plenary' },
 	{
 		'nvim-treesitter/nvim-treesitter',
-		config = function()
-			require('core.treesitter')
-		end,
-		event = 'BufRead',
-		run = ':TSUpdate',
 		opt = true,
+		event = 'BufRead',
 		requires = {
 			{
 				'nvim-treesitter/playground',
@@ -33,28 +26,33 @@ local plugins = {
 			'JoosepAlviste/nvim-ts-context-commentstring',
 			'windwp/nvim-ts-autotag',
 		},
+		config = function()
+			require('core.treesitter')
+		end,
+		run = ':TSUpdate',
 	},
 	{ 'rose-pine/neovim', as = 'rose-pine' },
 	{
 		'folke/which-key.nvim',
+		keys = '<space>',
 		config = function()
 			require('core.which-key')
 		end,
-		keys = '<space>',
 	},
 	{
 		'nvim-telescope/telescope.nvim',
 		cmd = 'Telescope',
 		module = 'telescope',
-		requires = 'nvim-lua/plenary.nvim',
 		wants = 'plenary.nvim',
+		requires = 'nvim-lua/plenary.nvim',
 	},
 	{
 		'mhartington/formatter.nvim',
-		config = function()
-			require('core.formatter')
-		end,
+		cmd = { 'Format', 'FormatWrite' },
 		event = 'BufRead',
+		config = function()
+			require('core/formatter')
+		end,
 	},
 	{
 		'editorconfig/editorconfig-vim',
@@ -62,13 +60,13 @@ local plugins = {
 	},
 	{
 		'neovim/nvim-lspconfig',
+		opt = true,
+		event = 'BufReadPre',
+		wants = 'lua-dev.nvim',
+		requires = 'folke/lua-dev.nvim',
 		config = function()
 			require('core.lsp')
 		end,
-		event = 'BufReadPre',
-		opt = true,
-		requires = 'folke/lua-dev.nvim',
-		wants = 'lua-dev.nvim',
 	},
 	{
 		'kabouzeid/nvim-lspinstall',
@@ -76,22 +74,22 @@ local plugins = {
 	},
 	{
 		'hrsh7th/nvim-compe',
-		config = function()
-			require('core.compe')
-		end,
-		event = 'InsertEnter',
 		opt = true,
+		event = 'InsertEnter',
+		wants = 'LuaSnip',
 		requires = {
 			{
 				'L3MON4D3/LuaSnip',
+				wants = 'friendly-snippets',
 				config = function()
 					require('core.luasnip')
 				end,
-				wants = 'friendly-snippets',
 			},
 			'rafamadriz/friendly-snippets',
 		},
-		wants = 'LuaSnip',
+		config = function()
+			require('core.compe')
+		end,
 	},
 	{
 		'windwp/nvim-autopairs',
@@ -102,14 +100,14 @@ local plugins = {
 	},
 	{
 		'terrortylor/nvim-comment',
+		opt = true,
+		cmd = 'CommentToggle',
+		keys = { 'gc', 'gcc' },
+		wants = 'nvim-ts-context-commentstring',
+		requires = 'JoosepAlviste/nvim-ts-context-commentstring',
 		config = function()
 			require('core.comment')
 		end,
-		cmd = 'CommentToggle',
-		opt = true,
-		keys = { 'gc', 'gcc' },
-		requires = 'JoosepAlviste/nvim-ts-context-commentstring',
-		wants = 'nvim-ts-context-commentstring',
 	},
 }
 
