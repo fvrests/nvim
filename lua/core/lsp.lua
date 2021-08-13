@@ -40,9 +40,7 @@ local function setup_servers()
 	local servers = lspinstall.installed_servers()
 
 	for _, server in pairs(servers) do
-		local config = {
-			capabilities = capabilities,
-		}
+		local config = {}
 
 		if server == 'lua' then
 			config = vim.tbl_extend('force', config, {
@@ -91,7 +89,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 		underline = O.lsp.underline,
 		update_in_insert = O.lsp.update_in_insert,
 		virtual_text = O.lsp.virtual_text and {
-			prefix = O.icons.modified
+			prefix = O.icons.modified,
 		},
 	}
 )
