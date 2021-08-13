@@ -56,7 +56,14 @@ O.leader_keymaps = {
 }
 
 O.modules = {
-	modes = true,
+	bufferline = false,
+	colorizer = false,
+	gitsigns = false,
+	lazygit = false,
+	markdown_preview = false,
+	modes = false,
+	terminal = false,
+	tree = false,
 }
 
 O.plugins = {

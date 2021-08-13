@@ -14,9 +14,6 @@ end
 -- Packer compile on save
 vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
 
-local util = require('util')
-local config_path = vim.fn.stdpath('config')
-
 local plugins = {
 	'wbthomason/packer.nvim',
 	{ 'nvim-lua/plenary.nvim', module = 'plenary' },
@@ -62,22 +59,6 @@ local plugins = {
 	{
 		'editorconfig/editorconfig-vim',
 		event = 'BufRead',
-	},
-	{
-		'romgrk/barbar.nvim',
-		config = function()
-			require('core.barbar')
-		end,
-		disable = not util.file_exists(
-			config_path .. '/plugin/packer_compiled.lua'
-		),
-	},
-	{
-		'kyazdani42/nvim-tree.lua',
-		cmd = 'NvimTreeToggle',
-		config = function()
-			require('core.tree')
-		end,
 	},
 	{
 		'neovim/nvim-lspconfig',

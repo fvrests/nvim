@@ -1,8 +1,14 @@
 O = {
 	-- Enable optional pre-configured plugins
 	modules = {
+		bufferline = false,
+		colorizer = false,
 		gitsigns = false,
+		lazygit = false,
+		markdown_preview = false,
 		modes = false,
+		terminal = false,
+		tree = false,
 	},
 	icons = {
 		none = ' ',

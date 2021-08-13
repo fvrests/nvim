@@ -9,6 +9,7 @@ vim.g.bufferline = {
 	icon_close_tab_modified = O.icons.modified,
 	icon_separator_active = '',
 	icon_separator_inactive = '',
-	icons = false,
-	no_name_title = '[New buffer]',
+	icons = false, -- disable file icons
 }
+
+return { 'romgrk/barbar.nvim' }
