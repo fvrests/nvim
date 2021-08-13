@@ -1,79 +1,66 @@
 local M = {}
 
-local fish_indent = {
-	function()
-		return {
-			exe = 'fish_indent',
-			args = {},
-			stdin = true,
-		}
-	end,
-}
+local function make_formatter(name, args)
+	return {
+		function()
+			return {
+				exe = name,
+				args = args or {},
+				stdin = true,
+			}
+		end,
+	}
+end
 
-local gofmt = {
-	function()
-		return {
-			exe = 'gofmt',
-			args = {},
-			stdin = true,
-		}
-	end,
-}
+local gofmt = make_formatter('gofmt')
+local prettier = make_formatter(
+	'prettier',
+	{ '--stdin-filepath', vim.api.nvim_buf_get_name(0), '--plugin-search-dir=.' }
+)
+local rustfmt = make_formatter('rustfmt', { '--emit=stdout' })
+local shfmt = make_formatter('shfmt', { '-' })
+local stylua = make_formatter('stylua', { '--search-parent-directories', '-' })
 
-local prettier = {
-	function()
-		return {
-			exe = 'prettier',
-			args = {
-				'--stdin-filepath',
-				vim.api.nvim_buf_get_name(0),
-				'--plugin-search-dir=.',
-			},
-			stdin = true,
-		}
-	end,
-}
+require('formatter').setup({
+	logging = false,
+	filetype = {
+		go = gofmt,
 
-local rustfmt = {
-	function()
-		return {
-			exe = 'rustfmt',
-			args = { '--emit=stdout' },
-			stdin = true,
-		}
-	end,
-}
+		javascript = prettier,
+		javascriptreact = prettier,
+		typescript = prettier,
+		typescriptreact = prettier,
+		vue = prettier,
+		svelte = prettier,
+		css = prettier,
+		scss = prettier,
+		html = prettier,
+		json = prettier,
+		yaml = prettier,
+		markdown = prettier,
+		ruby = prettier,
 
-local shfmt = {
-	function()
-		return {
-			exe = 'shfmt',
-			args = { '-' },
-			stdin = true,
-		}
-	end,
-}
+		rust = rustfmt,
 
-local stylua = {
-	function()
-		return {
-			exe = 'stylua',
-			args = { '--search-parent-directories', '-' },
-			stdin = true,
-		}
-	end,
-}
+		bash = shfmt,
+		sh = shfmt,
+		zsh = shfmt,
+
+		lua = stylua,
+	},
+})
 
 function M.enable_autoformat()
 	require('util').create_augroups({
 		autoformat = {
-			-- format on save
+			-- Format on save
 			{ 'BufWritePost', '*', ':silent FormatWrite' },
 		},
 	})
 end
 
 function M.disable_autoformat()
+	-- Remove format on save autocmd
 	vim.cmd(
 		[[if exists('#autoformat#BufWritePost') :autocmd! autoformat endif]]
 	)
@@ -95,35 +82,5 @@ if O.editor.format_on_save then
 else
 	M.disable_autoformat()
 end
-
-require('formatter').setup({
-	logging = false,
-	filetype = {
-		fish = fish_indent,
-
-		go = gofmt,
-
-		javascript = prettier,
-		javascriptreact = prettier,
-		typescript = prettier,
-		typescriptreact = prettier,
-		html = prettier,
-		css = prettier,
-		svelte = prettier,
-		vue = prettier,
-		json = prettier,
-		yaml = prettier,
-		markdown = prettier,
-		ruby = prettier,
-
-		rust = rustfmt,
-
-		bash = shfmt,
-		sh = shfmt,
-		zsh = shfmt,
-
-		lua = stylua,
-	},
-})
 
 return M
