@@ -39,7 +39,6 @@ O.lsp.virtual_text = false
 O.keymaps = {
 	{ 'n', '}', '<cmd>BufferNext<cr>' },
 	{ 'n', '{', '<cmd>BufferPrevious<cr>' },
-	{ 'v', '<leader>/', ":'<,'>CommentToggle<cr>" },
 }
 
 O.leader_keymaps = {
@@ -55,14 +54,14 @@ O.leader_keymaps = {
 }
 
 O.modules = {
-	bufferline = false,
-	colorizer = false,
-	gitsigns = false,
-	lazygit = false,
-	markdown_preview = false,
-	modes = false,
-	terminal = false,
-	tree = false,
+	bufferline = true,
+	colorizer = true,
+	gitsigns = true,
+	lazygit = true,
+	markdown_preview = true,
+	modes = true,
+	terminal = true,
+	tree = true,
 }
 
 O.plugins = {
