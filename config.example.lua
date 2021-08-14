@@ -50,7 +50,6 @@ O.leader_keymaps = {
 		},
 	},
 	visual = {
-
 		['/'] = { ":'<,'>CommentToggle<cr>", 'Comment' },
 	},
 }
