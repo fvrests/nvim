@@ -77,7 +77,7 @@ function M.save_without_formatting()
 	M.enable_autoformat()
 end
 
-if O.editor.format_on_save then
+if O.format_on_save then
 	M.enable_autoformat()
 else
 	M.disable_autoformat()

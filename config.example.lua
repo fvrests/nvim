@@ -4,18 +4,18 @@
 -- If you haven't already, copy this file as config.lua.
 -- This is your personal config and will not be overwritten when updating.
 
-O.editor.clipboard = ''
-O.editor.colorscheme = 'rose-pine'
+O.clipboard = ''
+O.colorscheme = 'rose-pine'
 vim.g.rose_pine_variant = 'rose-pine'
 vim.g.rose_pine_enable_italics = false
 vim.g.rose_pine_disable_background = false
-O.editor.cursorline = true
-O.editor.format_on_save = true
-O.editor.indent_guides = false
-O.editor.line_numbers = true
-O.editor.show_sign_column = true
-O.editor.tab_size = 4
-O.editor.wrap_lines = false
+O.cursorline = true
+O.format_on_save = true
+O.indent_guides = false
+O.line_numbers = true
+O.show_sign_column = true
+O.tab_size = 4
+O.wrap_lines = false
 
 O.lsp.on_hover.line_diagnostics = false
 O.lsp.on_hover.signature_help = false
@@ -68,37 +68,19 @@ O.modules = {
 
 O.plugins = {
 	{
-		'norcalli/nvim-colorizer.lua',
+		'hoob3rt/lualine.nvim',
 		config = function()
-			require('colorizer').setup({ '*' }, { names = false })
+			require('lualine').setup({})
 		end,
-		event = 'BufReadPre',
 	},
 	{
-		'kdheepak/lazygit.nvim',
-		cmd = { 'LazyGit' },
-	},
-	{
-		'iamcco/markdown-preview.nvim',
-		run = function()
-			-- post-install hook
-			vim.fn['mkdp#util#install']()
-		end,
-		ft = 'markdown',
-		cmd = { 'MarkdownPreview' },
-	},
-	{
-		'akinsho/nvim-toggleterm.lua',
+		'folke/tokyonight.nvim',
 		config = function()
-			require('toggleterm').setup({
-				direction = 'float',
-				open_mapping = [[<c-\>]],
-				close_on_exit = true,
-				float_opts = {
-					border = 'curved',
+			require('lualine').setup({
+				options = {
+					theme = 'tokyonight',
 				},
 			})
 		end,
-		keys = [[<c-\>]],
 	},
 }

@@ -17,8 +17,8 @@ require('keymaps')
 require('plugins')
 
 if
-	O.editor.colorscheme ~= nil
+	O.colorscheme ~= nil
 	and util.file_exists(config_path .. '/plugin/packer_compiled.lua')
 then
-	vim.cmd('colorscheme ' .. O.editor.colorscheme)
+	vim.cmd('colorscheme ' .. O.colorscheme)
 end

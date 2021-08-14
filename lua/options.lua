@@ -17,14 +17,15 @@ vim.opt.scrolloff = 8
 vim.opt.lazyredraw = true
 vim.opt.termguicolors = true
 
-vim.opt.clipboard = O.editor.clipboard
-vim.opt.cursorline = O.editor.cursorline
-vim.opt.number = O.editor.line_numbers
-vim.opt.signcolumn = O.editor.show_sign_column and 'yes' or 'no'
-vim.opt.shiftwidth = O.editor.tab_size
-vim.opt.tabstop = O.editor.tab_size
+vim.opt.clipboard = O.clipboard
+vim.opt.cursorline = O.cursorline
+vim.opt.number = O.line_numbers
+vim.opt.signcolumn = O.show_sign_column and 'yes' or 'no'
+vim.opt.shiftwidth = O.tab_size
+vim.opt.tabstop = O.tab_size
 
-if O.editor.wrap_lines then
+if O.wrap_lines then
+	vim.cmd('set breakindent')
 	vim.opt.linebreak = true
 	vim.opt.wrap = true
 end
@@ -39,7 +40,7 @@ if O.statusline.rhs ~= nil then
 	vim.opt.statusline:append(O.statusline.rhs)
 end
 
-if O.editor.indent_guides then
+if O.indent_guides then
 	vim.opt.list = true
 	vim.opt.listchars = { tab = '┊ ' }
 end

@@ -34,7 +34,7 @@ Install your preferred formatters. By default, we support:
 Enable format on save:
 
 ```lua
-O.editor.format_on_save = true
+O.format_on_save = true
 ```
 
 ## Related
