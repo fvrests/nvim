@@ -114,6 +114,7 @@ local plugins = {
 local modules = {}
 
 for name, enabled in pairs(O.modules) do
+	name = name:gsub('_', '-')
 	if enabled then
 		local status_ok, module = pcall(require, 'modules/' .. name)
 
