@@ -27,6 +27,8 @@ Install your preferred formatters. By default, we support:
 - fish_indent via [fish](https://fishshell.com)
 - gofmt via [go](https://golang.org)
 - prettier via `npm install prettier`
+  - ruby via https://github.com/prettier/plugin-ruby
+  - svelte via https://github.com/sveltejs/prettier-plugin-svelte
 - rustfmt via [rustup](https://rustup.rs)
 - shfmt via `brew install shfmt`
 - stylua via `brew install stylua`
