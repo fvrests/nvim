@@ -3,7 +3,5 @@ return {
 	opt = true,
 	ft = 'markdown',
 	cmd = { 'MarkdownPreview' },
-	run = function()
-		vim.fn['mkdp#util#install']()
-	end,
+	run = 'cd app && yarn install',
 }
