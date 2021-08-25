@@ -205,6 +205,7 @@ require('packer').startup(function(use)
 						require('luasnip').lsp_expand(args.body)
 					end,
 				},
+				preselect = cmp.PreselectMode.None,
 				mapping = {
 					['<Tab>'] = function(fallback)
 						if vim.fn.pumvisible() == 1 then
