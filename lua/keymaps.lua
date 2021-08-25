@@ -70,3 +70,7 @@ util.map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>')
 -- fuzzy search (nvim-telescope/telescope.nvim)
 util.map('n', '<leader>f', '<cmd>Telescope find_files<cr>')
 util.map('n', '<leader>st', '<cmd>Telescope live_grep<cr>')
+
+-- comments (terrortylor/nvim-comment)
+util.map('n', '<leader>/', '<cmd>CommentToggle<cr>')
+util.map('v', '<leader>/', ':CommentToggle<cr>')
