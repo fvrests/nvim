@@ -170,30 +170,19 @@ require('packer').startup(function(use)
 		end,
 	})
 	use({
-		'windwp/nvim-autopairs',
-		opt = true,
-		module = 'nvim-autopairs',
-		config = function()
-			require('nvim-autopairs').setup()
-		end,
-	})
-	use({
-		'L3MON4D3/LuaSnip',
-		requires = 'rafamadriz/friendly-snippets',
-		config = function()
-			require('luasnip').config.set_config({
-				history = true,
-			})
-			require('luasnip.loaders.from_vscode').load()
-		end,
-	})
-	use({
 		'hrsh7th/nvim-cmp',
+		event = 'InsertEnter',
+		wants = 'LuaSnip',
 		requires = {
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-path',
-			'saadparwaiz1/cmp_luasnip',
+			{
+				'L3MON4D3/LuaSnip',
+				event = 'InsertEnter',
+				wants = 'friendly-snippets',
+				config = function()
+					require('luasnip.loaders.from_vscode').load()
+				end,
+			},
+			'rafamadriz/friendly-snippets',
 		},
 		config = function()
 			local cmp = require('cmp')
@@ -265,6 +254,17 @@ require('packer').startup(function(use)
 					{ name = 'buffer' },
 				},
 			})
+		end,
+	})
+	use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
+	use({ 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' })
+	use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
+	use({ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' })
+	use({
+		'windwp/nvim-autopairs',
+		after = 'nvim-cmp',
+		config = function()
+			require('nvim-autopairs').setup()
 
 			-- you need setup cmp first put this after cmp.setup()
 			require('nvim-autopairs.completion.cmp').setup({
