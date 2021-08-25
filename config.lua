@@ -3,7 +3,16 @@
 
 O.colorscheme = 'rose-pine'
 O.format_on_save = true
-O.lsp.servers = { 'lua' }
+O.lsp.servers = {
+	'lua',
+	'typescript',
+	'html',
+	'svelte',
+	'css',
+	'tailwindcss',
+	'json',
+	'go',
+}
 O.lsp.show_virtual_text = true
 O.show_cursorline = true
 O.show_indent_guides = true
