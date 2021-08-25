@@ -54,7 +54,7 @@ require('packer').startup(function(use)
 				ignore_install = { 'haskell' },
 				indent = {
 					enable = true,
-					-- Currently there are issues with svelte indentation
+					-- TODO: temporarily disable svelte ts indentation
 					-- https://github.com/nvim-treesitter/nvim-treesitter/issues/1368
 					disabled = { 'svelte' },
 				},
