@@ -206,14 +206,6 @@ require('packer').startup(function(use)
 					end,
 				},
 				mapping = {
-					-- ['<Tab>'] = cmp.mapping(
-					-- 	cmp.mapping.select_next_item(),
-					-- 	{ 'i', 's' }
-					-- ),
-					-- ['<S-Tab>'] = cmp.mapping(
-					-- 	cmp.mapping.select_prev_item(),
-					-- 	{ 'i', 's' }
-					-- ),
 					['<Tab>'] = function(fallback)
 						if vim.fn.pumvisible() == 1 then
 							vim.fn.feedkeys(
@@ -264,10 +256,6 @@ require('packer').startup(function(use)
 							fallback()
 						end
 					end,
-					['<CR>'] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Insert,
-						select = false,
-					}),
 				},
 				sources = {
 					{ name = 'nvim_lsp' },
