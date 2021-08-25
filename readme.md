@@ -4,9 +4,13 @@
 
 ## Usage
 
+Clone or fork this repo
+
 ```sh
 git clone https://github.com/mvllow/nvim
 ```
+
+Bootstrap plugins
 
 ```sh
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
