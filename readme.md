@@ -7,7 +7,7 @@
 Clone or fork this repo
 
 ```sh
-git clone https://github.com/mvllow/nvim
+git clone https://github.com/fvrests/nvim
 ```
 
 Bootstrap plugins
@@ -30,5 +30,5 @@ We use [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) for formatt
 
 ## Related
 
-- [mvllow/dots](https://github.com/mvllow/dots)
+- [fvrests/dots](https://github.com/fvrests/dots)
 - [Rosé Pine theme](https://github.com/rose-pine/neovim)
