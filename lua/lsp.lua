@@ -72,10 +72,5 @@ end
 -- diagnostics
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics,
-	{
-		signs = true,
-		underline = true,
-		update_in_insert = false,
-		virtual_text = O.lsp.show_virtual_text,
-	}
+	O.lsp.diagnostics
 )

@@ -10,13 +10,12 @@ O = {
 		symlink = '↔',
 	},
 	lsp = {
+		diagnostics = {
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+			virtual_text = true,
+		},
 		servers = 'lua',
-		show_virtual_text = true,
 	},
-	show_cursorline = true,
-	show_indent_guides = true,
-	show_line_numbers = true,
-	show_signcolumn = true,
-	tab_size = 4,
-	wrap_lines = true,
 }
