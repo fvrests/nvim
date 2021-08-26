@@ -17,6 +17,7 @@ require('packer').startup(function(use)
 	use('wbthomason/packer.nvim')
 	use({ 'nvim-lua/plenary.nvim', module = 'plenary' })
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
+	use({ 'editorconfig/editorconfig-vim', event = 'BufReadPre' })
 	use({
 		'folke/which-key.nvim',
 		opt = true,
@@ -196,6 +197,16 @@ require('packer').startup(function(use)
 				},
 				preselect = cmp.PreselectMode.None,
 				mapping = {
+					['<C-p>'] = cmp.mapping.select_prev_item(),
+					['<C-n>'] = cmp.mapping.select_next_item(),
+					['<C-d>'] = cmp.mapping.scroll_docs(-4),
+					['<C-f>'] = cmp.mapping.scroll_docs(4),
+					['<C-Space>'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.close(),
+					['<CR>'] = cmp.mapping.confirm({
+						behavior = cmp.ConfirmBehavior.Insert,
+						select = true,
+					}),
 					['<Tab>'] = function(fallback)
 						if vim.fn.pumvisible() == 1 then
 							vim.fn.feedkeys(
@@ -265,7 +276,7 @@ require('packer').startup(function(use)
 		after = 'nvim-cmp',
 		config = function()
 			require('nvim-autopairs').setup()
-
+			--
 			-- you need setup cmp first put this after cmp.setup()
 			require('nvim-autopairs.completion.cmp').setup({
 				map_cr = true, --  map <CR> on insert mode
