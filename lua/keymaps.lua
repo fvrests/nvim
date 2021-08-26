@@ -36,6 +36,9 @@ util.map('v', '_', ":m '<-2<cr>gv=gv")
 -- escape
 util.map('i', 'jk', '<esc>')
 
+-- copy to system clipboard
+util.map('v', 'Y', '"*y')
+
 -- buffers
 -- these are ony necessary if not using barbar.nvim
 -- util.map('n', 'L', '<cmd>bnext<cr>')
